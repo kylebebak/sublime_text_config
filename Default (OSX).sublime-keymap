@@ -32,6 +32,7 @@
 
 
 // MULTIPLE COMMANDS
+// (these depend on run_multiple_commands.py)
 
 // copy and delete current line
 { "keys": ["super+shift+m"],
