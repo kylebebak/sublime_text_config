@@ -1,0 +1,10 @@
+# ignore everything
+/*
+
+# except...
+!.gitignore
+!README.md
+!run_multiple_commands.py
+!Default\ (OSX).sublime-keymap
+!*.sublime-settings
+!/__snippets

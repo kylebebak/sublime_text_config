@@ -1,0 +1,36 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"AdvancedNewFile",
+		"Alignment",
+		"All Autocomplete",
+		"ApplySyntax",
+		"Babel",
+		"Better Completion",
+		"BracketHighlighter",
+		"Djaneiro",
+		"DocBlockr",
+		"Emmet",
+		"Evaluate",
+		"Javatar",
+		"Jedi - Python autocompletion",
+		"MarkdownEditing",
+		"MoveTab",
+		"Package Control",
+		"PackageResourceViewer",
+		"PHP Completions Kit",
+		"Sass",
+		"ScopeHunter",
+		"SideBarEnhancements",
+		"SublimeLinter",
+		"SublimeLinter-javac",
+		"SublimeLinter-jshint",
+		"SublimeLinter-php",
+		"SublimeLinter-pyflakes",
+		"SublimeLinter-ruby"
+	]
+}

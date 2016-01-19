@@ -1,0 +1,246 @@
+[
+// GENERAL
+
+{ "keys": ["super+k", "super+t"], "command": "title_case" },
+
+// symbols and navigation
+{ "keys": ["super+e"], "command": "goto_definition" },
+{ "keys": ["super+shift+r"], "command": "goto_symbol_in_project" },
+{ "keys": ["super+shift+minus"], "command": "jump_back" },
+{ "keys": ["super+shift+plus"], "command": "jump_forward" },
+
+// delete current line
+{ "keys": ["super+shift+k"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete Line.sublime-macro"} },
+
+{ "keys": ["ctrl+alt+super+left"], "command": "next_view_in_stack" },
+{ "keys": ["ctrl+alt+super+right"], "command": "prev_view_in_stack" },
+
+{ "keys": ["super+0"], "command": "focus_side_bar" },
+{ "keys": ["alt+shift+f"], "command": "reindent"},
+
+// multiple cursors
+{ "keys": ["super+alt+up"], "command": "select_lines", "args": {"forward": false} },
+{ "keys": ["super+alt+down"], "command": "select_lines", "args": {"forward": true} },
+
+
+
+
+
+
+
+
+
+
+// MULTIPLE COMMANDS
+
+// copy and delete current line
+{ "keys": ["super+shift+m"],
+"command": "run_multiple_commands",
+"args": {
+  "commands": [
+  {"command": "move_to", "args": {"extend": false, "to": "bol"}, "context": "window" },
+  {"command": "move_to", "args": {"extend": true, "to": "eol"}, "context": "window" },
+  {"command": "copy", "context": "window" },
+  {"command": "left_delete", "context": "window" },
+  {"command": "run_macro_file", "args": {"file": "Packages/Default/Delete Line.sublime-macro"}, "context": "window" }
+  ]
+}
+},
+
+// copy current line
+{ "keys": ["alt+c"],
+"command": "run_multiple_commands",
+"args": {
+  "commands": [
+  {"command": "move_to", "args": {"extend": false, "to": "bol"}, "context": "window" },
+  {"command": "move_to", "args": {"extend": true, "to": "eol"}, "context": "window" },
+  {"command": "copy", "context": "window" },
+  {"command": "move", "args": {"by": "lines", "forward": true}, "context": "window" }
+  ]
+}
+},
+
+// copy current file to new file
+{ "keys": ["super+shift+o"],
+"command": "run_multiple_commands",
+"args": {
+  "commands": [
+  {"command": "select_all", "context": "window" },
+  {"command": "copy", "context": "window" },
+  {"command": "move_to", "args": {"extend": false, "to": "bof"}, "context": "window" },
+  {"command": "new_file", "context": "window" },
+  {"command": "paste", "context": "window" },
+  {"command": "move_to", "args": {"extend": false, "to": "bof"}, "context": "window" },
+  ]
+}
+},
+
+
+
+// move up and down multiple lines at a time
+{ "keys": ["ctrl+alt+enter"],
+"command": "run_multiple_commands",
+"args": {
+  "commands": [
+  {"command": "run_macro_file", "args": {"file": "Packages/Default/Add Line.sublime-macro"}, "context": "window" },
+  {"command": "run_macro_file", "args": {"file": "Packages/Default/Add Line.sublime-macro"}, "context": "window" },
+  {"command": "run_macro_file", "args": {"file": "Packages/Default/Add Line.sublime-macro"}, "context": "window" },
+  {"command": "run_macro_file", "args": {"file": "Packages/Default/Add Line.sublime-macro"}, "context": "window" },
+  {"command": "run_macro_file", "args": {"file": "Packages/Default/Add Line.sublime-macro"}, "context": "window" }
+  ]
+}
+},
+
+
+{ "keys": ["alt+up"],
+"command": "run_multiple_commands",
+"args": {
+  "commands": [
+  {"command": "move", "args": {"by": "lines", "forward": false}, "context": "window" },
+  {"command": "move", "args": {"by": "lines", "forward": false}, "context": "window" },
+  {"command": "move", "args": {"by": "lines", "forward": false}, "context": "window" },
+  {"command": "move", "args": {"by": "lines", "forward": false}, "context": "window" },
+  {"command": "move", "args": {"by": "lines", "forward": false}, "context": "window" }
+  ]
+}
+},
+
+{ "keys": ["alt+down"],
+"command": "run_multiple_commands",
+"args": {
+  "commands": [
+  {"command": "move", "args": {"by": "lines", "forward": true}, "context": "window" },
+  {"command": "move", "args": {"by": "lines", "forward": true}, "context": "window" },
+  {"command": "move", "args": {"by": "lines", "forward": true}, "context": "window" },
+  {"command": "move", "args": {"by": "lines", "forward": true}, "context": "window" },
+  {"command": "move", "args": {"by": "lines", "forward": true}, "context": "window" }
+  ]
+}
+},
+
+{ "keys": ["shift+alt+up"],
+"command": "run_multiple_commands",
+"args": {
+  "commands": [
+  {"command": "move", "args": {"by": "lines", "forward": false, "extend": true}, "context": "window" },
+  {"command": "move", "args": {"by": "lines", "forward": false, "extend": true}, "context": "window" },
+  {"command": "move", "args": {"by": "lines", "forward": false, "extend": true}, "context": "window" },
+  {"command": "move", "args": {"by": "lines", "forward": false, "extend": true}, "context": "window" },
+  {"command": "move", "args": {"by": "lines", "forward": false, "extend": true}, "context": "window" }
+  ]
+}
+},
+
+{ "keys": ["shift+alt+down"],
+"command": "run_multiple_commands",
+"args": {
+  "commands": [
+  {"command": "move", "args": {"by": "lines", "forward": true, "extend": true}, "context": "window" },
+  {"command": "move", "args": {"by": "lines", "forward": true, "extend": true}, "context": "window" },
+  {"command": "move", "args": {"by": "lines", "forward": true, "extend": true}, "context": "window" },
+  {"command": "move", "args": {"by": "lines", "forward": true, "extend": true}, "context": "window" },
+  {"command": "move", "args": {"by": "lines", "forward": true, "extend": true}, "context": "window" }
+  ]
+}
+},
+
+
+
+
+
+
+
+
+
+
+//PACKAGES
+
+// Evaluate
+{ "keys": ["super+enter"], "command": "evaluate"},
+
+{ "keys": ["super+alt+enter"],
+"command": "run_multiple_commands",
+"args": {
+  "commands": [
+  {"command": "move_to", "args": {"extend": false, "to": "bol"}, "context": "window" },
+  {"command": "move_to", "args": {"extend": true, "to": "eol"}, "context": "window" },
+  {"command": "evaluate", "context": "window" }
+  ]
+}
+},
+
+
+// MoveTab
+{
+  "keys": ["super+ctrl+left"],
+  "command": "move_tab",
+  "args": { "position": "-1" }
+},
+{
+  "keys": ["super+ctrl+right"],
+  "command": "move_tab",
+  "args": { "position": "+1" }
+},
+
+
+// Vintage
+{ "keys": ["j", "j"], "command": "exit_insert_mode",
+  "context":
+  [
+    { "key": "setting.command_mode", "operand": false },
+    { "key": "setting.is_widget", "operand": false }
+  ]
+},
+
+
+// Alignment
+{ "keys": ["super+shift+\\"], "command": "alignment" },
+
+
+// Emmet
+// make Emmet work for multiple file extensions
+{
+  "keys": ["tab"],
+  "command": "expand_abbreviation_by_tab",
+
+  // put comma-separated syntax selectors for which you file types in which
+  // you want to expand Emmet abbreviations into "operand" key instead of
+  // SCOPE_SELECTOR.
+  "context": [
+    {
+      "operand": "text.html, source.js",
+      "operator": "equal",
+      "match_all": true,
+      "key": "selector"
+    },
+
+    // runs only if there's no selected text
+    {
+      "match_all": true,
+      "key": "selection_empty"
+    },
+
+    // prevents expansion from occurring if there are active tabstops
+    {
+      "operator": "equal",
+      "operand": false,
+      "match_all": true,
+      "key": "has_next_field"
+    },
+
+    // prevents expansion from occurring if completion popup is visible
+    {
+      "operand": false,
+      "operator": "equal",
+      "match_all": true,
+      "key": "auto_complete_visible"
+    },
+    {
+      "match_all": true,
+      "key": "is_abbreviation"
+    }
+  ]
+}
+
+
+]
