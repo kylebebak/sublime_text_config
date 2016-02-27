@@ -26,7 +26,8 @@
 		"*.psd",
 		"*.db",
 		"*.sublime-workspace",
-		"transpiled.js"
+		"transpiled.*",
+		"bundle.*"
 	],
 	"folder_exclude_patterns":
 	[

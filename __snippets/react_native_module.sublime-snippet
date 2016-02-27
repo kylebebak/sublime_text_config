@@ -1,0 +1,29 @@
+<snippet>
+	<content><![CDATA[
+import React, {
+  StyleSheet, View, Text
+} from 'react-native';
+
+module.exports = React.createClass({
+  render() {
+    return (
+      <View style={styles.container}>
+        $1
+      </View>
+    );
+  },
+});
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>reactn</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>

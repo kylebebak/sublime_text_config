@@ -26,8 +26,8 @@
 		"ScopeHunter",
 		"SideBarEnhancements",
 		"SublimeLinter",
+		"SublimeLinter-contrib-eslint",
 		"SublimeLinter-javac",
-		"SublimeLinter-jshint",
 		"SublimeLinter-php",
 		"SublimeLinter-pyflakes",
 		"SublimeLinter-ruby"
