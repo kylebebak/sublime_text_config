@@ -5,6 +5,7 @@
 !.gitignore
 !README.md
 !run_multiple_commands.py
+!toggle_color_scheme.py
 !Default\ (OSX).sublime-keymap
 !*.sublime-settings
 !/__snippets
