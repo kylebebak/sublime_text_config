@@ -22,14 +22,15 @@
 		"Package Control",
 		"PackageResourceViewer",
 		"PHP Completions Kit",
-		"Sass",
 		"ScopeHunter",
+		"Seti_UI",
 		"SideBarEnhancements",
 		"SublimeLinter",
 		"SublimeLinter-contrib-eslint",
 		"SublimeLinter-javac",
 		"SublimeLinter-php",
 		"SublimeLinter-pyflakes",
-		"SublimeLinter-ruby"
+		"SublimeLinter-ruby",
+		"Syntax Highlighting for Sass"
 	]
 }

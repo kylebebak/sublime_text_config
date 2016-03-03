@@ -1,7 +1,13 @@
 {
+	"Seti_bold_slctdfile_labels": true,
 	"auto_complete_selector": "source, plain.text, text.html.markdown.gfm",
+	"bold_folder_labels": true,
+	"caret_extra_bottom": 2,
+	"caret_extra_top": 2,
+	"caret_extra_width": 2,
+	"caret_style": "phase",
 	"close_windows_when_empty": false,
-	"color_scheme": "Packages/User/SublimeLinter/Solarized (Light) (SL).tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/Solarized (Dark) (SL).tmTheme",
 	"ensure_newline_at_eof_on_save": true,
 	"extract_sublime_package_ask_on_open": true,
 	"file_exclude_patterns":
@@ -38,13 +44,24 @@
 		"node_modules"
 	],
 	"font_size": 12,
+	"highlight_line": false,
+	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
 		"Markdown"
 	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
+	],
+	"line_padding_bottom": 1,
+	"line_padding_top": 1,
 	"open_files_in_new_window": false,
 	"tab_size": 2,
+	"theme": "Seti.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
+	"wide_caret": false,
 	"word_wrap": true
 }
