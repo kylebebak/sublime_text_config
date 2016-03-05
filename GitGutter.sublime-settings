@@ -63,5 +63,5 @@
     "sublimelinter-error-marks",
     "sublimelinter-warning-gutter-marks",
     "sublimelinter-error-gutter-marks",
-    ]
+  ]
 }
