@@ -1,6 +1,6 @@
 import sublime, sublime_plugin
 
-class ToggleColorSchemeCommand(sublime_plugin.TextCommand):
+class CycleColorSchemeCommand(sublime_plugin.TextCommand):
     def run(self, edit, **kwargs):
 
         preferences = sublime.load_settings('Preferences.sublime-settings')

@@ -292,9 +292,9 @@
 { "keys": ["ctrl+shift+s"], "command": "auto_save", "args": {"all_files": false} },
 { "keys": ["ctrl+super+s"], "command": "auto_save", "args": {"all_files": false, "backup": true} },
 
-// toggle_color_scheme
+// cycle_color_scheme
 {
-    "keys": ["super+shift+c"], "command": "toggle_color_scheme",
+    "keys": ["super+shift+c"], "command": "cycle_color_scheme",
     "args": { "color_schemes": [
         "Packages/User/SublimeLinter/Solarized (Light) (SL).tmTheme",
         "Packages/User/SublimeLinter/Solarized (Dark) (SL).tmTheme",
