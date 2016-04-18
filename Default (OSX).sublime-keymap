@@ -288,19 +288,31 @@
   ]
 },
 
+// Project Manager
+{
+  "keys": ["super+ctrl+o"],
+  "command": "project_manager", "args": {"action": "new"}
+},
+
+
 // auto-save
 { "keys": ["ctrl+shift+s"], "command": "auto_save", "args": {"all_files": false} },
 { "keys": ["ctrl+super+s"], "command": "auto_save", "args": {"all_files": false, "backup": true} },
 
 // cycle_color_scheme
 {
-    "keys": ["super+shift+c"], "command": "cycle_color_scheme",
-    "args": { "color_schemes": [
-        "Packages/User/SublimeLinter/Solarized (Light) (SL).tmTheme",
-        "Packages/User/SublimeLinter/Solarized (Dark) (SL).tmTheme",
-        "Packages/User/SublimeLinter/Monokai (SL).tmTheme"
-      ]
-    }
+  "keys": ["super+shift+c"], "command": "cycle_color_scheme",
+  "args": { "color_schemes": [
+      "Packages/User/SublimeLinter/Solarized (Light) (SL).tmTheme",
+      "Packages/User/SublimeLinter/Solarized (Dark) (SL).tmTheme",
+      "Packages/User/SublimeLinter/Monokai (SL).tmTheme"
+    ]
+  }
+},
+
+// open_file_by_name
+{
+  "keys": ["ctrl+alt+super+o"], "command": "open_file_by_name"
 }
 
 ]

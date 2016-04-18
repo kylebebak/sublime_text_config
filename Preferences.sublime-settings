@@ -1,7 +1,30 @@
 {
 	"Seti_bold_slctdfile_labels": true,
 	"Seti_sb_small_padding": true,
+	"added_words":
+	[
+		"composable",
+		"siloed",
+		"footie"
+	],
 	"auto_complete_selector": "source, plain.text, text.html.markdown.gfm",
+	"binary_file_patterns":
+	[
+		"*.dds",
+		"*.eot",
+		"*.gif",
+		"*.ico",
+		"*.jar",
+		"*.jpeg",
+		"*.jpg",
+		"*.pdf",
+		"*.png",
+		"*.swf",
+		"*.tga",
+		"*.ttf",
+		"*.zip",
+		"components/**"
+	],
 	"bold_folder_labels": true,
 	"caret_extra_bottom": 2,
 	"caret_extra_top": 2,

@@ -62,6 +62,13 @@
     "sublimelinter-warning-marks",
     "sublimelinter-error-marks",
     "sublimelinter-warning-gutter-marks",
-    "sublimelinter-error-gutter-marks"
+    "sublimelinter-error-gutter-marks",
+    "lint-underline-illegal",
+    "lint-underline-violation",
+    "lint-underline-warning",
+    "lint-outlines-illegal",
+    "lint-outlines-violation",
+    "lint-outlines-warning",
+    "lint-annotations",
   ]
 }
