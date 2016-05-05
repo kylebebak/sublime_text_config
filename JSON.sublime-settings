@@ -6,6 +6,7 @@
 		".bowerrc",
 		".jscsrc",
 		".eslintrc",
-		".jshintrc"
+		".jshintrc",
+		"sublime-commands"
 	]
 }

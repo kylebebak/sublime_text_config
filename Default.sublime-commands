@@ -1,0 +1,13 @@
+[
+  { "caption": "Alignment: Run", "command": "alignment" },
+
+  { "caption": "Custom: Open File By Name", "command": "open_file_by_name" },
+
+  { "caption": "Custom: Cycle Color Scheme", "command": "cycle_color_scheme",
+  "args": { "color_schemes": [
+      "Packages/User/SublimeLinter/Solarized (Light) (SL).tmTheme",
+      "Packages/User/SublimeLinter/Solarized (Dark) (SL).tmTheme",
+      "Packages/User/SublimeLinter/Monokai (SL).tmTheme"
+    ] }
+  }
+]

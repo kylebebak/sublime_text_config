@@ -8,3 +8,4 @@
 !*.py
 !*.sublime-keymap
 !*.sublime-settings
+!*.sublime-commands

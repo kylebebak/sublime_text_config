@@ -22,8 +22,7 @@
 		"*.swf",
 		"*.tga",
 		"*.ttf",
-		"*.zip",
-		"components/**"
+		"*.zip"
 	],
 	"bold_folder_labels": true,
 	"caret_extra_bottom": 2,
