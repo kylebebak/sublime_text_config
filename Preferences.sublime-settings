@@ -63,6 +63,7 @@
 		".svn",
 		".git",
 		".hg",
+		".bundle",
 		"CVS",
 		"node_modules"
 	],
