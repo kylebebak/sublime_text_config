@@ -4,7 +4,7 @@
 # except...
 !.gitignore
 !README.md
-!/__snippets
+!/snippets
 !*.py
 !*.sublime-keymap
 !*.sublime-settings
