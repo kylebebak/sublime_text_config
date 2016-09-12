@@ -5,8 +5,8 @@
 	"extensions":
 	[
 		"py",
-		"pyw",
-		"py3"
+		"py3",
+		"pyw"
 	],
 	"indent_guide_options":
 	[

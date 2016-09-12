@@ -11,6 +11,9 @@ class ${1:Class} extends Component {
   }
 
   render() {
+    return (
+      ${2:null}
+    )
   }
 
 }
@@ -21,7 +24,7 @@ ${1:Class}.propTypes = {
 const styles = StyleSheet.create({
 })
 
-export { ${1:Class} }
+export default ${1:Class}
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>reactn</tabTrigger>

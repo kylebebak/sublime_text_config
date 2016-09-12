@@ -2,11 +2,11 @@
 	"extensions":
 	[
 		"geojson",
-		".csslintrc",
-		".bowerrc",
 		".jscsrc",
+		".bowerrc",
+		".csslintrc",
+		"sublime-commands",
 		".eslintrc",
-		".jshintrc",
-		"sublime-commands"
+		".jshintrc"
 	]
 }

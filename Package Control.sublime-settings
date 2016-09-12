@@ -28,16 +28,18 @@
 		"PackageResourceViewer",
 		"PHP Completions Kit",
 		"Pretty JSON",
-		"Project Manager",
+		"ProjectManager",
 		"ScopeHunter",
 		"Seti_UI",
 		"SideBarEnhancements",
+		"Sort Lines (Numerically)",
 		"SublimeLinter",
 		"SublimeLinter-contrib-eslint",
 		"SublimeLinter-javac",
 		"SublimeLinter-php",
 		"SublimeLinter-pyflakes",
 		"SublimeLinter-ruby",
-		"Syntax Highlighting for Sass"
+		"Syntax Highlighting for Sass",
+		"Wrap Plus"
 	]
 }

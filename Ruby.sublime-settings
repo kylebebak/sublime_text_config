@@ -1,13 +1,13 @@
 {
 	"extensions":
 	[
-		"rake",
-		"rb",
-		"thor",
 		"jbuilder",
 		"rabl",
 		"podspec",
+		"rb",
+		"simplecov",
+		"rake",
 		"ru",
-		"simplecov"
+		"thor"
 	]
 }
