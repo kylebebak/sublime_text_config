@@ -1,0 +1,5 @@
+// Place your settings in the file "User/CTags.sublime-settings", which
+// overrides the settings in here.
+{
+    "command": "/usr/local/bin/ctags"
+}

@@ -8,6 +8,7 @@
 { "keys": ["super+shift+r"], "command": "goto_symbol_in_project" },
 { "keys": ["super+shift+minus"], "command": "jump_back" },
 { "keys": ["super+shift+plus"], "command": "jump_forward" },
+{ "keys": ["super+shift+e"], "command": "show_symbols", "args": {"type": "multi"} },
 
 // delete current line
 { "keys": ["super+shift+k"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete Line.sublime-macro"} },
