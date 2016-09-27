@@ -5,6 +5,7 @@
 	],
 	"installed_packages":
 	[
+		"1337 Color Scheme",
 		"AdvancedNewFile",
 		"Alignment",
 		"All Autocomplete",
@@ -28,6 +29,7 @@
 		"Package Control",
 		"PackageResourceViewer",
 		"PHP Completions Kit",
+		"PlainTasks",
 		"Pretty JSON",
 		"ProjectManager",
 		"ScopeHunter",
