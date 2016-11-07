@@ -7,5 +7,6 @@
 		"txt"
 	],
 	"line_numbers": true,
-	"wrap_width": 95
+	"wrap_width": 95,
+  "tab_size": 2
 }

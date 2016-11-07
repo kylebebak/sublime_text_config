@@ -355,8 +355,12 @@
 { "keys": ["ctrl+shift+s"], "command": "auto_save", "args": {"all_files": false} },
 { "keys": ["ctrl+super+s"], "command": "auto_save", "args": {"all_files": false, "backup": true} },
 
-// sort-list
+// SortList
 { "keys": ["shift+alt+super+o"], "command": "sort_list" },
+
+// DateDiff
+{ "keys": ["super+t"], "command": "prompt_date_diff_days" },
+{ "keys": ["super+t", "super+t"], "command": "prompt_date_diff_fmt" },
 
 // cycle_color_scheme
 {
@@ -370,7 +374,10 @@
 },
 
 // open_file_by_name
-{ "keys": ["ctrl+alt+super+o"], "command": "open_file_by_name" }
+{ "keys": ["ctrl+alt+super+o"], "command": "open_file_by_name" },
+
+// wrap plus
+{ "keys": ["alt+w"], "command": "wrap_lines_plus", "args": {"width": 82}}
 
 ]
 

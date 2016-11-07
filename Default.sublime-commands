@@ -15,6 +15,9 @@
   { "caption": "Custom: Show Scope Name", "command": "show_scope_name" },
 
   { "caption": "GitGutter: Next Change", "command": "git_gutter_next_change" },
-  { "caption": "GitGutter: Previous Change", "command": "git_gutter_prev_change" }
+  { "caption": "GitGutter: Previous Change", "command": "git_gutter_prev_change" },
+
+
+  { "caption": "Wrap Plus: Wrap at 82 Chars", "command": "wrap_lines_plus", "args": {"width": 82}}
 
 ]
