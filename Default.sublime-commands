@@ -14,6 +14,8 @@
 
   { "caption": "Custom: Show Scope Name", "command": "show_scope_name" },
 
+  { "caption": "Jump To: Matching Bracket", "command": "move_to", "args": {"to": "brackets"} },
+
   { "caption": "GitGutter: Next Change", "command": "git_gutter_next_change" },
   { "caption": "GitGutter: Previous Change", "command": "git_gutter_prev_change" },
 

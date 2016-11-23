@@ -240,7 +240,7 @@
 //PACKAGES
 
 // Evaluate
-{ "keys": ["super+enter"], "command": "evaluate"},
+{ "keys": ["super+alt+ctrl+enter"], "command": "evaluate"},
 
 { "keys": ["super+alt+enter"],
 "command": "run_multiple_commands",
@@ -377,7 +377,12 @@
 { "keys": ["ctrl+alt+super+o"], "command": "open_file_by_name" },
 
 // wrap plus
-{ "keys": ["alt+w"], "command": "wrap_lines_plus", "args": {"width": 82}}
+{ "keys": ["alt+w"], "command": "wrap_lines_plus", "args": {"width": 82}},
+
+
+// GitSavvy
+{ "keys": ["super+alt+g"], "command": "gs_show_status" }
+
 
 ]
 
