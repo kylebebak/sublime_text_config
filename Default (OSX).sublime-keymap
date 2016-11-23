@@ -381,7 +381,10 @@
 
 
 // GitSavvy
-{ "keys": ["super+alt+g"], "command": "gs_show_status" }
+{ "keys": ["super+alt+g", "super+alt+g"], "command": "gs_show_status" },
+{ "keys": ["super+alt+g", "super+alt+b"], "command": "gs_show_branch" },
+{ "keys": ["super+alt+g", "super+alt+t"], "command": "gs_show_tags" },
+{ "keys": ["super+alt+g", "super+alt+l"], "command": "gs_log" }
 
 
 ]
