@@ -1,5 +1,6 @@
 {
 	"bootstrapped": true,
+	"ignore_vcs_packages": true,
 	"in_process_packages":
 	[
 	],
@@ -37,6 +38,7 @@
 		"Seti_UI",
 		"SideBarEnhancements",
 		"Sort Lines (Numerically)",
+		"Sublime Bookmarks",
 		"SublimeLinter",
 		"SublimeLinter-contrib-eslint",
 		"SublimeLinter-javac",
