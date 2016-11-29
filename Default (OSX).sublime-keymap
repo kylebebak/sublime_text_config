@@ -398,7 +398,7 @@
 { "keys": ["super+alt+b", "super+alt+g"], "command": "sublime_bookmark", "args": {"type": "goto"} },
 { "keys": ["super+alt+b", "super+alt+n"], "command": "sublime_bookmark", "args": {"type": "goto_next"} },
 { "keys": ["super+alt+b", "super+alt+r"], "command": "sublime_bookmark", "args": {"type": "remove"} },
-{ "keys": ["super+alt+b", "super+alt+d"], "command": "sublime_bookmark", "args": {"type": "remove_all"} }
+{ "keys": ["super+alt+b", "super+alt+k"], "command": "sublime_bookmark", "args": {"type": "remove_all"} }
 
 ]
 
