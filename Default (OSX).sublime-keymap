@@ -23,6 +23,9 @@
 { "keys": ["super+alt+up"], "command": "select_lines", "args": {"forward": false} },
 { "keys": ["super+alt+down"], "command": "select_lines", "args": {"forward": true} },
 
+// selection
+{ "keys": ["super+shift+a"], "command": "expand_selection", "args": {"to": "tag"} },
+
 
 
 
