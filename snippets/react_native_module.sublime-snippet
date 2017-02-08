@@ -21,6 +21,9 @@ class ${1:Class} extends Component {
 ${1:Class}.propTypes = {
 }
 
+${1:Class}.defaultProps = {
+}
+
 const styles = StyleSheet.create({
 })
 
