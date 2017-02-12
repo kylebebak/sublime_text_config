@@ -26,6 +26,8 @@
 // selection
 { "keys": ["super+shift+a"], "command": "expand_selection", "args": {"to": "tag"} },
 
+// files
+{ "keys": ["super+alt+r", "super+alt+r"], "command": "reveal_in_side_bar" },
 
 
 
@@ -372,11 +374,13 @@
 // cycle_color_scheme
 {
   "keys": ["super+shift+c"], "command": "cycle_color_scheme",
-  "args": { "color_schemes": [
-      "Packages/User/SublimeLinter/Solarized (Light) (SL).tmTheme",
-      "Packages/User/SublimeLinter/Solarized (Dark) (SL).tmTheme",
-      "Packages/User/SublimeLinter/Monokai (SL).tmTheme"
-    ]
+  "args": {
+    "color_schemes": [
+      "Solarized (Light) (SL).tmTheme",
+      "Solarized (Dark) (SL).tmTheme",
+      "Monokai (SL).tmTheme"
+    ],
+    "scheme_directory": "Packages/User/SublimeLinter"
   }
 },
 
