@@ -33,8 +33,6 @@
 
 
 
-
-
 // EXTRA AUTO-PAIR CHARACTERS
 
 // auto-pair grave accents
@@ -71,9 +69,6 @@
 
 
 
-
-
-
 // MULTIPLE COMMANDS
 // (these depend on run_multiple_commands.py)
 
@@ -82,11 +77,11 @@
 "command": "run_multiple_commands",
 "args": {
   "commands": [
-  {"command": "move_to", "args": {"extend": false, "to": "bol"}, "context": "window" },
-  {"command": "move_to", "args": {"extend": true, "to": "eol"}, "context": "window" },
-  {"command": "copy", "context": "window" },
-  {"command": "left_delete", "context": "window" },
-  {"command": "run_macro_file", "args": {"file": "Packages/Default/Delete Line.sublime-macro"}, "context": "window" }
+    {"command": "move_to", "args": {"extend": false, "to": "bol"}, "context": "window" },
+    {"command": "move_to", "args": {"extend": true, "to": "eol"}, "context": "window" },
+    {"command": "copy", "context": "window" },
+    {"command": "left_delete", "context": "window" },
+    {"command": "run_macro_file", "args": {"file": "Packages/Default/Delete Line.sublime-macro"}, "context": "window" }
   ]
 }
 },
@@ -96,10 +91,10 @@
 "command": "run_multiple_commands",
 "args": {
   "commands": [
-  {"command": "move_to", "args": {"extend": false, "to": "bol"}, "context": "window" },
-  {"command": "move_to", "args": {"extend": true, "to": "eol"}, "context": "window" },
-  {"command": "copy", "context": "window" },
-  {"command": "move", "args": {"by": "lines", "forward": true}, "context": "window" }
+    {"command": "move_to", "args": {"extend": false, "to": "bol"}, "context": "window" },
+    {"command": "move_to", "args": {"extend": true, "to": "eol"}, "context": "window" },
+    {"command": "copy", "context": "window" },
+    {"command": "move", "args": {"by": "lines", "forward": true}, "context": "window" }
   ]
 }
 },
@@ -109,16 +104,15 @@
 "command": "run_multiple_commands",
 "args": {
   "commands": [
-  {"command": "select_all", "context": "window" },
-  {"command": "copy", "context": "window" },
-  {"command": "move_to", "args": {"extend": false, "to": "bof"}, "context": "window" },
-  {"command": "new_file", "context": "window" },
-  {"command": "paste", "context": "window" },
-  {"command": "move_to", "args": {"extend": false, "to": "bof"}, "context": "window" },
+    {"command": "select_all", "context": "window" },
+    {"command": "copy", "context": "window" },
+    {"command": "move_to", "args": {"extend": false, "to": "bof"}, "context": "window" },
+    {"command": "new_file", "context": "window" },
+    {"command": "paste", "context": "window" },
+    {"command": "move_to", "args": {"extend": false, "to": "bof"}, "context": "window" },
   ]
 }
 },
-
 
 
 // move up and down multiple lines at a time
@@ -126,12 +120,9 @@
 "command": "run_multiple_commands",
 "args": {
   "commands": [
-  {"command": "run_macro_file", "args": {"file": "Packages/Default/Add Line.sublime-macro"}, "context": "window" },
-  {"command": "run_macro_file", "args": {"file": "Packages/Default/Add Line.sublime-macro"}, "context": "window" },
-  {"command": "run_macro_file", "args": {"file": "Packages/Default/Add Line.sublime-macro"}, "context": "window" },
-  {"command": "run_macro_file", "args": {"file": "Packages/Default/Add Line.sublime-macro"}, "context": "window" },
-  {"command": "run_macro_file", "args": {"file": "Packages/Default/Add Line.sublime-macro"}, "context": "window" }
-  ]
+    {"command": "run_macro_file", "args": {"file": "Packages/Default/Add Line.sublime-macro"}, "context": "window" }
+  ],
+  "repetitions": 5
 }
 },
 
@@ -140,12 +131,9 @@
 "command": "run_multiple_commands",
 "args": {
   "commands": [
-  {"command": "move", "args": {"by": "lines", "forward": false}, "context": "window" },
-  {"command": "move", "args": {"by": "lines", "forward": false}, "context": "window" },
-  {"command": "move", "args": {"by": "lines", "forward": false}, "context": "window" },
-  {"command": "move", "args": {"by": "lines", "forward": false}, "context": "window" },
-  {"command": "move", "args": {"by": "lines", "forward": false}, "context": "window" }
-  ]
+    {"command": "move", "args": {"by": "lines", "forward": false}, "context": "window" }
+  ],
+  "repetitions": 5
 }
 },
 
@@ -153,12 +141,9 @@
 "command": "run_multiple_commands",
 "args": {
   "commands": [
-  {"command": "move", "args": {"by": "lines", "forward": true}, "context": "window" },
-  {"command": "move", "args": {"by": "lines", "forward": true}, "context": "window" },
-  {"command": "move", "args": {"by": "lines", "forward": true}, "context": "window" },
-  {"command": "move", "args": {"by": "lines", "forward": true}, "context": "window" },
-  {"command": "move", "args": {"by": "lines", "forward": true}, "context": "window" }
-  ]
+    {"command": "move", "args": {"by": "lines", "forward": true}, "context": "window" }
+  ],
+  "repetitions": 5
 }
 },
 
@@ -166,12 +151,9 @@
 "command": "run_multiple_commands",
 "args": {
   "commands": [
-  {"command": "move", "args": {"by": "lines", "forward": false, "extend": true}, "context": "window" },
-  {"command": "move", "args": {"by": "lines", "forward": false, "extend": true}, "context": "window" },
-  {"command": "move", "args": {"by": "lines", "forward": false, "extend": true}, "context": "window" },
-  {"command": "move", "args": {"by": "lines", "forward": false, "extend": true}, "context": "window" },
-  {"command": "move", "args": {"by": "lines", "forward": false, "extend": true}, "context": "window" }
-  ]
+    {"command": "move", "args": {"by": "lines", "forward": false, "extend": true}, "context": "window" }
+  ],
+  "repetitions": 5
 }
 },
 
@@ -179,12 +161,9 @@
 "command": "run_multiple_commands",
 "args": {
   "commands": [
-  {"command": "move", "args": {"by": "lines", "forward": true, "extend": true}, "context": "window" },
-  {"command": "move", "args": {"by": "lines", "forward": true, "extend": true}, "context": "window" },
-  {"command": "move", "args": {"by": "lines", "forward": true, "extend": true}, "context": "window" },
-  {"command": "move", "args": {"by": "lines", "forward": true, "extend": true}, "context": "window" },
-  {"command": "move", "args": {"by": "lines", "forward": true, "extend": true}, "context": "window" }
-  ]
+    {"command": "move", "args": {"by": "lines", "forward": true, "extend": true}, "context": "window" }
+  ],
+  "repetitions": 5
 }
 },
 
@@ -192,10 +171,9 @@
 "command": "run_multiple_commands",
 "args": {
   "commands": [
-  {"command": "move", "args": {"by": "wordends", "forward": false}, "context": "window" },
-  {"command": "move", "args": {"by": "wordends", "forward": false}, "context": "window" },
-  {"command": "move", "args": {"by": "wordends", "forward": false}, "context": "window" },
-  ]
+    {"command": "move", "args": {"by": "characters", "forward": false}, "context": "window" }
+  ],
+  "repetitions": 10
 }
 },
 
@@ -203,10 +181,9 @@
 "command": "run_multiple_commands",
 "args": {
   "commands": [
-  {"command": "move", "args": {"by": "wordends", "forward": true}, "context": "window" },
-  {"command": "move", "args": {"by": "wordends", "forward": true}, "context": "window" },
-  {"command": "move", "args": {"by": "wordends", "forward": true}, "context": "window" },
-  ]
+    {"command": "move", "args": {"by": "characters", "forward": true}, "context": "window" }
+  ],
+  "repetitions": 10
 }
 },
 
@@ -214,10 +191,9 @@
 "command": "run_multiple_commands",
 "args": {
   "commands": [
-  {"command": "move", "args": {"by": "wordends", "forward": false, "extend": true}, "context": "window" },
-  {"command": "move", "args": {"by": "wordends", "forward": false, "extend": true}, "context": "window" },
-  {"command": "move", "args": {"by": "wordends", "forward": false, "extend": true}, "context": "window" },
-  ]
+    {"command": "move", "args": {"by": "characters", "forward": false, "extend": true}, "context": "window" }
+  ],
+  "repetitions": 10
 }
 },
 
@@ -225,18 +201,11 @@
 "command": "run_multiple_commands",
 "args": {
   "commands": [
-  {"command": "move", "args": {"by": "wordends", "forward": true, "extend": true}, "context": "window" },
-  {"command": "move", "args": {"by": "wordends", "forward": true, "extend": true}, "context": "window" },
-  {"command": "move", "args": {"by": "wordends", "forward": true, "extend": true}, "context": "window" },
-  ]
+    {"command": "move", "args": {"by": "characters", "forward": true, "extend": true}, "context": "window" }
+  ],
+  "repetitions": 10
 }
 },
-
-
-
-
-
-
 
 
 
@@ -408,4 +377,3 @@
 { "keys": ["super+alt+b", "super+alt+k"], "command": "sublime_bookmark", "args": {"type": "remove_all"} }
 
 ]
-

@@ -3,13 +3,10 @@ import sublime, sublime_plugin
 Source:
 https://forum.sublimetext.com/t/run-multiple-commands-command/6848
 
-Installation, place file here:
-~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/
-
-Takes an array of commands (same as those you'd provide to a key binding) with
-an optional context (defaults to view commands) & runs each command in order.
-Valid contexts are 'text', 'window', and 'app' for running a TextCommand,
-WindowCommands, or ApplicationCommand respectively.
+Takes an array of commands (same as those you'd provide to a key binding) with an
+optional context (defaults to view) & runs each command in order. Valid contexts
+are 'text', 'window', and 'app' for running a TextCommand, WindowCommands, or
+ApplicationCommand respectively.
 """
 
 class RunMultipleCommandsCommand(sublime_plugin.TextCommand):
@@ -41,8 +38,9 @@ class RunMultipleCommandsCommand(sublime_plugin.TextCommand):
         else:
             context.run_command(command['command'], args)
 
-    def run(self, edit, commands = None):
+    def run(self, edit, commands=None, repetitions=1):
         if commands is None:
             return # not an error
-        for command in commands:
-            self.exec_command(command)
+        for i in range(repetitions):
+            for command in commands:
+                self.exec_command(command)
