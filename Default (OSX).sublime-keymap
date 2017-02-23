@@ -72,6 +72,33 @@
 // MULTIPLE COMMANDS
 // (these depend on run_multiple_commands.py)
 
+// search for text in files
+{
+  "keys": ["shift+super+s"],
+  "command": "run_multiple_commands",
+  "args": {
+    "commands": [
+      { "command": "expand_selection", "args": {"to": "word"} },
+      { "command": "slurp_find_string", "context": "window" },
+      { "command": "show_panel", "args": {"panel": "find_in_files"}, "context": "window" }
+    ]
+  }
+},
+
+// search for text in goto anything panel
+{
+  "keys": ["ctrl+alt+super+p"],
+  "command": "run_multiple_commands",
+  "args": {
+    "commands": [
+      { "command": "expand_selection", "args": {"to": "word"} },
+      { "command": "copy", "context": "window" },
+      { "command": "show_overlay", "args": {"overlay": "goto"}, "context": "window" },
+      { "command": "paste", "context": "window" }
+    ]
+  }
+},
+
 // copy and delete current line
 {
   "keys": ["super+shift+m"],
