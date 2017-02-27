@@ -12,6 +12,8 @@
     ] }
   },
 
+  { "caption": "Custom: Open Project In Terminal", "command": "open_project_in_terminal" },
+
   { "caption": "Custom: Show Scope Name", "command": "show_scope_name" },
 
   { "caption": "Jump To: Matching Bracket", "command": "move_to", "args": {"to": "brackets"} },
