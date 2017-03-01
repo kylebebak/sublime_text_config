@@ -93,7 +93,7 @@
     "commands": [
       { "command": "expand_selection", "args": {"to": "word"} },
       { "command": "copy", "context": "window" },
-      { "command": "show_overlay", "args": {"overlay": "goto"}, "context": "window" },
+      { "command": "show_overlay", "args": {"overlay": "goto", "show_files": true}, "context": "window" },
       { "command": "paste", "context": "window" }
     ]
   }

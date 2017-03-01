@@ -3,6 +3,7 @@
 import React, { Component, } from 'react'
 import { StyleSheet, View, Text, } from 'react-native'
 
+
 class ${1:Class} extends Component {
   constructor(props) {
     super(props)
