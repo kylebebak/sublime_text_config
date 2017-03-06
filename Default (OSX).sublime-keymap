@@ -409,6 +409,8 @@
 { "keys": ["super+alt+g", "super+alt+b"], "command": "gs_show_branch" },
 { "keys": ["super+alt+g", "super+alt+t"], "command": "gs_show_tags" },
 { "keys": ["super+alt+g", "super+alt+l"], "command": "gs_log" },
+{ "keys": ["super+alt+g", "super+alt+f"], "command": "gs_diff", "args": {"current_file": true} },
+{ "keys": ["super+alt+g", "super+alt+i"], "command": "gs_inline_diff" },
 
 
 // sublimeBookmark, https://github.com/bollu/sublimeBookmark
