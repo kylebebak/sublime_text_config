@@ -5,7 +5,10 @@
 	[
 		"composable",
 		"siloed",
-		"footie"
+		"footie",
+		"overcomplicate",
+		"wireframes",
+		"apps"
 	],
 	"auto_complete_selector": "source, plain.text, text.html.markdown.gfm",
 	"binary_file_patterns":
