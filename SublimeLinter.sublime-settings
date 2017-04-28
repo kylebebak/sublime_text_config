@@ -1,7 +1,7 @@
 {
 	"user":
 	{
-		"debug": false,
+		"debug": true,
 		"delay": 0.75,
 		"error_color": "D02000",
 		"gutter_theme": "Packages/SublimeLinter/gutter-themes/Default/Default.gutter-theme",
@@ -12,6 +12,16 @@
 		"linters":
 		{
 			"eslint":
+			{
+				"@disable": false,
+				"args":
+				[
+				],
+				"excludes":
+				[
+				]
+			},
+			"htmltidy":
 			{
 				"@disable": false,
 				"args":
