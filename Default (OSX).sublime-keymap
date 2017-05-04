@@ -422,5 +422,76 @@
 
 
 // GoSublime, https://github.com/DisposaBoy/GoSublime
-{ "keys": ["super+.", "super+l"], "command": "gs_comp_lint" }
+{ "keys": ["super+.", "super+l"], "command": "gs_comp_lint" },
+
+
+// BracketHighlighter
+
+// go to left bracket
+{
+  "keys": ["ctrl+up"],
+  "command": "bh_async_key",
+  "args":
+  {
+    "no_outside_adj": null,
+    "no_block_mode": null,
+    "lines" : true,
+    "plugin":
+    {
+        "type": ["__all__"],
+        "command": "bh_modules.bracketselect",
+        "args": {"select": "left"}
+    }
+  }
+},
+// go to right bracket
+{
+  "keys": ["ctrl+down"],
+  "command": "bh_async_key",
+  "args":
+  {
+    "no_outside_adj": null,
+    "no_block_mode": null,
+    "lines" : true,
+    "plugin":
+    {
+        "type": ["__all__"],
+        "command": "bh_modules.bracketselect",
+        "args": {"select": "right"}
+    }
+  }
+},
+// select text between brackets
+{
+  "keys": ["ctrl+alt+up"],
+  "command": "bh_async_key",
+  "args":
+  {
+    "no_outside_adj": null,
+    "lines" : true,
+    "plugin":
+    {
+      "type": ["__all__"],
+      "command": "bh_modules.bracketselect"
+    }
+  }
+},
+// select text including brackets
+{
+  "keys": ["ctrl+alt+down"],
+  "command": "bh_async_key",
+  "args":
+  {
+    "no_outside_adj": null,
+    "lines" : true,
+    "plugin":
+    {
+      "type": ["__all__"],
+      "command": "bh_modules.bracketselect",
+      "args": {"always_include_brackets": true}
+    }
+  }
+}
+
+
 ]
