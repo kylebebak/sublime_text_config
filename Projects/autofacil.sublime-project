@@ -1,0 +1,12 @@
+{
+	"folders":
+	[
+		{
+			"file_exclude_patterns":
+			[
+				"shiny/credit_scoring/input.csv"
+			],
+			"path": "/Users/kylebebak/GoogleDrive/Code/htdocs/Work/autofacil"
+		}
+	]
+}

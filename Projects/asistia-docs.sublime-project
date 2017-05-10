@@ -1,0 +1,15 @@
+{
+	"folders":
+	[
+		{
+      "file_exclude_patterns":
+      [
+      ],
+      "folder_exclude_patterns":
+      [
+        "build"
+      ],
+			"path": "/Users/kylebebak/GoogleDrive/Code/Work/Asistia/repos/docs"
+		}
+	]
+}

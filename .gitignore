@@ -9,4 +9,10 @@
 !*.sublime-keymap
 !*.sublime-settings
 !*.sublime-commands
+!*.sublime-project
 !Seti_UI
+!Projects
+
+# but also ignores these files
+Projects/recent.json
+Projects/*.sublime-settings

@@ -15,7 +15,10 @@
 		"app",
 		"Unbeknownst",
 		"immersive",
-		"iframe"
+		"iframe",
+		"env",
+		"arg",
+		"params"
 	],
 	"auto_complete_selector": "source, plain.text, text.html.markdown.gfm",
 	"binary_file_patterns":

@@ -60,7 +60,7 @@
 				],
 				"excludes":
 				[
-					"*/_requests.*"
+					"*/requester.*"
 				]
 			},
 			"ruby":
