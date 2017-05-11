@@ -9,7 +9,8 @@
       ],
       "file_exclude_patterns":
       [
-        "tags/*"
+        "tags/*",
+        "tags.html"
       ]
 		}
 	]
