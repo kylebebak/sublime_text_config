@@ -461,24 +461,9 @@
     }
   }
 },
-// select text between brackets
-{
-  "keys": ["ctrl+alt+up"],
-  "command": "bh_async_key",
-  "args":
-  {
-    "no_outside_adj": null,
-    "lines" : true,
-    "plugin":
-    {
-      "type": ["__all__"],
-      "command": "bh_modules.bracketselect"
-    }
-  }
-},
 // select text including brackets
 {
-  "keys": ["ctrl+alt+down"],
+  "keys": ["ctrl+alt+up"],
   "command": "bh_async_key",
   "args":
   {
@@ -491,7 +476,25 @@
       "args": {"always_include_brackets": true}
     }
   }
-}
+},
+// select text between brackets
+{
+  "keys": ["ctrl+alt+down"],
+  "command": "bh_async_key",
+  "args":
+  {
+    "no_outside_adj": null,
+    "lines" : true,
+    "plugin":
+    {
+      "type": ["__all__"],
+      "command": "bh_modules.bracketselect"
+    }
+  }
+},
 
+
+// UnitTesting, https://github.com/randy3k/UnitTesting
+{ "keys": ["super+ctrl+alt+r"], "command": "unit_testing_reload_current_project" }
 
 ]

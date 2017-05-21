@@ -36,6 +36,7 @@
 		"PHP Completions Kit",
 		"Pretty JSON",
 		"ProjectManager",
+		"Requester",
 		"ScopeHunter",
 		"Seti_UI",
 		"SideBarEnhancements",
@@ -49,6 +50,11 @@
 		"SublimeLinter-pyflakes",
 		"SublimeLinter-ruby",
 		"Syntax Highlighting for Sass",
+		"UnitTesting",
 		"Wrap Plus"
+	],
+	"repositories":
+	[
+		"https://github.com/kylebebak/Requester"
 	]
 }
