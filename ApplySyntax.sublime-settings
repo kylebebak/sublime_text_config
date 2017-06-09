@@ -19,5 +19,11 @@
 
     // Put your custom syntax rules here:
     "syntaxes": [
+        {
+            "syntax": "Babel/JavaScript (Babel)",
+            "rules": [
+                {"file_path": ".*components/.*\\.js$"}
+            ]
+        }
     ]
 }

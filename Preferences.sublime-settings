@@ -35,7 +35,8 @@
 		"*.swf",
 		"*.tga",
 		"*.ttf",
-		"*.zip"
+		"*.zip",
+		"go/bin"
 	],
 	"bold_folder_labels": true,
 	"caret_extra_bottom": 2,
@@ -81,7 +82,12 @@
 		".hg",
 		".bundle",
 		"CVS",
-		"node_modules"
+		"node_modules",
+		"go/pkg",
+    "go/src/github.com",
+    "go/src/golang.org",
+    "go/src/cloud.google.com",
+    "go/src/google.golang.org"
 	],
 	"font_size": 12,
 	"highlight_line": false,
