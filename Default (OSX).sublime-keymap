@@ -495,6 +495,8 @@
 
 
 // UnitTesting, https://github.com/randy3k/UnitTesting
-{ "keys": ["super+ctrl+alt+r"], "command": "unit_testing_reload_current_project" }
+{ "keys": ["super+ctrl+alt+r"], "command": "unit_testing_reload_current_project" },
 
+// Requester
+{ "keys": ["ctrl+h"], "command": "requester_history" }
 ]

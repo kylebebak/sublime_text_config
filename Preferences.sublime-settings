@@ -18,7 +18,8 @@
 		"iframe",
 		"env",
 		"arg",
-		"params"
+		"params",
+		"plugin"
 	],
 	"auto_complete_selector": "source, plain.text, text.html.markdown.gfm",
 	"binary_file_patterns":
@@ -84,10 +85,10 @@
 		"CVS",
 		"node_modules",
 		"go/pkg",
-    "go/src/github.com",
-    "go/src/golang.org",
-    "go/src/cloud.google.com",
-    "go/src/google.golang.org"
+		"go/src/github.com",
+		"go/src/golang.org",
+		"go/src/cloud.google.com",
+		"go/src/google.golang.org"
 	],
 	"font_size": 12,
 	"highlight_line": false,

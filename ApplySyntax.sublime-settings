@@ -22,7 +22,8 @@
         {
             "syntax": "Babel/JavaScript (Babel)",
             "rules": [
-                {"file_path": ".*components/.*\\.js$"}
+                {"file_path": ".*components/.*\\.js$"},
+                {"file_path": ".*screens/.*\\.js$"}
             ]
         }
     ]
