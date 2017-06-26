@@ -52,6 +52,19 @@
 				],
 				"lint": ""
 			},
+			"pep8":
+			{
+				"@disable": false,
+				"args":
+				[
+				],
+				"excludes":
+				[
+				],
+				"ignore": "",
+				"max-line-length": null,
+				"select": ""
+			},
 			"php":
 			{
 				"@disable": false,
@@ -110,7 +123,7 @@
 			[
 			]
 		},
-		"rc_search_limit": 3,
+		"rc_search_limit": null,
 		"shell_timeout": 10,
 		"show_errors_on_save": false,
 		"show_marks_in_minimap": true,
