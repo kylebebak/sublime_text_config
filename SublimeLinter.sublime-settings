@@ -21,6 +21,24 @@
 				[
 				]
 			},
+			"flake8":
+			{
+				"@disable": false,
+				"args":
+				[
+				],
+				"builtins": "",
+				"excludes":
+				[
+				],
+				"executable": "",
+				"ignore": "",
+				"jobs": "1",
+				"max-complexity": -1,
+				"max-line-length": null,
+				"select": "",
+				"show-code": false
+			},
 			"golint":
 			{
 				"@disable": false,

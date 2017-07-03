@@ -16,6 +16,8 @@
 
   { "caption": "Custom: Autoflake remove unused imports", "command": "autoflake" },
 
+  { "caption": "Custom: Unescape URL", "command": "unescape_url"},
+
   { "caption": "Alignment: Run", "command": "alignment" },
 
   { "caption": "Jump To: Matching Bracket", "command": "move_to", "args": {"to": "brackets"} },
@@ -23,7 +25,6 @@
   { "caption": "GitGutter: Next Change", "command": "git_gutter_next_change" },
   { "caption": "GitGutter: Previous Change", "command": "git_gutter_prev_change" },
 
-
-  { "caption": "Wrap Plus: Wrap at 82 Chars", "command": "wrap_lines_plus", "args": {"width": 82}}
+  { "caption": "Wrap Plus: Wrap at 82 Chars", "command": "wrap_lines_plus", "args": {"width": 82}},
 
 ]

@@ -377,11 +377,6 @@
 { "keys": ["shift+alt+super+o"], "command": "sort_list" },
 
 
-// DateDiff
-{ "keys": ["super+t"], "command": "prompt_date_diff_days" },
-{ "keys": ["super+t", "super+t"], "command": "prompt_date_diff_fmt" },
-
-
 // cycle_color_scheme
 {
   "keys": ["super+shift+c"], "command": "cycle_color_scheme",
