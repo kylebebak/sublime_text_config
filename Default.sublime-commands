@@ -18,6 +18,8 @@
 
   { "caption": "Custom: Unescape URL", "command": "unescape_url"},
 
+  { "caption": "Custom: Open Node Debugger", "command": "open_node_debugger"},
+
   { "caption": "Alignment: Run", "command": "alignment" },
 
   { "caption": "Jump To: Matching Bracket", "command": "move_to", "args": {"to": "brackets"} },
