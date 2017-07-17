@@ -11,3 +11,6 @@
 !*.sublime-commands
 !*.sublime-project
 !Seti_UI
+
+# but DO ignore this guy
+GitSavvy.sublime-settings
