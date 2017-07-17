@@ -24,6 +24,10 @@
 
   { "caption": "Jump To: Matching Bracket", "command": "move_to", "args": {"to": "brackets"} },
 
+  { "caption": "Expand Selection: Matching Bracket", "command": "expand_selection", "args": {"to": "brackets"} },
+
+  { "caption": "Expand Selection: Matching Tag", "command": "expand_selection", "args": {"to": "tag"} },
+
   { "caption": "GitGutter: Next Change", "command": "git_gutter_next_change" },
   { "caption": "GitGutter: Previous Change", "command": "git_gutter_prev_change" },
 
