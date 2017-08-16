@@ -382,11 +382,10 @@
   "keys": ["super+shift+c"], "command": "cycle_color_scheme",
   "args": {
     "color_schemes": [
-      "Solarized (Light) (SL).tmTheme",
-      "Solarized (Dark) (SL).tmTheme",
-      "Monokai (SL).tmTheme"
-    ],
-    "scheme_directory": "Packages/User/SublimeLinter"
+      "Packages/User/Color Highlighter/themes/Solarized (Light) (SL).tmTheme",
+      "Packages/User/Color Highlighter/themes/Solarized (Dark) (SL).tmTheme",
+      "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
+    ]
   }
 },
 

@@ -1,6 +1,7 @@
 {
   "directory_open_commands": [
-    { "label": "terminal", "commands": [ "open", "-a", "/Applications/iTerm.app" ] }
+    { "label": "terminal", "commands": [ "open", "-a", "/Applications/iTerm.app" ] },
+    { "label": "chrome", "commands": [ "open", "-a", "/Applications/Google Chrome.app" ] }
   ],
   "web_searchers": [
     { "label": "google", "url": "http://google.com/search?q=" },
