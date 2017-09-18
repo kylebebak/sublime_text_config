@@ -1,0 +1,5 @@
+// settings in here override those in "Requester/Requester.sublime-settings",
+
+{
+  "packages_path": "/Users/kylebebak/.virtualenvs/general/lib/python3.5/site-packages"
+}

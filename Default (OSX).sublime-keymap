@@ -4,7 +4,14 @@
 { "keys": ["super+k", "super+t"], "command": "title_case" },
 
 // symbols and navigation
-{ "keys": ["super+e"], "command": "goto_definition" },
+{
+  "keys": ["super+e"],
+  "command": "goto_definition",
+  "context": [
+    { "key": "setting.requester.response_view", "operator": "equal", "operand": false }
+  ]
+},
+
 { "keys": ["super+shift+r"], "command": "goto_symbol_in_project" },
 { "keys": ["super+shift+minus"], "command": "jump_back" },
 { "keys": ["super+shift+plus"], "command": "jump_forward" },
@@ -202,6 +209,28 @@
 },
 
 {
+  "keys": ["ctrl+alt+super+up"],
+  "command": "run_multiple_commands",
+  "args": {
+    "commands": [
+      { "command": "swap_line_up", "context": "window" }
+    ],
+    "repetitions": 5
+  }
+},
+
+{
+  "keys": ["ctrl+alt+super+down"],
+  "command": "run_multiple_commands",
+  "args": {
+    "commands": [
+      { "command": "swap_line_down", "context": "window" }
+    ],
+    "repetitions": 5
+  }
+},
+
+{
   "keys": ["ctrl+alt+left"],
   "command": "run_multiple_commands",
   "args": {
@@ -209,7 +238,10 @@
       { "command": "move", "args": {"by": "characters", "forward": false}, "context": "window" }
     ],
     "repetitions": 10
-  }
+  },
+  "context": [
+    { "key": "setting.requester.response_view", "operator": "equal", "operand": false }
+  ]
 },
 
 {
@@ -220,7 +252,10 @@
       { "command": "move", "args": {"by": "characters", "forward": true}, "context": "window" }
     ],
     "repetitions": 10
-  }
+  },
+  "context": [
+    { "key": "setting.requester.response_view", "operator": "equal", "operand": false }
+  ]
 },
 
 {

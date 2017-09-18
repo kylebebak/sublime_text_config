@@ -7,7 +7,6 @@
 	"installed_packages":
 	[
 		"1337 Color Scheme",
-		"AdvancedNewFile",
 		"Alignment",
 		"All Autocomplete",
 		"ApplySyntax",
@@ -34,6 +33,7 @@
 		"MarkdownEditing",
 		"MoveTab",
 		"Package Control",
+		"PackageDev",
 		"PackageResourceViewer",
 		"PHP Completions Kit",
 		"Pretty JSON",
