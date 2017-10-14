@@ -3,6 +3,11 @@
 	[
 		"help"
 	],
+	"9o.hist./Users/kylebebak/GoogleDrive/Code/go/src/github.com/kylebebak/tutorials":
+	[
+		"vet",
+		"run"
+	],
 	"ann": "a17.08.23-1",
 	"install_version": "r17.08.23-1",
 	"version": "r17.08.23-1"

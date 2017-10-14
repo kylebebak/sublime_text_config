@@ -28,4 +28,6 @@
   { "caption": "Wrap Plus: Wrap At 82 Chars", "command": "wrap_lines_plus", "args": {"width": 82}},
 
   { "caption": "Toggle Distraction Free Mode (Full Screen)", "command": "toggle_distraction_free"},
+
+  { "caption": "Toggle Spell Check", "command": "toggle_setting", "args": {"setting": "spell_check"}}
 ]

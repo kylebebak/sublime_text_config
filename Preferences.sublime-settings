@@ -26,7 +26,13 @@
 		"username",
 		"refactor",
 		"repo",
-		"stderr"
+		"stderr",
+		"laggy",
+		"backoff",
+		"blog",
+		"httpbin",
+		"linting",
+		"linters"
 	],
 	"auto_complete_selector": "source, plain.text, text.html.markdown.gfm",
 	"binary_file_patterns":
@@ -91,6 +97,7 @@
 		".bundle",
 		"CVS",
 		"node_modules",
+		"node_modules.*",
 		"go/pkg",
 		"go/src/github.com",
 		"go/src/golang.org",
