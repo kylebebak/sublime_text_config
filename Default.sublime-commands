@@ -2,13 +2,17 @@
   { "caption": "Custom: Open File By Name", "command": "open_file_by_name" },
   { "caption": "Custom: Reveal File In Sidebar", "command": "reveal_in_side_bar" },
 
-  { "caption": "Custom: Open Project In Terminal", "command": "open_project_in_terminal" },
-
   { "caption": "Custom: Show Scope Name", "command": "show_scope_name" },
 
-  { "caption": "Custom: Autoflake Remove Unused Imports", "command": "autoflake" },
+  { "caption": "Custom: Autoflake Remove Unused Imports", "command": "autoflake_remove_unused_imports" },
 
-  { "caption": "Custom: Unescape URL", "command": "unescape_url"},
+  { "caption": "Transform String: Escape URL", "command": "transform_string", "args": {"func": "escape_url"} },
+
+  { "caption": "Transform String: Unescape URL", "command": "transform_string", "args": {"func": "unescape_url"} },
+
+  { "caption": "Transform String: Snake To Camel Case", "command": "transform_string", "args": {"func": "snake_to_camel_case"} },
+
+  { "caption": "Transform String: Camel To Snake Case", "command": "transform_string", "args": {"func": "camel_to_snake_case"} },
 
   { "caption": "Custom: Open Node Debugger", "command": "open_node_debugger"},
 

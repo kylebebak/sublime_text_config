@@ -6,6 +6,7 @@
 	],
 	"installed_packages":
 	[
+		"Advanced CSV",
 		"All Autocomplete",
 		"ApplySyntax",
 		"AutomaticPackageReloader",
@@ -24,7 +25,6 @@
 		"GitSavvy",
 		"GoSublime",
 		"InsertDate",
-		"IPS Package Manifest Syntax",
 		"Jedi - Python autocompletion",
 		"MarkdownEditing",
 		"MoveTab",
@@ -40,7 +40,6 @@
 		"Sort Lines (Numerically)",
 		"Sublime Bookmarks",
 		"SublimeLinter",
-		"SublimeLinter-contrib-eslint",
 		"SublimeLinter-flake8",
 		"SublimeLinter-html-tidy",
 		"SublimeLinter-javac",

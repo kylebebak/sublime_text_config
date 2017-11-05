@@ -1,5 +1,5 @@
 {
-	"file_extensions": ["all"],
+	"file_extensions": [".css", ".less", ".scss", ".sass", ".py", ".js", ".json", ".go", ".html"],
 	"search_colors_in":
 	{
 		"all_content":

@@ -4,7 +4,7 @@ import subprocess
 from os import getenv
 
 
-class AutoflakeCommand(sublime_plugin.TextCommand):
+class AutoflakeRemoveUnusedImportsCommand(sublime_plugin.TextCommand):
 
     autoflake_path = '{}/{}'.format(
         getenv('HOME'), '/.local/bin/autoflake'

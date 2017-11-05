@@ -3,6 +3,7 @@
 	[
 		"sh",
 		"zsh",
-		"bash"
+		"bash",
+		"conf"
 	]
 }

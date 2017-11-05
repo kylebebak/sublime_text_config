@@ -35,7 +35,7 @@
 				"ignore": "",
 				"jobs": "1",
 				"max-complexity": -1,
-				"max-line-length": null,
+				"max-line-length": 120,
 				"select": "",
 				"show-code": false
 			},
