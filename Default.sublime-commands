@@ -1,6 +1,10 @@
 [
   { "caption": "Custom: Open File By Name", "command": "open_file_by_name" },
+
   { "caption": "Custom: Reveal File In Sidebar", "command": "reveal_in_side_bar" },
+
+  { "caption": "Custom: Create React Component (Stateless)", "command": "react_component", "args": {"stateless": true} },
+  { "caption": "Custom: Create React Component", "command": "react_component", "args": {"stateless": false} },
 
   { "caption": "Custom: Show Scope Name", "command": "show_scope_name" },
 
