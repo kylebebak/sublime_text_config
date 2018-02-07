@@ -4,7 +4,7 @@
 	// e.g "env": { "PATH": "$HOME/go/bin:$PATH" }
 	// in values, $PATH and ${PATH} are replaced with
 	// the corresponding environment(PATH) variable, if it exists.
-	"env": {"GOPATH": "$HOME/GoogleDrive/Code/go", "PATH": "$GOPATH/bin:$PATH" },
+	"env": {"GOPATH": "$HOME/Code/go", "PATH": "$GOPATH/bin:$PATH" },
 
   "fmt_cmd": ["goimports"],
 

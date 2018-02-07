@@ -29,7 +29,6 @@ class {component} extends React.Component {{
       null
     )
   }}
-
 }}
 
 {component}.propTypes = {{
@@ -47,7 +46,7 @@ import PropTypes from 'prop-types'
 import Styles from './{component}.css'
 
 
-const {component} = (props) => {{
+const {component} = ({{  }}) => {{
   return (
     null
   )

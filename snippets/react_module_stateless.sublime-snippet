@@ -6,19 +6,10 @@ import PropTypes from 'prop-types'
 import Styles from './${1:Class}.css'
 
 
-class ${1:Class} extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-    }
-  }
-
-  render() {
-    return (
-      ${2:null}
-    )
-  }
-
+const ${1:Class} = ({  }) => {
+  return (
+    ${2:null}
+  )
 }
 
 ${1:Class}.propTypes = {
