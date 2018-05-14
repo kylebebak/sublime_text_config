@@ -10,6 +10,7 @@
 !*.sublime-settings
 !*.sublime-commands
 !*.sublime-project
+!*.sublime-color-scheme
 !Seti_UI
 
 # but DO ignore this guy
