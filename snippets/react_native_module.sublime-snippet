@@ -16,7 +16,6 @@ class ${1:Class} extends Component {
       ${2:null}
     )
   }
-
 }
 
 ${1:Class}.propTypes = {

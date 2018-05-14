@@ -1,14 +1,14 @@
 {
-	"9o.hist./Users/kylebebak/Dropbox/Code/go/src/github.com/kylebebak/tutorials":
-	[
-		"help"
-	],
 	"9o.hist./Users/kylebebak/Code/go/src/github.com/kylebebak/tutorials":
 	[
 		"vet",
 		"run"
 	],
-	"ann": "a18.01.17-1",
-	"install_version": "r18.01.17-1",
-	"version": "r18.01.17-1"
+	"9o.hist./Users/kylebebak/Dropbox/Code/go/src/github.com/kylebebak/tutorials":
+	[
+		"help"
+	],
+	"ann": "a18.04.30-1",
+	"install_version": "r18.04.30-1",
+	"version": "r18.04.30-1"
 }

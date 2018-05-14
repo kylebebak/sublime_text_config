@@ -1,11 +1,10 @@
 <snippet>
 	<content><![CDATA[
-<script id="${1:template}" type="text/x-handlebars-template">
-
-</script>
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
+await sleep($1)
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>handle</tabTrigger>
+	<tabTrigger>sleep</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
-	<!-- <scope>source.python</scope> -->
+	<scope>source.js</scope>
 </snippet>

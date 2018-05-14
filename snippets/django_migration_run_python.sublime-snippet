@@ -7,14 +7,14 @@ from django.db import migrations
 
 
 def function(apps, schema_editor):
-    Model = apps.get_model('app', 'Model') # change this
+    Model = apps.get_model('app', 'Model')  # change this
     pass
 
 
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('app', '00XX_previous_migration'), # change this
+        ('app', '00XX_previous_migration'),  # change this
     ]
 
     operations = [

@@ -1,0 +1,37 @@
+{
+  "user_bracket_styles": {
+    "default": {
+      "color": "region.bluish"
+    },
+    "unmatched": {
+      "color": "region.bluish"
+    },
+    "curly": {
+      "color": "region.bluish"
+    },
+    "round": {
+      "color": "region.bluish"
+    },
+    "square": {
+      "color": "region.bluish"
+    },
+    "angle": {
+      "color": "region.bluish"
+    },
+    "tag": {
+      "color": "region.bluish"
+    },
+    "c_define": {
+      "color": "region.bluish"
+    },
+    "single_quote": {
+      "color": "region.bluish"
+    },
+    "double_quote": {
+      "color": "region.bluish"
+    },
+    "regex": {
+      "color": "region.bluish"
+    }
+  }
+}

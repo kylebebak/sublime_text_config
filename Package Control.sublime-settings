@@ -42,10 +42,10 @@
 		"Sort Lines (Numerically)",
 		"Sublime Bookmarks",
 		"SublimeLinter",
+		"SublimeLinter-eslint",
 		"SublimeLinter-flake8",
 		"SublimeLinter-html-tidy",
 		"SublimeLinter-javac",
-		"SublimeLinter-php",
 		"SublimeLinter-ruby",
 		"UnitTesting",
 		"Wrap Plus"

@@ -18,7 +18,6 @@ class ${1:Class} extends React.Component {
       ${2:null}
     )
   }
-
 }
 
 ${1:Class}.propTypes = {

@@ -1,6 +1,6 @@
 // settings in here override those in "Requester/Requester.sublime-settings",
 
 {
-  "packages_path": "/Users/kylebebak/.pyenv/versions/3.3.6/lib/python3.3/site-packages",
+  "packages_path": "/usr/local/lib/python3.6/site-packages",
   "max_content_length_kb": 10000
 }
