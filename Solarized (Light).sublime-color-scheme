@@ -1,15 +1,15 @@
 {
-    "rules":
-    [
-        {
-            "name": "Markup Error",
-            "scope": "markup.error",
-            "foreground": "#DD0000"
-        },
-        {
-            "name": "Markup Warning",
-            "scope": "markup.warning",
-            "foreground": "#0000DD"
-        }
-    ]
+  "rules":
+  [
+    {
+      "name": "Markup Error",
+      "scope": "markup.error",
+      "foreground": "#DD0000"
+    },
+    {
+      "name": "Markup Warning",
+      "scope": "markup.warning",
+      "foreground": "#0000DD"
+    }
+  ]
 }

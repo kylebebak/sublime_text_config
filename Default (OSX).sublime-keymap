@@ -287,7 +287,7 @@
 //PACKAGES
 
 // Evaluate
-{ "keys": ["super+alt+ctrl+enter"], "command": "evaluate"},
+{ "keys": ["super+alt+ctrl+enter"], "command": "evaluate" },
 
 {
   "keys": ["super+alt+enter"],
@@ -313,20 +313,6 @@
   "command": "move_tab",
   "args": { "position": "+1" }
 },
-
-
-// Vintage
-{
-  "keys": ["j", "j"], "command": "exit_insert_mode",
-  "context": [
-    { "key": "setting.command_mode", "operand": false },
-    { "key": "setting.is_widget", "operand": false }
-  ]
-},
-
-
-// Alignment
-{ "keys": ["super+shift+\\"], "command": "alignment" },
 
 
 // Emmet
@@ -408,29 +394,12 @@
 { "keys": ["ctrl+super+s"], "command": "auto_save", "args": {"all_files": false, "backup": true} },
 
 
-// SortList
-{ "keys": ["shift+alt+super+o"], "command": "sort_list" },
-
-
-// cycle_color_scheme
-{
-  "keys": ["super+shift+c"], "command": "cycle_color_scheme",
-  "args": {
-    "color_schemes": [
-      "Packages/User/Color Highlighter/themes/Solarized (Light) (SL).tmTheme",
-      "Packages/User/Color Highlighter/themes/Solarized (Dark) (SL).tmTheme",
-      "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
-    ]
-  }
-},
-
-
 // open_file_by_name
 { "keys": ["ctrl+alt+super+o"], "command": "open_file_by_name" },
 
 
 // wrap plus
-{ "keys": ["alt+w"], "command": "wrap_lines_plus", "args": {"width": 82}},
+{ "keys": ["alt+w"], "command": "wrap_lines_plus", "args": {"width": 82} },
 
 
 // GitSavvy

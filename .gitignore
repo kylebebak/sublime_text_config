@@ -13,5 +13,5 @@
 !*.sublime-color-scheme
 !Seti_UI
 
-# but DO ignore this guy
+# but DO ignore this guy, it has my GitHub API token
 GitSavvy.sublime-settings

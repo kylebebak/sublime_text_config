@@ -1,4 +1,16 @@
 // SublimeLinter Settings - User
 {
-  "debug": false
+  // Set to true to print extra information in the console.
+  "debug": false,
+
+  "linters": {
+    "flake8": {
+      "excludes": ["*/*.pyr"],
+      // "args": [
+      //   "--max-complexity", "-1",
+      //   "--max-line-length", "100",
+      //   "--ignore", "E731,E402"
+      // ],
+    }
+  }
 }
