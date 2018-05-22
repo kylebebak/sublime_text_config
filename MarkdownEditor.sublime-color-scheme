@@ -1,0 +1,10 @@
+{
+  "rules":
+  [
+    {
+      "name": "Strikethrough",
+      "scope": "markup.strikethrough.markdown",
+      "foreground": "#AAAAAA"
+    }
+  ]
+}
