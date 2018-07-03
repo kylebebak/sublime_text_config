@@ -103,7 +103,9 @@
 		"go/src/golang.org",
 		"go/src/cloud.google.com",
 		"go/src/google.golang.org",
-		"__pycache__"
+		"__pycache__",
+		".sass-cache",
+		".mypy_cache"
 	],
 	"font_size": 12,
 	"highlight_line": false,

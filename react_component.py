@@ -34,9 +34,6 @@ class {component} extends React.Component {{
 {component}.propTypes = {{
 }}
 
-{component}.defaultProps = {{
-}}
-
 export default {component}
 """
 

@@ -15,9 +15,6 @@ const ${1:Class} = ({  }) => {
 ${1:Class}.propTypes = {
 }
 
-${1:Class}.defaultProps = {
-}
-
 export default ${1:Class}
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
