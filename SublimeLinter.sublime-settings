@@ -1,16 +1,20 @@
 // SublimeLinter Settings - User
 {
-  // Set to true to print extra information in the console.
+  // set to true to print extra information in the console
   "debug": false,
 
   "linters": {
     "flake8": {
+      // exclude requester files
       "excludes": ["*/*.pyr"],
-      // "args": [
-      //   "--max-complexity", "-1",
-      //   "--max-line-length", "100",
-      //   "--ignore", "E731,E402"
-      // ],
+    },
+    "golint": {
+      "executable": "/Users/kylebebak/Code/go/bin/golint",
+      "env": {"GOPATH": "/Users/kylebebak/Code/go"}
+    },
+    "gotype": {
+      "executable": "/Users/kylebebak/Code/go/bin/gotype",
+      "env": {"GOPATH": "/Users/kylebebak/Code/go"}
     }
   }
 }

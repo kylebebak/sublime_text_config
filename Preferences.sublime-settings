@@ -99,10 +99,6 @@
 		"node_modules",
 		"node_modules.*",
 		"go/pkg",
-		"go/src/github.com",
-		"go/src/golang.org",
-		"go/src/cloud.google.com",
-		"go/src/google.golang.org",
 		"__pycache__",
 		".sass-cache",
 		".mypy_cache"

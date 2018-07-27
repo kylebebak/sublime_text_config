@@ -1,16 +1,11 @@
 import sublime_plugin
 
 import subprocess
-from os import getenv
 
 
 class AutoflakeRemoveUnusedImportsCommand(sublime_plugin.TextCommand):
 
-    autoflake_path = '{}/{}'.format(
-        getenv('HOME'), '/.local/bin/autoflake'
-    )
-
     def run(self, edit, **kwargs):
         subprocess.check_call([
-            self.autoflake_path, '--in-place', '--remove-all-unused-imports', self.view.file_name()
+            '/usr/local/bin/autoflake', '--in-place', '--remove-all-unused-imports', self.view.file_name(),
         ])

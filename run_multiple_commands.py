@@ -1,4 +1,5 @@
-import sublime, sublime_plugin
+import sublime
+import sublime_plugin
 """
 Source:
 https://forum.sublimetext.com/t/run-multiple-commands-command/6848
@@ -9,9 +10,10 @@ are 'text', 'window', and 'app' for running a TextCommand, WindowCommand, or
 ApplicationCommand respectively.
 """
 
+
 class RunMultipleCommandsCommand(sublime_plugin.TextCommand):
     def exec_command(self, command):
-        if not 'command' in command:
+        if 'command' not in command:
             raise Exception('No command name provided.')
 
         args = None
@@ -40,7 +42,7 @@ class RunMultipleCommandsCommand(sublime_plugin.TextCommand):
 
     def run(self, edit, commands=None, repetitions=1):
         if commands is None:
-            return # not an error
+            return  # not an error
         for i in range(repetitions):
             for command in commands:
                 self.exec_command(command)
