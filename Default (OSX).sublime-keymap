@@ -37,9 +37,6 @@
 { "keys": ["super+alt+r", "super+alt+r"], "command": "reveal_in_side_bar" },
 
 
-
-
-
 // EXTRA AUTO-PAIR CHARACTERS
 
 // auto-pair grave accents
@@ -71,9 +68,6 @@
     { "key": "following_text", "operator": "regex_contains", "operand": "^`", "match_all": true }
   ]
 },
-
-
-
 
 
 // MULTIPLE COMMANDS
@@ -150,7 +144,6 @@
     ]
   }
 },
-
 
 // move up and down multiple lines at a time
 {
@@ -279,9 +272,6 @@
     "repetitions": 10
   }
 },
-
-
-
 
 
 //PACKAGES
@@ -493,6 +483,6 @@
 { "keys": ["ctrl+h"], "command": "requester_history" },
 
 
-// GitGutter
-{ "keys": ["super+alt+g", "super+alt+h"], "command": "git_gutter_diff_popup" }
+// GoSublime
+{ "keys": ["super+ctrl+g"], "command": "gs9o_open", "args": {"run": ["replay"]} },
 ]
