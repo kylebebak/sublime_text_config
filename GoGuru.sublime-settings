@@ -1,0 +1,6 @@
+{
+	"goguru_debug": false,
+  "goguru_env": {
+    "GOPATH": "/Users/kylebebak/Code/go"
+  },
+}

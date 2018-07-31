@@ -485,4 +485,5 @@
 
 // GoSublime
 { "keys": ["super+ctrl+g"], "command": "gs9o_open", "args": {"run": ["replay"]} },
+{ "keys": ["super+.", "super+g"], "command": "go_guru_goto_definition", "args": {"output": false}, "context": [{ "key": "selector", "operator": "equal", "operand": "source.go" }] },
 ]
