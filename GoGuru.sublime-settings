@@ -1,6 +1,6 @@
 {
 	"goguru_debug": false,
-  "goguru_env": {
-    "GOPATH": "/Users/kylebebak/Code/go"
+  "goguru_env": { // goguru doens't expand env vars for these paths
+    "GOPATH": "/Users/kylebebak/Code/go", "PATH": "/Users/kylebebak/Code/go/bin"
   },
 }

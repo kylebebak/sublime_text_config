@@ -1,5 +1,7 @@
 {
-	"env": {"GOPATH": "$HOME/Code/go", "PATH": "$GOPATH/bin:$PATH" },
+	"env": {
+		"GOPATH": "$HOME/Code/go", "PATH": "$GOPATH/bin:$PATH"
+	},
 
   "fmt_cmd": ["goimports"],
 
