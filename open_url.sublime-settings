@@ -1,12 +1,9 @@
 {
-  "directory_open_commands": [
+  "folder_custom_commands": [
     { "label": "terminal", "commands": [ "open", "-a", "/Applications/iTerm.app" ] },
-    { "label": "chrome", "commands": [ "open", "-a", "/Applications/Google Chrome.app" ] }
   ],
-  "web_searchers": [
-    { "label": "google", "url": "http://google.com/search?q=" },
-    { "label": "dictionary.com", "url": "http://www.dictionary.com/browse/" },
-    { "label": "thesaurus.com", "url": "http://www.thesaurus.com/browse/" },
-    { "label": "linguee.com english-spanish", "url": "http://www.linguee.com/english-spanish/search?source=auto&query=" }
-  ]
+
+  "folder_extra_commands": false,
+
+  "file_extra_commands": false,
 }
