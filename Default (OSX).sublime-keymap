@@ -483,6 +483,10 @@
 { "keys": ["ctrl+h"], "command": "requester_history" },
 
 
+// Open URL
+{ "keys": ["ctrl+alt+u"], "command": "open_url", "args": { "show_menu": false } },
+
+
 // GoSublime
 { "keys": ["super+ctrl+g"], "command": "gs9o_open", "args": {"run": ["replay"]} },
 { "keys": ["super+.", "super+g"], "command": "go_guru_goto_definition", "args": {"output": false}, "context": [{ "key": "selector", "operator": "equal", "operand": "source.go" }] },

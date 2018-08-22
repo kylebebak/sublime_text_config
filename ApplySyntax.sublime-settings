@@ -19,10 +19,9 @@
   // Put your custom syntax rules here:
   "syntaxes": [
     {
-      "syntax": "Babel/JavaScript (Babel)",
+      "syntax": "User/JS Custom/Syntaxes/React",
       "rules": [
-        {"file_path": ".*components/.*\\.js$"},
-        {"file_path": ".*screens/.*\\.js$"}
+        {"file_path": ".*\\.js$"}
       ]
     }
   ]

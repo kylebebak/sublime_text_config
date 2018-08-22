@@ -10,6 +10,11 @@
       "name": "Markup Warning",
       "scope": "markup.warning",
       "foreground": "#0000DD"
-    }
+    },
+    {
+      "name": "JavaScript unquoted object literal key",
+      "scope": "meta.object-literal.key, meta.object-literal.key string - punctuation, meta.mapping.key string - punctuation",
+      "foreground": "#C9146F"
+    },
   ]
 }
