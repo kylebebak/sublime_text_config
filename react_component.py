@@ -17,7 +17,6 @@ import PropTypes from 'prop-types'
 
 import Styles from './{component}.css'
 
-
 class {component} extends React.Component {{
   constructor(props) {{
     super(props)
@@ -42,7 +41,6 @@ module_stateless = """import React from 'react'
 import PropTypes from 'prop-types'
 
 import Styles from './{component}.css'
-
 
 const {component} = ({{  }}) => {{
   return (

@@ -1,9 +1,6 @@
 {
   "folder_custom_commands": [
+    { "label": "reveal", "commands": ["open"] },
     { "label": "terminal", "commands": [ "open", "-a", "/Applications/iTerm.app" ] },
   ],
-
-  "folder_extra_commands": false,
-
-  "file_extra_commands": false,
 }

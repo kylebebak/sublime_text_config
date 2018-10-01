@@ -3,6 +3,8 @@
 import React, { Component } from 'react'
 import { StyleSheet, View, Text } from 'react-native'
 
+const styles = StyleSheet.create({
+})
 
 class ${1:Class} extends Component {
   constructor(props) {
@@ -20,9 +22,6 @@ class ${1:Class} extends Component {
 
 ${1:Class}.propTypes = {
 }
-
-const styles = StyleSheet.create({
-})
 
 export default ${1:Class}
 ]]></content>

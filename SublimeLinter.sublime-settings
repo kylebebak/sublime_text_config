@@ -4,6 +4,9 @@
   "debug": false,
 
   "linters": {
+    "eslint": {
+      "env": {"PATH": "/usr/local/opt/node@8/bin"}
+    },
     "flake8": {
       // exclude requester files
       "excludes": ["*/*.pyr"],

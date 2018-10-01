@@ -125,6 +125,10 @@
 	"match_brackets_square": false,
 	"match_tags": false,
 	"open_files_in_new_window": false,
+	"rulers":
+	[
+		120
+	],
 	"tab_size": 2,
 	"theme": "Seti.sublime-theme",
 	"translate_tabs_to_spaces": true,

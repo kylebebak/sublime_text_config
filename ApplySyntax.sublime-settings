@@ -18,11 +18,5 @@
 
   // Put your custom syntax rules here:
   "syntaxes": [
-    {
-      "syntax": "User/JS Custom/Syntaxes/React",
-      "rules": [
-        {"file_path": ".*\\.js$"}
-      ]
-    }
   ]
 }
