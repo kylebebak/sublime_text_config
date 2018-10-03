@@ -1,12 +1,13 @@
 <snippet>
 	<content><![CDATA[
-import React, { Component } from 'react'
+import React from 'react'
 import { StyleSheet, View, Text } from 'react-native'
+import PropTypes from 'prop-types'
 
 const styles = StyleSheet.create({
 })
 
-class ${1:Class} extends Component {
+class ${1:Class} extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
