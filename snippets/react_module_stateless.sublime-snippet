@@ -3,7 +3,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Styles from './${1:Class}.css'
+import Styles from './${1:Class}.module.css'
 
 const ${1:Class} = ({  }) => {
   return (

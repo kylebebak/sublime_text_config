@@ -15,7 +15,7 @@ package = """{{
 module = """import React from 'react'
 import PropTypes from 'prop-types'
 
-import Styles from './{component}.css'
+import Styles from './{component}.module.css'
 
 class {component} extends React.Component {{
   constructor(props) {{
@@ -40,7 +40,7 @@ export default {component}
 module_stateless = """import React from 'react'
 import PropTypes from 'prop-types'
 
-import Styles from './{component}.css'
+import Styles from './{component}.module.css'
 
 const {component} = ({{  }}) => {{
   return (
@@ -90,4 +90,4 @@ def make_component(directory, name, stateless=True):
         else:
             file.write(module.format(component=name))
 
-    open('{}.css'.format(name), 'a').close()
+    open('{}.module.css'.format(name), 'a').close()
