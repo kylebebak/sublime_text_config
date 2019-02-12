@@ -3,4 +3,9 @@
     { "label": "reveal", "commands": ["open"] },
     { "label": "terminal", "commands": [ "open", "-a", "/Applications/iTerm.app" ] },
   ],
+  "file_custom_commands": [
+    { "label": "reveal", "os": "osx", "commands": ["open", "-R"] },
+    { "label": "open with default application", "os": "osx", "commands": ["open"] },
+    { "label": "terminal", "commands": "open -a /Applications/iTerm.app `dirname $url`" },
+  ],
 }
