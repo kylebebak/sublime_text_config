@@ -27,6 +27,7 @@
 		"GoTests",
 		"Jedi - Python autocompletion",
 		"JSCustom",
+		"JsPrettier",
 		"MarkdownEditing",
 		"MoveTab",
 		"Package Control",
@@ -50,7 +51,6 @@
 		"SublimeLinter-html-tidy",
 		"SublimeLinter-javac",
 		"SublimeLinter-ruby",
-		"TypeScript",
 		"UnitTesting",
 		"Wrap Plus"
 	],

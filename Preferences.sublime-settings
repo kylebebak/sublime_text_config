@@ -103,6 +103,7 @@
 	"theme": "Seti.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
+	"use_tab_stops": true,
 	"wide_caret": false,
 	"word_wrap": true
 }
