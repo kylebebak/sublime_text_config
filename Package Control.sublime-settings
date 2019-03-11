@@ -51,6 +51,8 @@
 		"SublimeLinter-html-tidy",
 		"SublimeLinter-javac",
 		"SublimeLinter-ruby",
+		"SublimeLinter-tslint",
+		"TypeScript",
 		"UnitTesting",
 		"Wrap Plus"
 	],
