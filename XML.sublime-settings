@@ -4,8 +4,8 @@
 		"xml",
 		"svg",
 		"xml.dist",
-		"xsd",
-		"xslt"
+		"xslt",
+		"xsd"
 	],
 	"hidden_extensions":
 	[
