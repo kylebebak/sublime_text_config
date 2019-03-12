@@ -1,6 +1,8 @@
 {
 	"Seti_bold_slctdfile_labels": true,
 	"Seti_sb_small_padding": true,
+	"node_path": "/usr/local/opt/node@8/bin/node", // for TypeScript plugin
+	"enable_language_service_for_javascript": false,
 	"added_words":
 	[
 	],

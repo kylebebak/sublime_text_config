@@ -6,6 +6,7 @@
 !README.md
 !/snippets
 !*.py
+!*.tmPreferences
 !*.sublime-build
 !*.sublime-keymap
 !*.sublime-project

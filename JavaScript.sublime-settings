@@ -2,5 +2,6 @@
 	"rulers":
   [
     120
-  ]
+  ],
+  "use_tab_stops": true,
 }

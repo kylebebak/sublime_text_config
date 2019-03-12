@@ -494,4 +494,8 @@
 
 // Prettier
 { "keys": ["super+ctrl+alt+f"], "command": "js_prettier" },
+
+
+// TypeScript
+{ "keys": ["super+ctrl+e"], "command": "typescript_project_error_list", "context": [{"key": "selector", "operator": "equal", "operand": "source.ts"}] }
 ]
