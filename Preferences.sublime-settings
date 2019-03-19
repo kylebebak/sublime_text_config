@@ -1,8 +1,6 @@
 {
 	"Seti_bold_slctdfile_labels": true,
 	"Seti_sb_small_padding": true,
-	"node_path": "/usr/local/opt/node@8/bin/node", // for TypeScript plugin
-	"enable_language_service_for_javascript": false,
 	"added_words":
 	[
 	],
@@ -31,6 +29,7 @@
 	"caret_style": "phase",
 	"close_windows_when_empty": false,
 	"color_scheme": "Packages/Color Scheme - Default/Solarized (Light).tmTheme",
+	"enable_language_service_for_javascript": false,
 	"ensure_newline_at_eof_on_save": true,
 	"extract_sublime_package_ask_on_open": true,
 	"file_exclude_patterns":
@@ -80,6 +79,7 @@
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
+		"All Autocomplete",
 		"Markdown",
 		"Vintage"
 	],
@@ -96,6 +96,7 @@
 	"match_brackets_content": false,
 	"match_brackets_square": false,
 	"match_tags": false,
+	"node_path": "/usr/local/opt/node@8/bin/node",
 	"open_files_in_new_window": false,
 	"rulers":
 	[
