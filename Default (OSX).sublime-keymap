@@ -499,4 +499,7 @@
 // TypeScript
 { "keys": ["super+ctrl+e"], "command": "typescript_project_error_list", "context": [{"key": "selector", "operator": "equal", "operand": "source.ts"}] },
 { "keys": ["super+b"], "command": "typescript_build", "context": [{"key": "selector", "operator": "equal", "operand": "source.ts"}] },
+
+// Color Helper
+{ "keys": ["super+shift+c"], "command": "color_helper", "args": {"mode": "info"} },
 ]

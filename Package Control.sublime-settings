@@ -12,6 +12,7 @@
 		"AutomaticPackageReloader",
 		"BracketHighlighter",
 		"ChannelRepositoryTools",
+		"ColorHelper",
 		"DocBlockr",
 		"Emmet",
 		"Evaluate",
