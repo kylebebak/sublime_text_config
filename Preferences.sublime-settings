@@ -79,7 +79,6 @@
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
-		"All Autocomplete",
 		"Markdown",
 		"Vintage"
 	],

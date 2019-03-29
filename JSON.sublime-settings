@@ -2,10 +2,10 @@
 	"extensions":
 	[
 		".jscsrc",
+		"geojson",
+		".csslintrc",
 		".bowerrc",
 		"sublime-commands",
-		".csslintrc",
-		"geojson",
 		".eslintrc",
 		".jshintrc"
 	]
