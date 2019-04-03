@@ -316,7 +316,7 @@
   // SCOPE_SELECTOR.
   "context": [
     {
-      "operand": "text.html, source.js",
+      "operand": "text.html, source.js, source.ts, source.tsx",
       "operator": "equal",
       "match_all": true,
       "key": "selector"
@@ -497,8 +497,8 @@
 
 
 // TypeScript
-{ "keys": ["super+ctrl+e"], "command": "typescript_project_error_list", "context": [{"key": "selector", "operator": "equal", "operand": "source.ts"}] },
-{ "keys": ["super+b"], "command": "typescript_build", "context": [{"key": "selector", "operator": "equal", "operand": "source.ts"}] },
+{ "keys": ["super+ctrl+e"], "command": "typescript_project_error_list", "context": [{"key": "selector", "operator": "equal", "operand": "source.ts | source.tsx"}] },
+{ "keys": ["super+b"], "command": "typescript_build", "context": [{"key": "selector", "operator": "equal", "operand": "source.ts | source.tsx"}] },
 
 // Color Helper
 { "keys": ["super+shift+c"], "command": "color_helper", "args": {"mode": "info"} },
