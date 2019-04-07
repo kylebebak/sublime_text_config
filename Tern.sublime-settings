@@ -1,5 +1,0 @@
-{
-  "tern_command": ["/usr/local/opt/node@8/bin/node", "/usr/local/bin/tern"],
-  "tern_argument_hints": false,
-  "tern_arguments": ["--no-port-file"],
-}
