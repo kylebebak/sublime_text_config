@@ -1,25 +1,22 @@
 <snippet>
 	<content><![CDATA[
 import React from 'react'
-import { StyleSheet, View, Text } from 'react-native'
-import PropTypes from 'prop-types'
 
-const styles = StyleSheet.create({
-})
+import Styles from './${1:Class}.module.css'
 
-const ${1:Class} = ({  }) => {
+export interface ${1:Class}Props {
+}
+
+const ${1:Class} = ({  }: ${1:Class}Props) => {
   return (
     ${2:null}
   )
 }
 
-${1:Class}.propTypes = {
-}
-
 export default ${1:Class}
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>reactns</tabTrigger>
+	<tabTrigger>reacts</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
-	<scope>source.js</scope>
+	<scope>source.ts,source.tsx</scope>
 </snippet>
