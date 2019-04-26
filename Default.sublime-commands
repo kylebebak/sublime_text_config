@@ -33,9 +33,11 @@
   { "caption": "GitGutter: Next Change", "command": "git_gutter_next_change" },
   { "caption": "GitGutter: Previous Change", "command": "git_gutter_prev_change" },
 
-  { "caption": "Wrap Plus: Wrap At 82 Chars", "command": "wrap_lines_plus", "args": {"width": 82}},
+  { "caption": "Wrap Plus: Wrap At 82 Chars", "command": "wrap_lines_plus", "args": {"width": 82} },
 
-  { "caption": "Toggle Distraction Free Mode (Full Screen)", "command": "toggle_distraction_free"},
+  { "caption": "Toggle Distraction Free Mode (Full Screen)", "command": "toggle_distraction_free" },
 
-  { "caption": "Toggle Spell Check", "command": "toggle_setting", "args": {"setting": "spell_check"}}
+  { "caption": "Toggle Spell Check", "command": "toggle_setting", "args": {"setting": "spell_check"} },
+
+  { "caption": "Reload TypeScript Package", "command": "package_reloader_reload", "args": {"pkg_name": "TypeScript"} },
 ]

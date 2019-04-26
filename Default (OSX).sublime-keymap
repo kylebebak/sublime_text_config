@@ -503,4 +503,7 @@
 
 // Color Helper
 { "keys": ["super+shift+c"], "command": "color_helper", "args": {"mode": "info"} },
+
+// AutomaticPackageReloader
+{ "keys": ["super+ctrl+alt+t"], "command": "package_reloader_reload", "args": {"pkg_name": "TypeScript"} },
 ]
