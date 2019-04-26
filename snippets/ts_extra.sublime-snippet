@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+{ [key: string]: any }
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>extra</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.ts,source.tsx</scope>
+</snippet>
