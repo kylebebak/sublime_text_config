@@ -500,6 +500,7 @@
 { "keys": ["f10"], "command": "typescript_project_error_list", "context": [{"key": "selector", "operator": "equal", "operand": "source.ts | source.tsx"}] },
 { "keys": ["super+b"], "command": "typescript_build", "context": [{"key": "selector", "operator": "equal", "operand": "source.ts | source.tsx"}] },
 { "keys": ["super+shift+e"], "command": "typescript_go_to_definition", "context": [{"key": "selector", "operator": "equal", "operand": "source.ts | source.tsx"}] },
+{ "keys": ["ctrl+e"], "command": "typescript_go_to_type_definition", "context": [{"key": "selector", "operator": "equal", "operand": "source.ts | source.tsx"}] },
 
 // Color Helper
 { "keys": ["super+shift+c"], "command": "color_helper", "args": {"mode": "info"} },
