@@ -4,6 +4,10 @@
     {
       "label": "terminal",
       "commands": ["open", "-a", "/Applications/iTerm.app"]
+    },
+    {
+      "label": "open with vs code",
+      "commands": "open -a /Applications/Visual\\ Studio\\ Code.app '$url'"
     }
   ],
   "file_custom_commands": [
@@ -17,7 +21,11 @@
       "label": "terminal",
       "commands": "open -a /Applications/iTerm.app \"`dirname '$url'`\""
     },
-    { "label": "copy path", "commands": "printf '$url' | pbcopy" }
+    { "label": "copy path", "commands": "printf '$url' | pbcopy" },
+    {
+      "label": "open with vs code",
+      "commands": "open -a /Applications/Visual\\ Studio\\ Code.app '$url'"
+    }
   ],
   "search_paths": ["src"],
   "file_suffixes": [".js", ".ts", ".tsx"]
