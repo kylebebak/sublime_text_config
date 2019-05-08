@@ -614,31 +614,10 @@
   },
   { "keys": ["super+alt+g", "super+alt+i"], "command": "gs_inline_diff" },
 
-  // sublimeBookmark, https://github.com/bollu/sublimeBookmark
+  // file_path_and_line_number
   {
     "keys": ["super+alt+b", "super+alt+b"],
-    "command": "sublime_bookmark",
-    "args": { "type": "add" }
-  },
-  {
-    "keys": ["super+alt+b", "super+alt+g"],
-    "command": "sublime_bookmark",
-    "args": { "type": "goto" }
-  },
-  {
-    "keys": ["super+alt+b", "super+alt+n"],
-    "command": "sublime_bookmark",
-    "args": { "type": "goto_next" }
-  },
-  {
-    "keys": ["super+alt+b", "super+alt+r"],
-    "command": "sublime_bookmark",
-    "args": { "type": "remove" }
-  },
-  {
-    "keys": ["super+alt+b", "super+alt+k"],
-    "command": "sublime_bookmark",
-    "args": { "type": "remove_all" }
+    "command": "copy_file_path_and_line_number"
   },
 
   // GoSublime, https://github.com/DisposaBoy/GoSublime
