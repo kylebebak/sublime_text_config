@@ -5,22 +5,22 @@
 
   "linters": {
     "eslint": {
-      "env": {"PATH": "/usr/local/opt/node@8/bin"},
-      "selector": "source.js, source.ts, source.tsx",
+      "env": { "PATH": "/usr/local/opt/node@8/bin" },
+      "selector": "source.js, source.ts, source.tsx"
     },
     "flake8": {
       // exclude requester files
-      "excludes": ["*/*.pyr"],
+      "excludes": ["*/*.pyr"]
     },
     "mypy": {
       // exclude requester files
-      "excludes": ["*/*.pyr"],
+      "excludes": ["*/*.pyr"]
     },
     "gotype": {
       // see: https://github.com/SublimeLinter/SublimeLinter-gotype/issues/3
       // could also `launchctl setenv GOPATH $GOPATH` to ensure ST picks up this env var
       "executable": "/Users/kylebebak/Code/go/bin/gotype",
-      "env": {"GOPATH": "/Users/kylebebak/Code/go"},
-    },
+      "env": { "GOPATH": "/Users/kylebebak/Code/go" }
+    }
   }
 }

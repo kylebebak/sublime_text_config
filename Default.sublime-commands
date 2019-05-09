@@ -1,45 +1,111 @@
 [
-  { "caption": "Custom: Reveal File In Sidebar", "command": "reveal_in_side_bar" },
+  {
+    "caption": "Custom: Reveal File In Sidebar",
+    "command": "reveal_in_side_bar"
+  },
 
-  { "caption": "Custom: Copy File Path And Line Number", "command": "copy_file_path_and_line_number" },
+  {
+    "caption": "Custom: Copy File Path And Line Number",
+    "command": "copy_file_path_and_line_number"
+  },
 
-  { "caption": "Custom: Create React Component (Stateless)", "command": "react_component", "args": {"stateless": true} },
-  { "caption": "Custom: Create React Component", "command": "react_component", "args": {"stateless": false} },
+  {
+    "caption": "Custom: Create React Component (Stateless)",
+    "command": "react_component",
+    "args": { "stateless": true }
+  },
+  {
+    "caption": "Custom: Create React Component",
+    "command": "react_component",
+    "args": { "stateless": false }
+  },
 
   { "caption": "Custom: Show Scope Name", "command": "show_scope_name" },
 
   { "caption": "Custom: Open File By Name", "command": "open_file_by_name" },
 
-  { "caption": "Custom: Autoflake Remove Unused Imports", "command": "autoflake_remove_unused_imports" },
+  {
+    "caption": "Custom: Autoflake Remove Unused Imports",
+    "command": "autoflake_remove_unused_imports"
+  },
 
-  { "caption": "Transform String: Escape URL", "command": "transform_string", "args": {"func": "escape_url"} },
+  {
+    "caption": "Transform String: Escape URL",
+    "command": "transform_string",
+    "args": { "func": "escape_url" }
+  },
 
-  { "caption": "Transform String: Unescape URL", "command": "transform_string", "args": {"func": "unescape_url"} },
+  {
+    "caption": "Transform String: Unescape URL",
+    "command": "transform_string",
+    "args": { "func": "unescape_url" }
+  },
 
-  { "caption": "Transform String: Snake To Camel Case", "command": "transform_string", "args": {"func": "snake_to_camel_case"} },
+  {
+    "caption": "Transform String: Snake To Camel Case",
+    "command": "transform_string",
+    "args": { "func": "snake_to_camel_case" }
+  },
 
-  { "caption": "Transform String: Camel To Snake Case", "command": "transform_string", "args": {"func": "camel_to_snake_case"} },
+  {
+    "caption": "Transform String: Camel To Snake Case",
+    "command": "transform_string",
+    "args": { "func": "camel_to_snake_case" }
+  },
 
-  { "caption": "Custom: Open Node Debugger", "command": "open_node_debugger"},
+  { "caption": "Custom: Open Node Debugger", "command": "open_node_debugger" },
 
-  { "caption": "Custom: Open With Chrome", "command": "build", "args": {"build_system": "Packages/User/Chrome.sublime-build", "variant": ""} },
+  {
+    "caption": "Custom: Open With Chrome",
+    "command": "build",
+    "args": {
+      "build_system": "Packages/User/Chrome.sublime-build",
+      "variant": ""
+    }
+  },
 
   { "caption": "Alignment: Run", "command": "alignment" },
 
-  { "caption": "Expand Selection: Matching Bracket", "command": "expand_selection", "args": {"to": "brackets"} },
+  {
+    "caption": "Expand Selection: Matching Bracket",
+    "command": "expand_selection",
+    "args": { "to": "brackets" }
+  },
 
-  { "caption": "Expand Selection: Matching Tag", "command": "expand_selection", "args": {"to": "tag"} },
+  {
+    "caption": "Expand Selection: Matching Tag",
+    "command": "expand_selection",
+    "args": { "to": "tag" }
+  },
 
-  {"caption": "GoTests", "command": "gotests"},
+  { "caption": "GoTests", "command": "gotests" },
 
   { "caption": "GitGutter: Next Change", "command": "git_gutter_next_change" },
-  { "caption": "GitGutter: Previous Change", "command": "git_gutter_prev_change" },
+  {
+    "caption": "GitGutter: Previous Change",
+    "command": "git_gutter_prev_change"
+  },
 
-  { "caption": "Wrap Plus: Wrap At 82 Chars", "command": "wrap_lines_plus", "args": {"width": 82} },
+  {
+    "caption": "Wrap Plus: Wrap At 82 Chars",
+    "command": "wrap_lines_plus",
+    "args": { "width": 82 }
+  },
 
-  { "caption": "Toggle Distraction Free Mode (Full Screen)", "command": "toggle_distraction_free" },
+  {
+    "caption": "Toggle Distraction Free Mode (Full Screen)",
+    "command": "toggle_distraction_free"
+  },
 
-  { "caption": "Toggle Spell Check", "command": "toggle_setting", "args": {"setting": "spell_check"} },
+  {
+    "caption": "Toggle Spell Check",
+    "command": "toggle_setting",
+    "args": { "setting": "spell_check" }
+  },
 
-  { "caption": "Reload TypeScript Package", "command": "package_reloader_reload", "args": {"pkg_name": "TypeScript"} },
+  {
+    "caption": "Reload TypeScript Package",
+    "command": "package_reloader_reload",
+    "args": { "pkg_name": "TypeScript" }
+  }
 ]
