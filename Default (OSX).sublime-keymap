@@ -706,9 +706,7 @@
     "keys": ["super+.", "super+g"],
     "command": "go_guru_goto_definition",
     "args": { "output": false },
-    "context": [
-      { "key": "selector", "operator": "equal", "operand": "source.go" }
-    ]
+    "context": [{ "key": "selector", "operator": "equal", "operand": "source.go" }]
   },
 
   // Prettier
@@ -778,8 +776,12 @@
   {
     "keys": ["super+shift+e"],
     "command": "sublime_jedi_goto",
-    "context": [
-      { "key": "selector", "operator": "equal", "operand": "source.python" }
-    ]
+    "context": [{ "key": "selector", "operator": "equal", "operand": "source.python" }]
+  },
+
+  // Sublime Linter
+  {
+    "keys": ["ctrl+l"],
+    "command": "sublime_linter_line_report"
   }
 ]

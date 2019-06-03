@@ -30,6 +30,11 @@
   },
 
   {
+    "caption": "Paste From History",
+    "command": "paste_from_history"
+  },
+
+  {
     "caption": "Transform String: Escape URL",
     "command": "transform_string",
     "args": { "func": "escape_url" }
