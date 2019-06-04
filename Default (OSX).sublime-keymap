@@ -620,6 +620,12 @@
     "command": "copy_file_path_and_line_number"
   },
 
+  // mypy_reveal_type
+  {
+    "keys": ["ctrl+t"],
+    "command": "mypy_reveal_type"
+  },
+
   // GoSublime, https://github.com/DisposaBoy/GoSublime
   { "keys": ["super+.", "super+l"], "command": "gs_comp_lint" },
 

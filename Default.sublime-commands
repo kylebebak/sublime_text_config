@@ -10,6 +10,11 @@
   },
 
   {
+    "caption": "Custom: Mypy Reveal Type",
+    "command": "mypy_reveal_type"
+  },
+
+  {
     "caption": "Custom: Create React Component (Stateless)",
     "command": "react_component",
     "args": { "stateless": true }
