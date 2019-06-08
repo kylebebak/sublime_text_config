@@ -44,12 +44,10 @@
 		"SublimeLinter-contrib-mypy",
 		"SublimeLinter-eslint",
 		"SublimeLinter-flake8",
-		"SublimeLinter-flow",
 		"SublimeLinter-gotype",
 		"SublimeLinter-html-tidy",
 		"SublimeLinter-javac",
 		"SublimeLinter-ruby",
-		"TypeScript",
 		"UnitTesting",
 		"Wrap Plus"
 	],
