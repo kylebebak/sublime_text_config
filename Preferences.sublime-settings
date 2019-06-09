@@ -4,6 +4,7 @@
 	"added_words":
 	[
 	],
+	"auto_complete_cycle": true,
 	"auto_complete_selector": "source, plain.text, text.html.markdown.gfm",
 	"binary_file_patterns":
 	[
@@ -105,7 +106,6 @@
 	"theme": "Seti.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
-	"auto_complete_cycle": true,
 	"use_tab_stops": true,
 	"wide_caret": false,
 	"word_wrap": true

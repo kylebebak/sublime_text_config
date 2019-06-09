@@ -1,7 +1,5 @@
 {
-  // An array of scope names to exclude from being autocompleted.
-  // Can be a partial string, for instance, "css" would match scss code.
-  "exclude_from_completion": [
-    "requester-response"
-  ]
+  "exclude_from_completion": ["requester-response", "source.tsx", "source.ts"],
+  "exclude_sources": ["git-savvy", "markdown"],
+  "min_word_size": 5
 }
