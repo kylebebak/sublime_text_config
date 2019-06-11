@@ -7,6 +7,7 @@
 	"installed_packages":
 	[
 		"Advanced CSV",
+		"All Autocomplete",
 		"ApplySyntax",
 		"AutomaticPackageReloader",
 		"BracketHighlighter",
@@ -21,7 +22,6 @@
 		"GitGutter",
 		"GitSavvy",
 		"GoGuru",
-		"GoSublime",
 		"GoTests",
 		"JSCustom",
 		"JsPrettier",
@@ -45,8 +45,6 @@
 		"SublimeLinter-flake8",
 		"SublimeLinter-gotype",
 		"SublimeLinter-html-tidy",
-		"SublimeLinter-javac",
-		"SublimeLinter-ruby",
 		"UnitTesting",
 		"Wrap Plus"
 	],

@@ -1,5 +1,5 @@
 {
-  "node_path": "/usr/local/opt/node@8/bin/node",
+  "node_path": "/usr/local/bin/node",
   "auto_format_on_save": false,
   "auto_format_on_save_excludes": [
     "*/node_modules/*",

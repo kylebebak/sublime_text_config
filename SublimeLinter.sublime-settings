@@ -5,7 +5,7 @@
 
   "linters": {
     "eslint": {
-      "env": { "PATH": "/usr/local/opt/node@8/bin" },
+      "env": { "PATH": "/usr/local/bin" },
       "selector": "source.js, source.ts, source.tsx"
     },
     "flake8": {
