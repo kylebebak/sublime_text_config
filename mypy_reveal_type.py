@@ -1,7 +1,7 @@
 try:
-    from typing import cast, Any, Tuple, Optional
+    from typing import Any, Tuple, Optional
 except Exception:
-    cast = lambda t, v: v
+    pass
 
 import os
 import threading
@@ -25,6 +25,12 @@ class MypyRevealTypeCommand(sublime_plugin.TextCommand):
                 self.view.rowcol(bounds[0])[0] + 1,
             )
             break
+
+    def show_popup(self, contents: str) -> None:
+        self.view.show_popup(
+            "<style>body {{ height: 100px }}</style><p>{}</p>".format(contents),
+            max_width=800,
+        )
 
     def get_modified_contents(self, bounds, contents):
         # type: (Tuple[int, int], str) -> str
@@ -69,28 +75,21 @@ class MypyRevealTypeCommand(sublime_plugin.TextCommand):
                 stdout=subprocess.PIPE,
             )
             out, err = p.communicate()
-            for line in cast(str, out.decode("utf-8")).splitlines():
-                search = "{}: error: Revealed type is ".format(line_number)
-                if search in line:
-                    log(line)
-                    self.view.show_popup(
-                        "<style>body {{ height: 100px }}</style><p>{}</p>".format(
-                            line.split(search)[1]
-                        ),
-                        max_width=800,
-                    )
-                    return
-
-                log(line)  # no revealed type found
-                self.view.show_popup(
-                    "<style>body {{ height: 100px }}</style><p>{}</p>".format(
-                        line.split("{}: ".format(line_number))[1]
-                    ),
-                    max_width=800,
-                )
-                line.split(search)[1]
+            self.parse_output(out.decode("utf-8"), line_number)
 
         threading.Thread(target=sp).start()
+
+    def parse_output(self, out: str, line_number: int) -> None:
+        for line in out.splitlines():
+            search = "{}: error: Revealed type is ".format(line_number)
+            if search in line:
+                log(line)
+                self.show_popup(line.split(search)[1])
+                return
+
+            log(line)  # no revealed type found
+            self.show_popup(line.split("{}: ".format(line_number))[1])
+            line.split(search)[1]
 
     def project_path(self):
         # type: () -> Optional[str]
