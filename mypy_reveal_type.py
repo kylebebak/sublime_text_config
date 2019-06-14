@@ -1,7 +1,7 @@
 try:
-    from typing import Any, Tuple, Optional
+    from typing import cast, Any, Tuple, Optional
 except Exception:
-    pass
+    cast = lambda t, v: v
 
 import os
 import threading
@@ -9,6 +9,10 @@ import subprocess
 
 import sublime  # type: ignore
 import sublime_plugin  # type: ignore
+
+
+def log(*args):
+    print(*args)
 
 
 class MypyRevealTypeCommand(sublime_plugin.TextCommand):
@@ -54,28 +58,37 @@ class MypyRevealTypeCommand(sublime_plugin.TextCommand):
             end += 1
         return start, end
 
-    def run_mypy(self, contents: str, line_number: int):
+    def run_mypy(self, contents: str, line_number: int) -> None:
         """Runs on another thread to avoid blocking main thread.
         """
 
-        def sp():
+        def sp() -> None:
             p = subprocess.Popen(
                 ["mypy", "-c", contents],
                 cwd=self.project_path(),
                 stdout=subprocess.PIPE,
             )
             out, err = p.communicate()
-            for line in out.decode("utf-8").splitlines():
+            for line in cast(str, out.decode("utf-8")).splitlines():
                 search = "{}: error: Revealed type is ".format(line_number)
                 if search in line:
-                    print(line)
+                    log(line)
                     self.view.show_popup(
                         "<style>body {{ height: 100px }}</style><p>{}</p>".format(
                             line.split(search)[1]
                         ),
                         max_width=800,
                     )
-                    break
+                    return
+
+                log(line)  # no revealed type found
+                self.view.show_popup(
+                    "<style>body {{ height: 100px }}</style><p>{}</p>".format(
+                        line.split("{}: ".format(line_number))[1]
+                    ),
+                    max_width=800,
+                )
+                line.split(search)[1]
 
         threading.Thread(target=sp).start()
 

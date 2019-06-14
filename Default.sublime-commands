@@ -112,5 +112,10 @@
     "caption": "Reload TypeScript Package",
     "command": "package_reloader_reload",
     "args": { "pkg_name": "TypeScript" }
+  },
+
+  {
+    "caption": "Jedi GoTo Definition",
+    "command": "sublime_jedi_goto"
   }
 ]
