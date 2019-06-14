@@ -15,6 +15,17 @@ def log(*args):
     print(*args)
 
 
+def parse_output(out: str, line_number: int) -> str:
+    for line in out.splitlines():
+        search = "{}: error: Revealed type is ".format(line_number)
+        if search in line:
+            log(line)
+            return line.split(search)[1]
+
+    log(line)  # no revealed type found
+    return line.split("{}: ".format(line_number))[1]
+
+
 class MypyRevealTypeCommand(sublime_plugin.TextCommand):
     def run(self, edit) -> None:
         contents = self.view.substr(sublime.Region(0, self.view.size()))
@@ -75,21 +86,9 @@ class MypyRevealTypeCommand(sublime_plugin.TextCommand):
                 stdout=subprocess.PIPE,
             )
             out, err = p.communicate()
-            self.parse_output(out.decode("utf-8"), line_number)
+            self.show_popup(parse_output(out.decode("utf-8"), line_number))
 
         threading.Thread(target=sp).start()
-
-    def parse_output(self, out: str, line_number: int) -> None:
-        for line in out.splitlines():
-            search = "{}: error: Revealed type is ".format(line_number)
-            if search in line:
-                log(line)
-                self.show_popup(line.split(search)[1])
-                return
-
-            log(line)  # no revealed type found
-            self.show_popup(line.split("{}: ".format(line_number))[1])
-            line.split(search)[1]
 
     def project_path(self):
         # type: () -> Optional[str]

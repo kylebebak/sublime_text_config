@@ -785,6 +785,12 @@
     "context": [{ "key": "selector", "operator": "equal", "operand": "source.python" }]
   },
 
+  {
+    "keys": ["ctrl+f"],
+    "command": "sublime_jedi_find_usages",
+    "context": [{ "key": "selector", "operator": "equal", "operand": "source.python" }]
+  },
+
   // Sublime Linter
   {
     "keys": ["ctrl+l"],
