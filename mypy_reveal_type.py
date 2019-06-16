@@ -4,6 +4,7 @@ except Exception:
     pass
 
 import os
+import logging
 import threading
 import subprocess
 
@@ -11,8 +12,9 @@ import sublime  # type: ignore
 import sublime_plugin  # type: ignore
 
 
-def log(*args):
-    print(*args)
+def log(s: str) -> None:
+    logging.basicConfig(level=logging.DEBUG)
+    logging.debug("mypy_reveal_type: {}".format(s))
 
 
 def parse_output(out: str, line_number: int) -> str:
@@ -20,7 +22,7 @@ def parse_output(out: str, line_number: int) -> str:
         search = "{}: error: Revealed type is ".format(line_number)
         if search in line:
             log(line)
-            return line.split(search)[1]
+            return line.split(search)[1][1:-1]
 
     log(line)  # no revealed type found
     return line.split("{}: ".format(line_number))[1]

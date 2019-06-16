@@ -95,7 +95,7 @@
 	"match_brackets_content": false,
 	"match_brackets_square": false,
 	"match_tags": false,
-	"mini_diff": false, // see here: https://github.com/jisaacks/GitGutter/issues/543
+	"mini_diff": false,
 	"node_path": "/usr/local/bin/node",
 	"open_files_in_new_window": false,
 	"rulers":
