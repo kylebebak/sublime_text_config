@@ -30,13 +30,14 @@ def parse_output(out: str, line_number: int) -> str:
 
 
 def parse_locals_output(out: str, line_number: int) -> str:
-    local_types = []
+    lines = []
     for line in out.splitlines():
         search = "{}: error: ".format(line_number)
         if search in line and "Revealed local types are:" not in line:
-            local_types.append(line.split(search)[1])
-    if len(local_types) > 0:
-        return "<br>".join(local_types)
+            lines.append(line.split(search)[1])
+    if len(lines) > 0:
+        lines = ["<b>{}</b>: {}".format(parts[0], parts[1]) for parts in [line.split(": ") for line in lines]]
+        return "<br>".join(lines)
 
     return "error"
 
