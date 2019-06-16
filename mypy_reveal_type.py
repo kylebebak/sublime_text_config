@@ -29,16 +29,42 @@ def parse_output(out: str, line_number: int) -> str:
     return line.split("{}: ".format(line_number))[1]
 
 
+def parse_locals_output(out: str, line_number: int) -> str:
+    local_types = []
+    for line in out.splitlines():
+        search = "{}: error: ".format(line_number)
+        if search in line and "Revealed local types are:" not in line:
+            local_types.append(line.split(search)[1])
+    if len(local_types) > 0:
+        return "<br>".join(local_types)
+
+    return "error"
+
+
 class MypyRevealTypeCommand(sublime_plugin.TextCommand):
     def run(self, edit, locals=False) -> None:
-        contents = self.view.substr(sublime.Region(0, self.view.size()))
         for r in self.view.sel():
-            bounds = self.get_bounds(r)
-            self.run_mypy(
-                self.get_modified_contents(self.get_bounds(r), contents),
-                self.view.rowcol(bounds[0])[0] + 1,
-                contents[bounds[0]:bounds[1]],
-            )
+            if locals:
+                self.view.run_command("insert", {"characters": "\nreveal_locals()"})
+                contents = cast(
+                    str, self.view.substr(sublime.Region(0, self.view.size()))
+                )
+                sublime.set_timeout_async(lambda: self.view.run_command("undo"), 0)
+                self.run_mypy(
+                    contents=contents,
+                    line_number=self.view.rowcol(r.end())[0] + 2,
+                    locals=True,
+                )
+            else:
+                contents = cast(
+                    str, self.view.substr(sublime.Region(0, self.view.size()))
+                )
+                bounds = self.get_bounds(r)
+                self.run_mypy(
+                    contents=self.get_modified_contents(self.get_bounds(r), contents),
+                    line_number=self.view.rowcol(bounds[0])[0] + 1,
+                    selection=contents[bounds[0] : bounds[1]],
+                )
             break
 
     def show_popup(self, contents: str) -> None:
@@ -53,6 +79,9 @@ class MypyRevealTypeCommand(sublime_plugin.TextCommand):
         return "{}reveal_type({}){}".format(
             contents[0:start], contents[start:end], contents[end:]
         )
+
+    def get_modified_contents_locals(self, begin: int, contents: str) -> str:
+        return contents
 
     def get_bounds(self, region):
         # type: (Any) -> Tuple[int, int]
@@ -79,7 +108,9 @@ class MypyRevealTypeCommand(sublime_plugin.TextCommand):
             end += 1
         return start, end
 
-    def run_mypy(self, contents: str, line_number: int, selection: str = "") -> None:
+    def run_mypy(
+        self, contents: str, line_number: int, selection: str = "", locals=False
+    ) -> None:
         """Runs on another thread to avoid blocking main thread.
         """
 
@@ -90,10 +121,18 @@ class MypyRevealTypeCommand(sublime_plugin.TextCommand):
                 stdout=subprocess.PIPE,
             )
             out, err = p.communicate()
-            popup_contents = parse_output(out.decode("utf-8"), line_number)  # type: str
-            if selection:
-                popup_contents = "<p>{}</p><p>{}</p>".format(selection, popup_contents)
-            self.show_popup(popup_contents)
+            if locals:
+                popup_contents = parse_locals_output(
+                    out.decode("utf-8"), line_number
+                )  # type: str
+                self.show_popup(popup_contents)
+            else:
+                popup_contents = parse_output(out.decode("utf-8"), line_number)
+                if selection:
+                    popup_contents = "<p>{}</p><p>{}</p>".format(
+                        selection, popup_contents
+                    )
+                self.show_popup(popup_contents)
 
         threading.Thread(target=sp).start()
 
