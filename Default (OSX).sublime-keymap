@@ -625,6 +625,13 @@
     "keys": ["ctrl+t"],
     "command": "mypy_reveal_type"
   },
+  {
+    "keys": ["alt+t"],
+    "command": "mypy_reveal_type",
+    "args": {
+      "locals": true
+    }
+  },
 
   // GoSublime, https://github.com/DisposaBoy/GoSublime
   { "keys": ["super+.", "super+l"], "command": "gs_comp_lint" },

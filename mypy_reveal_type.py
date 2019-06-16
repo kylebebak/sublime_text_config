@@ -1,9 +1,10 @@
 try:
-    from typing import Any, Tuple, Optional
+    from typing import Any, Tuple, Optional, cast
 except Exception:
-    pass
+    cast = lambda t, v: v
 
 import os
+import string
 import logging
 import threading
 import subprocess
@@ -29,19 +30,20 @@ def parse_output(out: str, line_number: int) -> str:
 
 
 class MypyRevealTypeCommand(sublime_plugin.TextCommand):
-    def run(self, edit) -> None:
+    def run(self, edit, locals=False) -> None:
         contents = self.view.substr(sublime.Region(0, self.view.size()))
         for r in self.view.sel():
             bounds = self.get_bounds(r)
             self.run_mypy(
                 self.get_modified_contents(self.get_bounds(r), contents),
                 self.view.rowcol(bounds[0])[0] + 1,
+                contents[bounds[0]:bounds[1]],
             )
             break
 
     def show_popup(self, contents: str) -> None:
         self.view.show_popup(
-            "<style>body {{ height: 100px }}</style><p>{}</p>".format(contents),
+            "<style>body {{ min-height: 100px }}</style><p>{}</p>".format(contents),
             max_width=800,
         )
 
@@ -60,24 +62,24 @@ class MypyRevealTypeCommand(sublime_plugin.TextCommand):
         if start != end:
             return start, end
 
-        # nothing is selected, so expand selection to nearest delimiters
+        # nothing is selected, so expand selection
         view_size = self.view.size()  # type: int
-        delimiters = list(" \t\n\r\"'`,{}=:")
+        included = list("{}{}_".format(string.ascii_letters, string.digits))
 
         # move the selection back to the start of the url
         while start > 0:
-            if self.view.substr(start - 1) in delimiters:
+            if cast(str, self.view.substr(start - 1)) not in included:
                 break
             start -= 1
 
         # move end of selection forward to the end of the url
         while end < view_size:
-            if self.view.substr(end) in delimiters:
+            if cast(str, self.view.substr(end)) not in included:
                 break
             end += 1
         return start, end
 
-    def run_mypy(self, contents: str, line_number: int) -> None:
+    def run_mypy(self, contents: str, line_number: int, selection: str = "") -> None:
         """Runs on another thread to avoid blocking main thread.
         """
 
@@ -88,7 +90,10 @@ class MypyRevealTypeCommand(sublime_plugin.TextCommand):
                 stdout=subprocess.PIPE,
             )
             out, err = p.communicate()
-            self.show_popup(parse_output(out.decode("utf-8"), line_number))
+            popup_contents = parse_output(out.decode("utf-8"), line_number)  # type: str
+            if selection:
+                popup_contents = "<p>{}</p><p>{}</p>".format(selection, popup_contents)
+            self.show_popup(popup_contents)
 
         threading.Thread(target=sp).start()
 
