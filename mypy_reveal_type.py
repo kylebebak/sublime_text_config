@@ -23,7 +23,7 @@ def parse_output(out: str, line_number: int) -> str:
         search = "{}: error: Revealed type is ".format(line_number)
         if search in line:
             log(line)
-            return line.split(search)[1][1:-1]
+            return "<b>{}</b>".format(line.split(search)[1][1:-1])
 
     log(line)  # no revealed type found
     return line.split("{}: ".format(line_number))[1]
@@ -36,7 +36,14 @@ def parse_locals_output(out: str, line_number: int) -> str:
         if search in line and "Revealed local types are:" not in line:
             lines.append(line.split(search)[1])
     if len(lines) > 0:
-        lines = ["<b>{}</b>: {}".format(parts[0], parts[1]) for parts in [line.split(": ") for line in lines]]
+        name_type_pairs = [line.split(": ") for line in lines]
+        max_chars = max(len(pair[0]) for pair in name_type_pairs)
+        lines = [
+            "<b>{}</b> {}".format(
+                pair[0].ljust(max_chars, "-").replace("-", "&nbsp;"), pair[1]
+            )
+            for pair in name_type_pairs
+        ]
         return "<br>".join(lines)
 
     return "error"
@@ -46,6 +53,7 @@ class MypyRevealTypeCommand(sublime_plugin.TextCommand):
     def run(self, edit, locals=False) -> None:
         for r in self.view.sel():
             if locals:
+                self.view.run_command("move_to", {"to": "eol"})
                 self.view.run_command("insert", {"characters": "\nreveal_locals()"})
                 contents = cast(
                     str, self.view.substr(sublime.Region(0, self.view.size()))
@@ -130,7 +138,7 @@ class MypyRevealTypeCommand(sublime_plugin.TextCommand):
             else:
                 popup_contents = parse_output(out.decode("utf-8"), line_number)
                 if selection:
-                    popup_contents = "<p>{}</p><p>{}</p>".format(
+                    popup_contents = '<p>"{}"</p><p>{}</p>'.format(
                         selection, popup_contents
                     )
                 self.show_popup(popup_contents)
