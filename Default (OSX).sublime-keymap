@@ -623,14 +623,16 @@
   // mypy_reveal_type
   {
     "keys": ["ctrl+t"],
-    "command": "mypy_reveal_type"
+    "command": "mypy_reveal_type",
+    "context": [{ "key": "selector", "operator": "equal", "operand": "source.python" }]
   },
   {
     "keys": ["alt+t"],
     "command": "mypy_reveal_type",
     "args": {
       "locals": true
-    }
+    },
+    "context": [{ "key": "selector", "operator": "equal", "operand": "source.python" }]
   },
 
   // GoSublime, https://github.com/DisposaBoy/GoSublime

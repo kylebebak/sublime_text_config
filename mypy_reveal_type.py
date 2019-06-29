@@ -46,7 +46,7 @@ def parse_locals_output(out: str, line_number: int) -> str:
         ]
         return "<br>".join(lines)
 
-    return "error"
+    return "reveal_locals error"
 
 
 class MypyRevealTypeCommand(sublime_plugin.TextCommand):
