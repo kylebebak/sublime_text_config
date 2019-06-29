@@ -18,5 +18,9 @@
 
   // Put your custom syntax rules here:
   "syntaxes": [
+    {
+      "syntax": "TOML",
+      "rules": [{ "file_path": ".*/Pipfile$" }]
+    }
   ]
 }

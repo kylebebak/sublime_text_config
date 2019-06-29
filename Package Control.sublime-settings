@@ -44,6 +44,7 @@
 		"SublimeLinter-flake8",
 		"SublimeLinter-gotype",
 		"SublimeLinter-html-tidy",
+		"TOML",
 		"UnitTesting",
 		"Wrap Plus"
 	],
