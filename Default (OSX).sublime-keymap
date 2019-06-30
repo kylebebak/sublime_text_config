@@ -620,15 +620,15 @@
     "command": "copy_file_path_and_line_number"
   },
 
-  // mypy_reveal_type
+  // mypy_reveal
   {
     "keys": ["ctrl+t"],
-    "command": "mypy_reveal_type",
+    "command": "mypy_reveal",
     "context": [{ "key": "selector", "operator": "equal", "operand": "source.python" }]
   },
   {
     "keys": ["alt+t"],
-    "command": "mypy_reveal_type",
+    "command": "mypy_reveal",
     "args": {
       "locals": true
     },
