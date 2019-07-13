@@ -38,7 +38,6 @@
 		"SideBarEnhancements",
 		"Sort Lines (Numerically)",
 		"sublack",
-		"SublimeLinter",
 		"SublimeLinter-contrib-mypy",
 		"SublimeLinter-eslint",
 		"SublimeLinter-flake8",
@@ -54,6 +53,7 @@
 		"https://github.com/kylebebak/SublimeAllAutocomplete",
 		"https://github.com/kylebebak/TypeScript-Sublime-Plugin",
 		"https://github.com/kylebebak/SublimeJEDI",
+		"https://github.com/kylebebak/SublimeLinter",
 		"https://github.com/kylebebak/sublime_date_diff",
 		"https://github.com/kylebebak/sublime-mypy-reveal",
 		"https://github.com/noahcoad/open-url"
