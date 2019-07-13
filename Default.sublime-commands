@@ -113,14 +113,4 @@
     "command": "package_reloader_reload",
     "args": { "pkg_name": "TypeScript" }
   },
-
-  {
-    "caption": "Jedi GoTo Definition",
-    "command": "sublime_jedi_goto"
-  },
-
-  {
-    "caption": "Jedi Find Usages",
-    "command": "sublime_jedi_find_usages"
-  }
 ]

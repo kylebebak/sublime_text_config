@@ -1,5 +1,5 @@
 {
   "only_complete_after_regex": "\\.|\\(",
-  "highlight_usages_on_hover": true,
-  "highlight_usages_color": "region.redish"
+  "highlight_usages_on_select": true,
+  "highlight_usages_color": "region.bluish"
 }
