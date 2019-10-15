@@ -109,8 +109,14 @@
   },
 
   {
-    "caption": "Reload TypeScript Package",
+    "caption": "Reload/Restart TypeScript Package",
     "command": "package_reloader_reload",
     "args": { "pkg_name": "TypeScript" }
+  },
+
+  {
+    "caption": "Reload/Restart SublimeJEDI Package",
+    "command": "package_reloader_reload",
+    "args": { "pkg_name": "Jedi - Python autocompletion" }
   },
 ]

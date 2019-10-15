@@ -5,6 +5,7 @@
 	],
 	"auto_complete_cycle": true,
 	"auto_complete_selector": "source, plain.text, text.html.markdown.gfm",
+	"additional_path_items": ["/Users/kylebebak/.pyenv/shims/"],
 	"binary_file_patterns":
 	[
 		"*.dds",

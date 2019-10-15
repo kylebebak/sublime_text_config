@@ -4,10 +4,10 @@ import React from 'react'
 
 import Styles from './${1:Class}.module.css'
 
-export interface ${1:Class}Props {
+export interface Props {
 }
 
-const ${1:Class} = ({  }: ${1:Class}Props) => {
+const ${1:Class} = ({  }: Props) => {
   return (
     ${2:null}
   )

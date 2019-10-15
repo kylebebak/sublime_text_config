@@ -619,6 +619,11 @@
     "keys": ["super+alt+b", "super+alt+b"],
     "command": "copy_file_path_and_line_number"
   },
+  {
+    "keys": ["super+alt+b", "super+alt+v"],
+    "command": "copy_file_path_and_line_number",
+    "args": { "include_text": true }
+  },
 
   // mypy_reveal
   {

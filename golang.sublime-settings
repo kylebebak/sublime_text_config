@@ -1,0 +1,4 @@
+{
+	// see: https://github.com/golang/sublime-config/blob/master/docs/user.md#global-sublime-text-settings
+	"GOPATH": "/usr/local/go"
+}

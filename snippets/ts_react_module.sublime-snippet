@@ -4,10 +4,10 @@ import React from 'react'
 
 import Styles from './${1:Class}.module.css'
 
-export interface ${1:Class}Props {
+export interface Props {
 }
 
-class ${1:Class} extends React.Component<${1:Class}Props, {}> {
+class ${1:Class} extends React.Component<Props, {}> {
   static defaultProps = {}
 
   state = {}

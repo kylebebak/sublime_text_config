@@ -2,7 +2,9 @@
 {
   // set to true to print extra information in the console
   "debug": false,
-
+  "paths": {
+    "osx": ["/Users/kylebebak/.pyenv/shims/"]
+  },
   "linters": {
     "eslint": {
       "env": { "PATH": "/usr/local/bin" },
