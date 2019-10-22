@@ -3,9 +3,12 @@
 	"added_words":
 	[
 	],
+	"additional_path_items":
+	[
+		"/Users/kylebebak/.pyenv/shims/"
+	],
 	"auto_complete_cycle": true,
 	"auto_complete_selector": "source, plain.text, text.html.markdown.gfm",
-	"additional_path_items": ["/Users/kylebebak/.pyenv/shims/"],
 	"binary_file_patterns":
 	[
 		"*.dds",
@@ -29,7 +32,7 @@
 	"caret_extra_width": 2,
 	"caret_style": "phase",
 	"close_windows_when_empty": false,
-	"color_scheme": "Packages/Color Scheme - Default/Solarized (Light).tmTheme",
+	"color_scheme": "Packages/Color Scheme - Legacy/Solarized (Light).tmTheme",
 	"enable_language_service_for_javascript": false,
 	"ensure_newline_at_eof_on_save": true,
 	"extract_sublime_package_ask_on_open": true,
