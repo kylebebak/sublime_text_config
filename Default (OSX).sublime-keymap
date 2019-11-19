@@ -603,7 +603,7 @@
   },
 
   // wrap plus
-  { "keys": ["alt+w"], "command": "wrap_lines_plus", "args": { "width": 82 } },
+  { "keys": ["alt+w"], "command": "wrap_lines_plus", "args": { "width": 80 } },
 
   // GitSavvy
   { "keys": ["super+alt+g", "super+alt+g"], "command": "gs_show_status" },
