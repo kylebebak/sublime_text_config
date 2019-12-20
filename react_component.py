@@ -4,57 +4,6 @@ import sublime_plugin
 import os
 
 
-package = """{{
-  "name": "{component}",
-  "version": "0.0.0",
-  "private": true,
-  "main": "./{component}.js"
-}}
-"""
-
-module = """import React from 'react'
-import PropTypes from 'prop-types'
-
-import Styles from './{component}.module.css'
-
-class {component} extends React.Component {{
-  constructor(props) {{
-    super(props)
-    this.state = {{
-    }}
-  }}
-
-  render() {{
-    return (
-      null
-    )
-  }}
-}}
-
-{component}.propTypes = {{
-}}
-
-export default {component}
-"""
-
-module_stateless = """import React from 'react'
-import PropTypes from 'prop-types'
-
-import Styles from './{component}.module.css'
-
-const {component} = ({{  }}) => {{
-  return (
-    null
-  )
-}}
-
-{component}.propTypes = {{
-}}
-
-export default {component}
-"""
-
-
 class ReactComponentCommand(sublime_plugin.WindowCommand):
     def run(self, stateless):
         file_name = self.window.active_view().file_name()
@@ -81,13 +30,5 @@ def make_component(directory, name, stateless=True):
     os.makedirs(path)
     os.chdir(path)
 
-    with open('package.json', 'w') as file:
-        file.write(package.format(component=name))
-
-    with open('{}.js'.format(name), 'w') as file:
-        if stateless:
-            file.write(module_stateless.format(component=name))
-        else:
-            file.write(module.format(component=name))
-
-    open('{}.module.css'.format(name), 'a').close()
+    open('{}.tsx'.format(name), 'a').close()
+    open('{}.module.scss'.format(name), 'a').close()
