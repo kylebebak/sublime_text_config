@@ -2,7 +2,6 @@
 	<content><![CDATA[
 import React from 'react'
 import { StyleSheet, View, Text } from 'react-native'
-import PropTypes from 'prop-types'
 
 const styles = StyleSheet.create({
 })
@@ -19,9 +18,6 @@ class ${1:Class} extends React.Component {
       ${2:null}
     )
   }
-}
-
-${1:Class}.propTypes = {
 }
 
 export default ${1:Class}

@@ -1,17 +1,13 @@
 <snippet>
 	<content><![CDATA[
 import React from 'react'
-import PropTypes from 'prop-types'
 
-import Styles from './${1:Class}.module.css'
+import Styles from './${1:Class}.module.scss'
 
 function ${1:Class}({  }) {
   return (
     ${2:null}
   )
-}
-
-${1:Class}.propTypes = {
 }
 
 export default ${1:Class}

@@ -3,7 +3,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Styles from './${1:Class}.module.css'
+import Styles from './${1:Class}.module.scss'
 
 class ${1:Class} extends React.Component {
   constructor(props) {
@@ -17,9 +17,6 @@ class ${1:Class} extends React.Component {
       ${2:null}
     )
   }
-}
-
-${1:Class}.propTypes = {
 }
 
 export default ${1:Class}
