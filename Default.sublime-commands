@@ -10,14 +10,8 @@
   },
 
   {
-    "caption": "Custom: Create React Component (Stateless)",
-    "command": "react_component",
-    "args": { "stateless": true }
-  },
-  {
     "caption": "Custom: Create React Component",
     "command": "react_component",
-    "args": { "stateless": false }
   },
 
   { "caption": "Custom: Show Scope Name", "command": "show_scope_name" },
