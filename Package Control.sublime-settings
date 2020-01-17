@@ -46,6 +46,7 @@
 		"SublimeLinter-eslint",
 		"SublimeLinter-flake8",
 		"TOML",
+		"TypeScript",
 		"UnitTesting",
 		"Wrap Plus"
 	],
