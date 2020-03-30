@@ -12,8 +12,8 @@
 	"extensions":
 	[
 		"pyw",
-		"py3",
-		"py"
+		"py",
+		"py3"
 	],
 	"indent_guide_options":
 	[

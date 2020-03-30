@@ -2,8 +2,7 @@
 	"extensions":
 	[
 		"md",
-		"mdown",
-		"txt"
+		"mdown"
 	],
 	"line_numbers": true,
 	"tab_size": 2,

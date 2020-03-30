@@ -1,11 +1,11 @@
 {
 	"extensions":
 	[
-		"svg",
-		"xsd",
+		"xml.dist",
 		"xslt",
-		"xml",
-		"xml.dist"
+		"xsd",
+		"svg",
+		"xml"
 	],
 	"hidden_extensions":
 	[
