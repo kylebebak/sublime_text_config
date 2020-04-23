@@ -1,22 +1,17 @@
 <snippet>
 	<content><![CDATA[
 import React from 'react'
-import PropTypes from 'prop-types'
 
 import Styles from './${1:Class}.module.scss'
 
-class ${1:Class} extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-    }
-  }
+export interface Props {
+}
 
-  render() {
-    return (
-      ${2:null}
-    )
-  }
+function ${1:Class}({}: Props) {
+
+  return (
+    ${2:null}
+  )
 }
 
 export default ${1:Class}
@@ -24,5 +19,5 @@ export default ${1:Class}
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>react</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
-	<scope>source.js</scope>
+	<scope>source.tsx</scope>
 </snippet>

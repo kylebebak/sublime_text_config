@@ -6,24 +6,16 @@ import { StyleSheet, View, Text } from 'react-native'
 const styles = StyleSheet.create({
 })
 
-class ${1:Class} extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-    }
-  }
-
-  render() {
-    return (
-      ${2:null}
-    )
-  }
+const ${1:Class} = ({  }) => {
+  return (
+    ${2:null}
+  )
 }
 
 export default ${1:Class}
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>reactn</tabTrigger>
+	<tabTrigger>reactns</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<scope>source.js</scope>
 </snippet>
