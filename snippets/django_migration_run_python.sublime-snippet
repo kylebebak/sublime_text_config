@@ -7,6 +7,10 @@ from django.db import migrations
 #    # copy and redefine some instance method from model here
 
 
+def reverse_function(apps, schema_editor):
+    pass
+
+
 def function(apps, schema_editor):
     # DON'T TRY to use instance methods in migrations; redefine instance methods in migration
     ModelName = apps.get_model('appname', 'ModelName')
@@ -20,7 +24,7 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RunPython(function),
+        migrations.RunPython(function, reverse_code=reverse_function),
     ]
 
 ]]></content>
