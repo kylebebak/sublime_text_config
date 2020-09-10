@@ -24,6 +24,7 @@
 		"*.tga",
 		"*.ttf",
 		"*.zip",
+		"*.rdb",
 		"go/bin"
 	],
 	"bold_folder_labels": true,

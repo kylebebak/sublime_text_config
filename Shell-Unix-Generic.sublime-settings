@@ -2,8 +2,8 @@
 	"extensions":
 	[
 		"bash",
-		"zsh",
+		"conf",
 		"sh",
-		"conf"
+		"zsh"
 	]
 }

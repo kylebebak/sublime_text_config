@@ -11,9 +11,9 @@
 	"ensure_newline_at_eof_on_save": true,
 	"extensions":
 	[
-		"pyw",
+		"py3",
 		"py",
-		"py3"
+		"pyw"
 	],
 	"indent_guide_options":
 	[
