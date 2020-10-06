@@ -14,6 +14,7 @@
 !*.sublime-commands
 !*.sublime-color-scheme
 !Seti_UI
+!MaterialMonokaiLight.tmTheme
 
 # but DO ignore this guy, it has my GitHub API token
 GitSavvy.sublime-settings
