@@ -5,7 +5,8 @@
 	],
 	"additional_path_items":
 	[
-		"/Users/kylebebak/.pyenv/shims/"
+		"/Users/kylebebak/.pyenv/shims",
+		"/Users/kylebebak/.nvm/current/bin"
 	],
 	"auto_complete_cycle": true,
 	"auto_complete_selector": "source, plain.text, text.html.markdown.gfm",
@@ -101,7 +102,7 @@
 	"match_brackets_square": false,
 	"match_tags": false,
 	"mini_diff": false,
-	"node_path": "/usr/local/bin/node",
+	"node_path": "/Users/kylebebak/.nvm/current/bin/node",
 	"open_files_in_new_window": false,
 	"rulers":
 	[

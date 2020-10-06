@@ -27,6 +27,8 @@
 		"Jedi - Python autocompletion",
 		"JSCustom",
 		"JsPrettier",
+		"LSP",
+		"LSP-pyright",
 		"MarkdownEditing",
 		"MoveTab",
 		"Package Control",

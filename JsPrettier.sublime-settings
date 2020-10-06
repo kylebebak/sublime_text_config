@@ -1,5 +1,5 @@
 {
-  "node_path": "/usr/local/bin/node",
+  "node_path": "/Users/kylebebak/.nvm/current/bin/node",
   "auto_format_on_save": false,
   "auto_format_on_save_excludes": [
     "*/node_modules/*",
