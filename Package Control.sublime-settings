@@ -7,7 +7,6 @@
 	"installed_packages":
 	[
 		"Advanced CSV",
-		"All Autocomplete",
 		"ApplySyntax",
 		"AutomaticPackageReloader",
 		"BracketHighlighter",
@@ -42,6 +41,7 @@
 		"SideBarEnhancements",
 		"Sort Lines (Numerically)",
 		"sublack",
+		"SublimeAllAutocomplete",
 		"SublimeLinter",
 		"SublimeLinter-contrib-mypy",
 		"SublimeLinter-eslint",
@@ -55,9 +55,6 @@
 	[
 		"https://github.com/kylebebak/Requester",
 		"https://github.com/kylebebak/SublimeAllAutocomplete",
-		"https://github.com/kylebebak/TypeScript-Sublime-Plugin",
-		"https://github.com/kylebebak/SublimeJEDI",
-		"https://github.com/kylebebak/SublimeLinter",
 		"https://github.com/kylebebak/sublime_date_diff",
 		"https://github.com/kylebebak/sublime-mypy-reveal",
 		"https://github.com/noahcoad/open-url"
