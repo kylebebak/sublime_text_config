@@ -765,4 +765,6 @@
     "keys": ["ctrl+l"],
     "command": "sublime_linter_line_report"
   }
+
+  // Emmet works in jsx/tsx by default, but only when the tag is prefixed with <
 ]

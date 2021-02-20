@@ -11,7 +11,7 @@
 
   {
     "caption": "Custom: Create React Component",
-    "command": "react_component",
+    "command": "react_component"
   },
 
   { "caption": "Custom: Show Scope Name", "command": "show_scope_name" },
@@ -97,7 +97,7 @@
 
   {
     "caption": "Clipboard: Paste From History",
-    "command": "paste_from_history",
+    "command": "paste_from_history"
   },
 
   {
