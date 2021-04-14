@@ -1,4 +1,12 @@
 {
-  "auto_show_diagnostics_panel": "never",
-  "auto_show_diagnostics_panel_level": 0,
+	"auto_show_diagnostics_panel": "never",
+	"auto_show_diagnostics_panel_level": 0,
+	"clients":
+	{
+		"gopls":
+		{
+			"enabled": true,
+      "command": ["/Users/kylebebak/Code/go/bin/gopls"]
+		}
+	}
 }
