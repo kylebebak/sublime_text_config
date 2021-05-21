@@ -25,6 +25,12 @@
     "args": { "type": "multi" }
   },
 
+  {
+    "keys": ["super+shift+e"],
+    "command": "lsp_symbol_definition",
+    "context": [{ "key": "selector", "operator": "equal", "operand": "source.python" }]
+  },
+
   // delete current line
   {
     "keys": ["super+shift+k"],
@@ -580,24 +586,6 @@
     "args": { "include_text": true }
   },
 
-  // mypy_reveal
-  {
-    "keys": ["ctrl+t"],
-    "command": "mypy_reveal",
-    "context": [{ "key": "selector", "operator": "equal", "operand": "source.python" }]
-  },
-  {
-    "keys": ["alt+t"],
-    "command": "mypy_reveal",
-    "args": {
-      "locals": true
-    },
-    "context": [{ "key": "selector", "operator": "equal", "operand": "source.python" }]
-  },
-
-  // GoSublime, https://github.com/DisposaBoy/GoSublime
-  { "keys": ["super+.", "super+l"], "command": "gs_comp_lint" },
-
   // BracketHighlighter
 
   // go to left bracket
@@ -745,19 +733,6 @@
     "keys": ["super+ctrl+alt+t"],
     "command": "package_reloader_reload",
     "args": { "pkg_name": "TypeScript" }
-  },
-
-  // Jedi
-  {
-    "keys": ["super+shift+e"],
-    "command": "sublime_jedi_goto",
-    "context": [{ "key": "selector", "operator": "equal", "operand": "source.python" }]
-  },
-
-  {
-    "keys": ["ctrl+f"],
-    "command": "sublime_jedi_find_usages",
-    "context": [{ "key": "selector", "operator": "equal", "operand": "source.python" }]
   },
 
   // Sublime Linter

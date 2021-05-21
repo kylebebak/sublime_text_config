@@ -34,7 +34,6 @@
 	"caret_extra_width": 2,
 	"caret_style": "phase",
 	"close_windows_when_empty": false,
-	"color_scheme": "Packages/User/MaterialMonokaiLight.tmTheme",
 	"enable_language_service_for_javascript": false,
 	"ensure_newline_at_eof_on_save": true,
 	"extract_sublime_package_ask_on_open": true,
@@ -86,7 +85,7 @@
 	"ignored_packages":
 	[
 		"Markdown",
-		"Vintage"
+		"Vintage",
 	],
 	"indent_guide_options":
 	[
@@ -114,5 +113,5 @@
 	"trim_trailing_white_space_on_save": true,
 	"use_tab_stops": true,
 	"wide_caret": false,
-	"word_wrap": true
+	"word_wrap": true,
 }

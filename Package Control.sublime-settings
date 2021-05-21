@@ -22,7 +22,6 @@
 		"GitGutter",
 		"GitSavvy",
 		"Gofmt",
-		"Jedi - Python autocompletion",
 		"JsPrettier",
 		"LESS",
 		"LSP",
@@ -42,21 +41,18 @@
 		"SideBarEnhancements",
 		"Sort Lines (Numerically)",
 		"sublack",
-		"SublimeAllAutocomplete",
 		"SublimeLinter",
 		"SublimeLinter-eslint",
 		"SublimeLinter-flake8",
 		"TOML",
 		"TypeScript",
 		"UnitTesting",
-		"Wrap Plus"
+		"Wrap Plus",
 	],
 	"repositories":
 	[
 		"https://github.com/kylebebak/Requester",
-		"https://github.com/kylebebak/SublimeAllAutocomplete",
 		"https://github.com/kylebebak/sublime_date_diff",
-		"https://github.com/kylebebak/sublime-mypy-reveal",
 		"https://github.com/noahcoad/open-url"
-	]
+	],
 }
