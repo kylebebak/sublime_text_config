@@ -114,4 +114,5 @@
 	"use_tab_stops": true,
 	"wide_caret": false,
 	"word_wrap": true,
+	"color_scheme": "Mariana.sublime-color-scheme",
 }

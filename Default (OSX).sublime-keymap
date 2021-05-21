@@ -659,19 +659,6 @@
     "args": { "show_menu": false }
   },
 
-  // GoSublime
-  {
-    "keys": ["super+ctrl+g"],
-    "command": "gs9o_open",
-    "args": { "run": ["replay"] }
-  },
-  {
-    "keys": ["super+.", "super+g"],
-    "command": "go_guru_goto_definition",
-    "args": { "output": false },
-    "context": [{ "key": "selector", "operator": "equal", "operand": "source.go" }]
-  },
-
   // Prettier
   { "keys": ["super+ctrl+alt+f"], "command": "js_prettier" },
 
@@ -740,6 +727,4 @@
     "keys": ["ctrl+l"],
     "command": "sublime_linter_line_report"
   }
-
-  // Emmet works in jsx/tsx by default, but only when the tag is prefixed with <
 ]
