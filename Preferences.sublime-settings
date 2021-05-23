@@ -110,7 +110,7 @@
 	"tab_size": 2,
 	"theme": "Seti.sublime-theme",
 	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": true,
+	"trim_trailing_white_space_on_save": "all",
 	"use_tab_stops": true,
 	"wide_caret": false,
 	"word_wrap": true,
