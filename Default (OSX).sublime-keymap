@@ -40,11 +40,7 @@
     "args": { "file": "Packages/Default/Delete Line.sublime-macro" }
   },
 
-  { "keys": ["ctrl+alt+super+left"], "command": "next_view_in_stack" },
-  { "keys": ["ctrl+alt+super+right"], "command": "prev_view_in_stack" },
-
   { "keys": ["super+0"], "command": "focus_side_bar" },
-  { "keys": ["alt+shift+f"], "command": "reindent" },
 
   // multiple cursors
   {
@@ -68,108 +64,6 @@
   // files
   { "keys": ["super+alt+r", "super+alt+r"], "command": "reveal_in_side_bar" },
 
-  // EXTRA AUTO-PAIR CHARACTERS
-
-  // auto-pair grave accents
-  {
-    "keys": ["`"],
-    "command": "insert_snippet",
-    "args": { "contents": "`$0`" },
-    "context": [
-      {
-        "key": "setting.auto_match_enabled",
-        "operator": "equal",
-        "operand": true
-      },
-      {
-        "key": "selection_empty",
-        "operator": "equal",
-        "operand": true,
-        "match_all": true
-      },
-      {
-        "key": "following_text",
-        "operator": "regex_contains",
-        "operand": "^(?:\t| |\\)|]|;|\\}|$)",
-        "match_all": true
-      }
-    ]
-  },
-  {
-    "keys": ["`"],
-    "command": "insert_snippet",
-    "args": { "contents": "`${0:$SELECTION}`" },
-    "context": [
-      {
-        "key": "setting.auto_match_enabled",
-        "operator": "equal",
-        "operand": true
-      },
-      {
-        "key": "selection_empty",
-        "operator": "equal",
-        "operand": false,
-        "match_all": true
-      }
-    ]
-  },
-  {
-    "keys": ["`"],
-    "command": "move",
-    "args": { "by": "characters", "forward": true },
-    "context": [
-      {
-        "key": "setting.auto_match_enabled",
-        "operator": "equal",
-        "operand": true
-      },
-      {
-        "key": "selection_empty",
-        "operator": "equal",
-        "operand": true,
-        "match_all": true
-      },
-      {
-        "key": "following_text",
-        "operator": "regex_contains",
-        "operand": "^`",
-        "match_all": true
-      }
-    ]
-  },
-  {
-    "keys": ["backspace"],
-    "command": "run_macro_file",
-    "args": {
-      "file": "res://Packages/Default/Delete Left Right.sublime-macro"
-    },
-    "context": [
-      {
-        "key": "setting.auto_match_enabled",
-        "operator": "equal",
-        "operand": true
-      },
-      {
-        "key": "selection_empty",
-        "operator": "equal",
-        "operand": true,
-        "match_all": true
-      },
-      {
-        "key": "preceding_text",
-        "operator": "regex_contains",
-        "operand": "`$",
-        "match_all": true
-      },
-      {
-        "key": "following_text",
-        "operator": "regex_contains",
-        "operand": "^`",
-        "match_all": true
-      }
-    ]
-  },
-
   // MULTIPLE COMMANDS
   // (these depend on run_multiple_commands.py)
 
@@ -190,117 +84,7 @@
     }
   },
 
-  // search for text in goto anything panel
-  {
-    "keys": ["ctrl+alt+super+p"],
-    "command": "run_multiple_commands",
-    "args": {
-      "commands": [
-        { "command": "expand_selection", "args": { "to": "word" } },
-        { "command": "copy", "context": "window" },
-        {
-          "command": "show_overlay",
-          "args": { "overlay": "goto", "show_files": true },
-          "context": "window"
-        },
-        { "command": "paste", "context": "window" }
-      ]
-    }
-  },
-
-  // copy and delete current line
-  {
-    "keys": ["super+shift+m"],
-    "command": "run_multiple_commands",
-    "args": {
-      "commands": [
-        {
-          "command": "move_to",
-          "args": { "extend": false, "to": "bol" },
-          "context": "window"
-        },
-        {
-          "command": "move_to",
-          "args": { "extend": true, "to": "eol" },
-          "context": "window"
-        },
-        { "command": "copy", "context": "window" },
-        { "command": "left_delete", "context": "window" },
-        {
-          "command": "run_macro_file",
-          "args": { "file": "Packages/Default/Delete Line.sublime-macro" },
-          "context": "window"
-        }
-      ]
-    }
-  },
-
-  // copy current line
-  {
-    "keys": ["alt+c"],
-    "command": "run_multiple_commands",
-    "args": {
-      "commands": [
-        {
-          "command": "move_to",
-          "args": { "extend": false, "to": "bol" },
-          "context": "window"
-        },
-        {
-          "command": "move_to",
-          "args": { "extend": true, "to": "eol" },
-          "context": "window"
-        },
-        { "command": "copy", "context": "window" },
-        {
-          "command": "move",
-          "args": { "by": "lines", "forward": true },
-          "context": "window"
-        }
-      ]
-    }
-  },
-
-  // copy current file to new file
-  {
-    "keys": ["super+shift+o"],
-    "command": "run_multiple_commands",
-    "args": {
-      "commands": [
-        { "command": "select_all", "context": "window" },
-        { "command": "copy", "context": "window" },
-        {
-          "command": "move_to",
-          "args": { "extend": false, "to": "bof" },
-          "context": "window"
-        },
-        { "command": "new_file", "context": "window" },
-        { "command": "paste", "context": "window" },
-        {
-          "command": "move_to",
-          "args": { "extend": false, "to": "bof" },
-          "context": "window"
-        }
-      ]
-    }
-  },
-
   // move up and down multiple lines at a time
-  {
-    "keys": ["ctrl+alt+enter"],
-    "command": "run_multiple_commands",
-    "args": {
-      "commands": [
-        {
-          "command": "run_macro_file",
-          "args": { "file": "Packages/Default/Add Line.sublime-macro" },
-          "context": "window"
-        }
-      ],
-      "repetitions": 5
-    }
-  },
-
   {
     "keys": ["alt+up"],
     "command": "run_multiple_commands",
@@ -358,98 +142,6 @@
         }
       ],
       "repetitions": 5
-    }
-  },
-
-  {
-    "keys": ["ctrl+alt+super+up"],
-    "command": "run_multiple_commands",
-    "args": {
-      "commands": [{ "command": "swap_line_up", "context": "window" }],
-      "repetitions": 5
-    }
-  },
-
-  {
-    "keys": ["ctrl+alt+super+down"],
-    "command": "run_multiple_commands",
-    "args": {
-      "commands": [{ "command": "swap_line_down", "context": "window" }],
-      "repetitions": 5
-    }
-  },
-
-  {
-    "keys": ["ctrl+alt+left"],
-    "command": "run_multiple_commands",
-    "args": {
-      "commands": [
-        {
-          "command": "move",
-          "args": { "by": "characters", "forward": false },
-          "context": "window"
-        }
-      ],
-      "repetitions": 10
-    },
-    "context": [
-      {
-        "key": "setting.requester.response_view",
-        "operator": "equal",
-        "operand": false
-      }
-    ]
-  },
-
-  {
-    "keys": ["ctrl+alt+right"],
-    "command": "run_multiple_commands",
-    "args": {
-      "commands": [
-        {
-          "command": "move",
-          "args": { "by": "characters", "forward": true },
-          "context": "window"
-        }
-      ],
-      "repetitions": 10
-    },
-    "context": [
-      {
-        "key": "setting.requester.response_view",
-        "operator": "equal",
-        "operand": false
-      }
-    ]
-  },
-
-  {
-    "keys": ["ctrl+alt+shift+left"],
-    "command": "run_multiple_commands",
-    "args": {
-      "commands": [
-        {
-          "command": "move",
-          "args": { "by": "characters", "forward": false, "extend": true },
-          "context": "window"
-        }
-      ],
-      "repetitions": 10
-    }
-  },
-
-  {
-    "keys": ["ctrl+alt+shift+right"],
-    "command": "run_multiple_commands",
-    "args": {
-      "commands": [
-        {
-          "command": "move",
-          "args": { "by": "characters", "forward": true, "extend": true },
-          "context": "window"
-        }
-      ],
-      "repetitions": 10
     }
   },
 
@@ -551,18 +243,6 @@
         "match_all": true
       }
     ]
-  },
-
-  // auto-save
-  {
-    "keys": ["ctrl+shift+s"],
-    "command": "auto_save",
-    "args": { "all_files": false }
-  },
-  {
-    "keys": ["ctrl+super+s"],
-    "command": "auto_save",
-    "args": { "all_files": false, "backup": true }
   },
 
   // wrap plus
