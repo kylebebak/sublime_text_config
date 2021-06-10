@@ -28,7 +28,9 @@
   {
     "keys": ["super+shift+e"],
     "command": "lsp_symbol_definition",
-    "context": [{ "key": "selector", "operator": "equal", "operand": "source.python" }]
+    "context": [
+      { "key": "selector", "operator": "equal", "operand": "source.python | source.ts | source.tsx | source.go" }
+    ]
   },
 
   // delete current line
@@ -662,64 +664,11 @@
   // Prettier
   { "keys": ["super+ctrl+alt+f"], "command": "js_prettier" },
 
-  // TypeScript
-  {
-    "keys": ["f10"],
-    "command": "typescript_project_error_list",
-    "context": [
-      {
-        "key": "selector",
-        "operator": "equal",
-        "operand": "source.ts | source.tsx"
-      }
-    ]
-  },
-  {
-    "keys": ["super+b"],
-    "command": "typescript_build",
-    "context": [
-      {
-        "key": "selector",
-        "operator": "equal",
-        "operand": "source.ts | source.tsx"
-      }
-    ]
-  },
-  {
-    "keys": ["super+shift+e"],
-    "command": "typescript_go_to_definition",
-    "context": [
-      {
-        "key": "selector",
-        "operator": "equal",
-        "operand": "source.ts | source.tsx"
-      }
-    ]
-  },
-  {
-    "keys": ["ctrl+e"],
-    "command": "typescript_go_to_type_definition",
-    "context": [
-      {
-        "key": "selector",
-        "operator": "equal",
-        "operand": "source.ts | source.tsx"
-      }
-    ]
-  },
-
   // Color Helper
   {
     "keys": ["super+shift+c"],
     "command": "color_helper",
     "args": { "mode": "info" }
-  },
-
-  // AutomaticPackageReloader
-  {
-    "keys": ["super+ctrl+alt+t"],
-    "command": "package_reloader_reload",
-    "args": { "pkg_name": "TypeScript" }
   },
 
   // Sublime Linter
