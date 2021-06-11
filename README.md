@@ -1,6 +1,6 @@
 ## Sublime Text 3 Configuration
 
-This repo contains the useful (mostly non-generated) files in the `~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/` directory. Check [.gitignore](.gitignore) to see which files belong in version control.
+This repo contains the useful (mostly non-generated) files in the `~/Library/Application\ Support/Sublime\ Text/Packages/User/` directory. Check [.gitignore](.gitignore) to see which files belong in version control.
 
 **Sublime Text** is a highly extensible, amazing text editor. Check [Package Control.sublime-settings](Package%20Control.sublime-settings) to see which packages I've installed.
 

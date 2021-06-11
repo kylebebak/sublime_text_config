@@ -2,19 +2,15 @@
 	<content><![CDATA[
 import React from 'react'
 
-import Styles from './${1:Class}.module.scss'
-
 export interface Props {
 }
 
-function ${1:Class}({}: Props) {
+export function ${1:Class}({}: Props) {
 
   return (
     ${2:null}
   )
 }
-
-export default ${1:Class}
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>react</tabTrigger>

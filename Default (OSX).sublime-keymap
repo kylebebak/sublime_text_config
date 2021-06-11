@@ -19,18 +19,16 @@
   { "keys": ["super+shift+r"], "command": "goto_symbol_in_project" },
   { "keys": ["super+shift+minus"], "command": "jump_back" },
   { "keys": ["super+shift+plus"], "command": "jump_forward" },
+
+  // LSP
   {
     "keys": ["super+shift+e"],
-    "command": "show_symbols",
-    "args": { "type": "multi" }
+    "command": "lsp_symbol_definition"
   },
 
   {
-    "keys": ["super+shift+e"],
-    "command": "lsp_symbol_definition",
-    "context": [
-      { "key": "selector", "operator": "equal", "operand": "source.python | source.ts | source.tsx | source.go" }
-    ]
+    "keys": ["ctrl+e"],
+    "command": "lsp_symbol_type_definition"
   },
 
   // delete current line
@@ -64,8 +62,27 @@
   // files
   { "keys": ["super+alt+r", "super+alt+r"], "command": "reveal_in_side_bar" },
 
-  // MULTIPLE COMMANDS
-  // (these depend on run_multiple_commands.py)
+  // auto-pair grave accents around selected text
+  {
+    "keys": ["`"],
+    "command": "insert_snippet",
+    "args": { "contents": "`${0:$SELECTION}`" },
+    "context": [
+      {
+        "key": "setting.auto_match_enabled",
+        "operator": "equal",
+        "operand": true
+      },
+      {
+        "key": "selection_empty",
+        "operator": "equal",
+        "operand": false,
+        "match_all": true
+      }
+    ]
+  },
+
+  // MULTIPLE COMMANDS; these depend on run_multiple_commands.py
 
   // search for text in files
   {
@@ -145,6 +162,24 @@
     }
   },
 
+  {
+    "keys": ["ctrl+alt+super+up"],
+    "command": "run_multiple_commands",
+    "args": {
+      "commands": [{ "command": "swap_line_up", "context": "window" }],
+      "repetitions": 5
+    }
+  },
+
+  {
+    "keys": ["ctrl+alt+super+down"],
+    "command": "run_multiple_commands",
+    "args": {
+      "commands": [{ "command": "swap_line_down", "context": "window" }],
+      "repetitions": 5
+    }
+  },
+
   //PACKAGES
 
   // Evaluate
@@ -189,63 +224,7 @@
     "args": { "action": "new" }
   },
 
-  // MarkdownEditing
-  {
-    "keys": ["tab"],
-    "command": "indent_list_item",
-    "context": [
-      {
-        "key": "selection_empty",
-        "operator": "equal",
-        "operand": true,
-        "match_all": true
-      },
-      {
-        "key": "preceding_text",
-        "operator": "regex_contains",
-        "operand": "^\\s*(>\\s*)?[*+\\-]\\s+$",
-        "match_all": true
-      },
-      {
-        "key": "following_text",
-        "operator": "regex_contains",
-        "operand": "^$",
-        "match_all": true
-      },
-      {
-        "key": "selector",
-        "operator": "equal",
-        "operand": "text.html.markdown",
-        "match_all": true
-      },
-      {
-        "key": "selector",
-        "operator": "not_equal",
-        "operand": "markup.raw",
-        "match_all": true
-      }
-    ]
-  },
-  {
-    "keys": ["tab"],
-    "command": "indent_list_multiitem",
-    "context": [
-      {
-        "key": "selection_empty",
-        "operator": "equal",
-        "operand": false,
-        "match_all": true
-      },
-      {
-        "key": "selector",
-        "operator": "equal",
-        "operand": "text.html.markdown",
-        "match_all": true
-      }
-    ]
-  },
-
-  // wrap plus
+  // Wrap Plus
   { "keys": ["alt+w"], "command": "wrap_lines_plus", "args": { "width": 80 } },
 
   // GitSavvy
@@ -260,10 +239,6 @@
   // file_path_and_line_number
   {
     "keys": ["super+alt+b", "super+alt+b"],
-    "command": "copy_file_path_and_line_number"
-  },
-  {
-    "keys": ["super+alt+b", "super+alt+v"],
     "command": "copy_file_path_and_line_number",
     "args": { "include_text": true }
   },
@@ -328,7 +303,7 @@
     }
   },
 
-  // UnitTesting, https://github.com/randy3k/UnitTesting
+  // Automatic Package Reloader
   { "keys": ["super+ctrl+alt+r"], "command": "package_reloader_reload" },
 
   // Requester
