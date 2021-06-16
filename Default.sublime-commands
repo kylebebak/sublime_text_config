@@ -1,15 +1,16 @@
 [
   {
-    "caption": "Custom: Reveal File In Sidebar",
-    "command": "reveal_in_side_bar"
+    "caption": "Copy File Path And Line Number",
+    "command": "copy_file_path_and_line_number",
+    "args": { "include_text": true }
   },
 
   {
-    "caption": "Custom: Copy File Path And Line Number",
-    "command": "copy_file_path_and_line_number"
+    "caption": "Reveal File In Sidebar",
+    "command": "reveal_in_side_bar"
   },
 
-  { "caption": "Custom: Show Scope Name", "command": "show_scope_name" },
+  { "caption": "Show Scope Name", "command": "show_scope_name" },
 
   {
     "caption": "Paste From History",
@@ -17,15 +18,10 @@
   },
 
   {
-    "caption": "Custom: Open With Chrome",
-    "command": "build",
-    "args": {
-      "build_system": "Packages/User/Chrome.sublime-build",
-      "variant": ""
-    }
+    "caption": "Toggle Spell Check",
+    "command": "toggle_setting",
+    "args": { "setting": "spell_check" }
   },
-
-  { "caption": "Alignment: Run", "command": "alignment" },
 
   {
     "caption": "Expand Selection: Matching Bracket",
@@ -39,39 +35,9 @@
     "args": { "to": "tag" }
   },
 
-  { "caption": "GoTests", "command": "gotests" },
-
-  { "caption": "GitGutter: Next Change", "command": "git_gutter_next_change" },
   {
-    "caption": "GitGutter: Previous Change",
-    "command": "git_gutter_prev_change"
-  },
-
-  {
-    "caption": "Wrap Plus: Wrap At 82 Chars",
+    "caption": "Wrap Plus: Wrap At 80 Chars",
     "command": "wrap_lines_plus",
-    "args": { "width": 82 }
-  },
-
-  {
-    "caption": "Toggle Distraction Free Mode (Full Screen)",
-    "command": "toggle_distraction_free"
-  },
-
-  {
-    "caption": "Toggle Spell Check",
-    "command": "toggle_setting",
-    "args": { "setting": "spell_check" }
-  },
-
-  {
-    "caption": "Clipboard: Paste From History",
-    "command": "paste_from_history"
-  },
-
-  {
-    "caption": "Reload/Restart TypeScript Package",
-    "command": "package_reloader_reload",
-    "args": { "pkg_name": "TypeScript" }
+    "args": { "width": 80 }
   },
 ]
