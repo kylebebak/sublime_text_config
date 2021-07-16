@@ -8,7 +8,6 @@
 !*.py
 !*.sublime-build
 !*.sublime-keymap
-!*.sublime-project
 !*.sublime-settings
 !*.sublime-commands
 !*.sublime-color-scheme

@@ -3,7 +3,7 @@
 	[
 		{
 			"characters": ".",
-			"selector": "source.python"
+			"selector": "source.python",
 		}
 	],
 	"detect_indentation": false,
@@ -13,7 +13,7 @@
 	[
 		"py3",
 		"py",
-		"pyw"
+		"pyw",
 	],
 	"indent_guide_options":
 	[
@@ -25,5 +25,5 @@
 		120
 	],
 	"tab_size": 4,
-	"trim_trailing_white_space_on_save": true
+	"trim_trailing_white_space_on_save": true,
 }
