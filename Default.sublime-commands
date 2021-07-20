@@ -13,7 +13,7 @@
   { "caption": "Show Scope Name", "command": "show_scope_name" },
 
   {
-    "caption": "Paste From History",
+    "caption": "Paste From Clipboard History",
     "command": "paste_from_history"
   },
 
