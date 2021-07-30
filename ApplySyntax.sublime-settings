@@ -19,8 +19,8 @@
   // Put your custom syntax rules here:
   "syntaxes": [
     {
-      "syntax": "TOML",
-      "rules": [{ "file_path": ".*/Pipfile$" }]
+      "syntax": "ShellScript/Bash",
+      "rules": [{ "file_path": ".*/\\.tmux\\.conf$" }]
     }
   ]
 }
