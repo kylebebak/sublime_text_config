@@ -21,6 +21,10 @@
     {
       "syntax": "ShellScript/Bash",
       "rules": [{ "file_path": ".*/\\.tmux\\.conf$" }]
+    },
+    {
+      "syntax": "INI/INI",
+      "rules": [{ "file_path": ".*/supervisord\\.conf$" }]
     }
   ]
 }

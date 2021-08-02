@@ -4,7 +4,7 @@
 		"gopls":
 		{
 			"enabled": true,
-      "command": ["/Users/kylebebak/Code/go/bin/gopls"],
+      "command": ["/Users/kylebebak/go/bin/gopls"],
 		},
 	},
 	"show_diagnostics_panel_on_save": 0,
