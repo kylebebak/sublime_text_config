@@ -330,5 +330,8 @@
   {
     "keys": ["ctrl+l"],
     "command": "sublime_linter_line_report"
-  }
+  },
+
+  // LSP
+  { "keys": ["super+alt+l", "super+alt+l"], "command": "lsp_restart_server" }
 ]
