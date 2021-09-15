@@ -3,6 +3,8 @@
 
   { "keys": ["super+k", "super+t"], "command": "title_case" },
 
+  { "keys": ["super+shift+d"], "command": "duplicate_line" },
+
   // symbols and navigation
   {
     "keys": ["super+e"],
