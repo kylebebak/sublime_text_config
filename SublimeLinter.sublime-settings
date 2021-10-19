@@ -13,15 +13,5 @@
       // exclude requester files
       "excludes": ["*/*.pyr"]
     },
-    "mypy": {
-      // exclude requester files
-      "excludes": ["*/*.pyr"]
-    },
-    "gotype": {
-      // see: https://github.com/SublimeLinter/SublimeLinter-gotype/issues/3
-      // could also `launchctl setenv GOPATH $GOPATH` to ensure ST picks up this env var
-      "executable": "/Users/kylebebak/Code/go/bin/gotype",
-      "env": { "GOPATH": "/Users/kylebebak/Code/go" }
-    }
   }
 }

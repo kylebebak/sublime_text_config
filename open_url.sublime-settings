@@ -28,5 +28,17 @@
     }
   ],
   "search_paths": ["src"],
-  "file_suffixes": [".js", ".ts", ".tsx"]
+  "file_suffixes": [".js", ".ts", ".tsx"],
+  "web_searchers": [
+    {
+      "label": "google search",
+      "url": "https://google.com/search?q=",
+      "encoding": "utf-8"
+    },
+    {
+      "label": "python search",
+      "url": "https://docs.python.org/3/search.html?check_keywords=yes&area=default&q=",
+      "encoding": "utf-8"
+    }
+  ]
 }

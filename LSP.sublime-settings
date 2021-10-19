@@ -1,12 +1,11 @@
 {
-	"clients":
-	{
-		"gopls":
-		{
+	"clients": {
+		"gopls": {
 			"enabled": true,
-      "command": ["/Users/kylebebak/go/bin/gopls"],
-		},
+			"command": ["/Users/kylebebak/go/bin/gopls"],
+			"selector": "source.go"
+		}
 	},
 	"show_diagnostics_panel_on_save": 0,
-	"show_code_actions": "",
+	"show_code_actions": ""
 }
