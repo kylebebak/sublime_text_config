@@ -335,5 +335,11 @@
   },
 
   // LSP
-  { "keys": ["super+alt+l", "super+alt+l"], "command": "lsp_restart_server" }
+  { "keys": ["super+alt+l", "super+alt+l"], "command": "lsp_restart_server" },
+
+  // sublack
+  {
+    "keys": ["super+ctrl+b"],
+    "command": "black_file"
+  },
 ]
