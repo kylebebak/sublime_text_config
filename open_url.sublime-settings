@@ -36,6 +36,11 @@
       "encoding": "utf-8"
     },
     {
+      "label": "elementary github search",
+      "url": "https://github.com/search?type=code&q=org%3Aelementary-robotics+",
+      "encoding": "utf-8"
+    },
+    {
       "label": "python search",
       "url": "https://docs.python.org/3/search.html?check_keywords=yes&area=default&q=",
       "encoding": "utf-8"
