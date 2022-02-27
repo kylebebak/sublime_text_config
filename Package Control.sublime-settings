@@ -50,6 +50,7 @@
 		"SublimeLinter",
 		"SublimeLinter-eslint",
 		"SublimeLinter-flake8",
+		"Terraform",
 		"TOML",
 		"UnitTesting",
 		"Wrap Plus",
