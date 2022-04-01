@@ -33,6 +33,9 @@
     "command": "lsp_symbol_type_definition"
   },
 
+  { "keys": ["super+alt+l", "super+alt+l"], "command": "lsp_restart_server" },
+  { "keys": ["ctrl+l"], "command": "lsp_hover"},
+
   // delete current line
   {
     "keys": ["super+shift+k"],
@@ -330,12 +333,9 @@
 
   // Sublime Linter
   {
-    "keys": ["ctrl+l"],
+    "keys": ["alt+l"],
     "command": "sublime_linter_line_report"
   },
-
-  // LSP
-  { "keys": ["super+alt+l", "super+alt+l"], "command": "lsp_restart_server" },
 
   // sublack
   {

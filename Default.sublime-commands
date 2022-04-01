@@ -40,4 +40,9 @@
     "command": "wrap_lines_plus",
     "args": { "width": 80 }
   },
+
+  {
+    "caption": "LSP: Show Hover Popup",
+    "command": "lsp_hover",
+  },
 ]
