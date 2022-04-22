@@ -5,7 +5,7 @@
 		"mdown"
 	],
 	"line_numbers": true,
-	"tab_size": 2,
+	"tab_size": 4,
 	"wrap_width": 100,
 	"color_scheme": "MarkdownEditor.sublime-color-scheme",
 	"rulers":
