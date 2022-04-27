@@ -1,7 +1,0 @@
-{
-	"rulers":
-  [
-    120
-  ],
-  "use_tab_stops": true, // explicitly set this to ensure TypeScript plugin doesn't break JS tab stops
-}

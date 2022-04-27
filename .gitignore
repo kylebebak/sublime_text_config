@@ -15,3 +15,16 @@
 
 # but DO ignore this guy, it has my GitHub API token
 GitSavvy.sublime-settings
+
+# unused settings
+UnitTesting.sublime-settings
+Bash.sublime-settings
+INI.sublime-settings
+PHP.sublime-settings
+Python.sublime-settings
+Ruby.sublime-settings
+Shell-Unix-Generic.sublime-settings
+XML.sublime-settings
+YAML.sublime-settings
+HTML\ (Rails).sublime-settings
+Ruby\ Haml.sublime-settings
