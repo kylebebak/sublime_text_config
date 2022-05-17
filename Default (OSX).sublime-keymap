@@ -64,6 +64,12 @@
     "args": { "to": "tag" }
   },
 
+  // Similar to `find_all {"close_panel": true}`, bound to `alt+enter`
+  {
+    "keys": ["ctrl+alt+enter"],
+    "command": "find_all_under",
+  },
+
   // files
   { "keys": ["super+alt+r", "super+alt+r"], "command": "reveal_in_side_bar" },
 
