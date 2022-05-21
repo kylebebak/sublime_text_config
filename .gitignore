@@ -8,23 +8,23 @@
 !*.py
 !*.sublime-build
 !*.sublime-keymap
-!*.sublime-settings
 !*.sublime-commands
-!*.sublime-color-scheme
 !Seti_UI
 
-# but DO ignore this guy, it has my GitHub API token
-GitSavvy.sublime-settings
-
-# unused settings
-UnitTesting.sublime-settings
-Bash.sublime-settings
-INI.sublime-settings
-PHP.sublime-settings
-Python.sublime-settings
-Ruby.sublime-settings
-Shell-Unix-Generic.sublime-settings
-XML.sublime-settings
-YAML.sublime-settings
-HTML\ (Rails).sublime-settings
-Ruby\ Haml.sublime-settings
+# and these settings files
+!ApplySyntax.sublime-settings
+!bh_core.sublime-settings
+!Emmet.sublime-settings
+!GitGutter.sublime-settings
+!Gofmt.sublime-settings
+!golang.sublime-settings
+!JsPrettier.sublime-settings
+!LSP.sublime-settings
+!Markdown.sublime-settings
+!nginx.sublime-settings
+!open_url.sublime-settings
+!Package\ Control.sublime-settings
+!Preferences.sublime-settings
+!Requester.sublime-settings
+!sublack.sublime-settings
+!SublimeLinter.sublime-settings

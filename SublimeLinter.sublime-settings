@@ -3,7 +3,7 @@
   // set to true to print extra information in the console
   "debug": false,
   "paths": {
-    "osx": ["/Users/kylebebak/.pyenv/shims/"]
+    "osx": ["~/.pyenv/shims/"]
   },
   "linters": {
     "eslint": {

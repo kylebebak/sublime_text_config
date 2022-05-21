@@ -1,13 +1,5 @@
 {
 	"Seti_bold_slctdfile_labels": true,
-	"added_words":
-	[
-	],
-	"additional_path_items":
-	[
-		"/Users/kylebebak/.pyenv/shims",
-		"/Users/kylebebak/.nvm/current/bin"
-	],
 	"auto_complete_cycle": true,
 	"auto_complete_selector": "source, plain.text, text.html.markdown.gfm",
 	"binary_file_patterns":
@@ -34,9 +26,7 @@
 	"caret_extra_width": 2,
 	"caret_style": "phase",
 	"close_windows_when_empty": false,
-	"enable_language_service_for_javascript": false,
 	"ensure_newline_at_eof_on_save": true,
-	"extract_sublime_package_ask_on_open": true,
 	"file_exclude_patterns":
 	[
 		"*.pyc",
@@ -101,7 +91,6 @@
 	"match_brackets_square": false,
 	"match_tags": false,
 	"mini_diff": false,
-	"node_path": "/Users/kylebebak/.nvm/current/bin/node",
 	"open_files_in_new_window": "never",
 	"rulers":
 	[
