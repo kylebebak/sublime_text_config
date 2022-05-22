@@ -9,6 +9,24 @@ from collections import namedtuple
 import os
 
 
+class DeleteOpenFileCommand(sublime_plugin.TextCommand):
+    def run(self, *args, **kwargs) -> None:
+        path: str | None = self.view.file_name()
+        if not path:
+            return
+        os.remove(path)
+
+
+class CopyViewNameCommand(sublime_plugin.TextCommand):
+    def run(self, *args, **kwargs) -> None:
+        name = self.view.name()
+        if not name:
+            return
+
+        sublime.set_clipboard(name)
+        self.view.window().status_message(f"copied \"{name}\"")
+
+
 BookmarkType = NamedTuple("Point", [("row", int), ("col", int), ("text", str)])
 Bookmark = namedtuple("Bookmark", ["row", "col", "text"])
 

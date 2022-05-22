@@ -1,13 +1,18 @@
 [
   {
-    "caption": "Copy File Path And Line Number",
+    "caption": "File: Copy Path And Line Number",
     "command": "copy_file_path_and_line_number",
     "args": { "include_text": true }
   },
 
   {
-    "caption": "Reveal File In Sidebar",
-    "command": "reveal_in_side_bar"
+    "caption": "File: Delete",
+    "command": "delete_open_file"
+  },
+
+  {
+    "caption": "View: Copy Name",
+    "command": "copy_view_name"
   },
 
   { "caption": "Show Scope Name", "command": "show_scope_name" },
