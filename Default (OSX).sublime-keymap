@@ -5,7 +5,7 @@
 
   { "keys": ["super+shift+d"], "command": "duplicate_line" },
 
-  // symbols and navigation
+  // Symbols and navigation
   {
     "keys": ["super+e"],
     "command": "goto_definition",
@@ -34,9 +34,9 @@
   },
 
   { "keys": ["super+alt+l", "super+alt+l"], "command": "lsp_restart_server" },
-  { "keys": ["ctrl+l"], "command": "lsp_hover"},
+  { "keys": ["ctrl+l"], "command": "lsp_hover" },
 
-  // delete current line
+  // Delete current line
   {
     "keys": ["super+shift+k"],
     "command": "run_macro_file",
@@ -45,7 +45,7 @@
 
   { "keys": ["super+0"], "command": "focus_side_bar" },
 
-  // multiple cursors
+  // Multiple cursors
   {
     "keys": ["super+alt+up"],
     "command": "select_lines",
@@ -57,23 +57,23 @@
     "args": { "forward": true }
   },
 
-  // selection
+  // Selection
   {
     "keys": ["super+shift+a"],
     "command": "expand_selection",
     "args": { "to": "tag" }
   },
 
-  // Similar to `find_all {"close_panel": true}`, bound to `alt+enter`
+  // Aka select all, similar to `find_all {"close_panel": true}`, bound to `alt+enter`
   {
     "keys": ["ctrl+alt+enter"],
-    "command": "find_all_under",
+    "command": "find_all_under"
   },
 
-  // files
+  // Files
   { "keys": ["super+alt+r", "super+alt+r"], "command": "reveal_in_side_bar" },
 
-  // auto-pair grave accents around selected text
+  // Auto-pair grave accents around selected text
   {
     "keys": ["`"],
     "command": "insert_snippet",
@@ -95,7 +95,7 @@
 
   // MULTIPLE COMMANDS; these depend on run_multiple_commands.py
 
-  // search for text in files
+  // Search for text in files
   {
     "keys": ["shift+super+s"],
     "command": "run_multiple_commands",
@@ -112,7 +112,7 @@
     }
   },
 
-  // move up and down multiple lines at a time
+  // Move up and down multiple lines at a time
   {
     "keys": ["alt+up"],
     "command": "run_multiple_commands",
@@ -191,10 +191,20 @@
     }
   },
 
-  //PACKAGES
+  // PACKAGES
 
   // Evaluate
-  { "keys": ["super+alt+ctrl+enter"], "command": "evaluate" },
+  {
+    "keys": ["super+alt+enter"],
+    "command": "evaluate",
+    "context": [
+      {
+        "key": "selection_empty",
+        "operator": "equal",
+        "operand": false
+      }
+    ]
+  },
 
   {
     "keys": ["super+alt+enter"],
@@ -213,7 +223,14 @@
         },
         { "command": "evaluate", "context": "window" }
       ]
-    }
+    },
+    "context": [
+      {
+        "key": "selection_empty",
+        "operator": "equal",
+        "operand": true
+      }
+    ]
   },
 
   // MoveTab
@@ -247,7 +264,7 @@
   },
   { "keys": ["super+alt+g", "super+alt+i"], "command": "gs_inline_diff" },
 
-  // file_path_and_line_number
+  // Copy file path and line number
   {
     "keys": ["super+alt+b", "super+alt+b"],
     "command": "copy_file_path_and_line_number",
@@ -256,7 +273,7 @@
 
   // BracketHighlighter
 
-  // go to left bracket
+  // Go to left bracket
   {
     "keys": ["ctrl+up"],
     "command": "bh_async_key",
@@ -271,7 +288,7 @@
       }
     }
   },
-  // go to right bracket
+  // Go to right bracket
   {
     "keys": ["ctrl+down"],
     "command": "bh_async_key",
@@ -286,7 +303,7 @@
       }
     }
   },
-  // select text including brackets
+  // Select text including brackets
   {
     "keys": ["ctrl+alt+up"],
     "command": "bh_async_key",
@@ -300,7 +317,7 @@
       }
     }
   },
-  // select text between brackets
+  // Select text between brackets
   {
     "keys": ["ctrl+alt+down"],
     "command": "bh_async_key",
@@ -347,5 +364,8 @@
   {
     "keys": ["super+ctrl+b"],
     "command": "black_file"
-  },
+  }
+
+  // MarkdownEditing
+  // For links no need to add anything, just look at "MarkdownEditing: New Inline Link" in command palette
 ]
