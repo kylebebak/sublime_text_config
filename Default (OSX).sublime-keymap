@@ -364,8 +364,22 @@
   {
     "keys": ["super+ctrl+b"],
     "command": "black_file"
-  }
+  },
 
   // MarkdownEditing
   // For links no need to add anything, just look at "MarkdownEditing: New Inline Link" in command palette
+
+  // Toggle GFM tasks
+  {
+    "keys": ["ctrl+x"],
+    "command": "mde_toggle_task_list_item",
+    "context": [
+      {
+        "key": "selector",
+        "operator": "equal",
+        "operand": "text.html.markdown & (markup.list | markup.quote)",
+        "match_all": true
+      }
+    ]
+  }
 ]
