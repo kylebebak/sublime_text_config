@@ -193,6 +193,11 @@
 
   // PACKAGES
 
+  {
+    "keys": ["ctrl+super+v"],
+    "command": "paste_from_history"
+  },
+
   // Evaluate
   {
     "keys": ["super+alt+enter"],
