@@ -30,6 +30,7 @@
 		"LSP-json",
 		"LSP-lua",
 		"LSP-pyright",
+		"LSP-rust-analyzer",
 		"LSP-typescript",
 		"MarkdownEditing",
 		"MoveTab",
