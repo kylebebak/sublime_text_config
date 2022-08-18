@@ -245,7 +245,7 @@
   },
 
   // Wrap Plus
-  { "keys": ["alt+w"], "command": "wrap_lines_plus", "args": { "width": 80 } },
+  { "keys": ["alt+w"], "command": "wrap_lines_plus", "args": { "width": 120 } },
 
   // Prettier
   { "keys": ["ctrl+alt+f"], "command": "js_prettier" },

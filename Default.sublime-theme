@@ -1,0 +1,18 @@
+{
+  "variables": {},
+  "rules": [
+    {
+      "class": "sidebar_label",
+      "font.size": 13
+    },
+    {
+      "class": "sidebar_tree",
+      // left, top, right, bottom
+      "row_padding": [16, 5, 4, 5],
+    },
+    {
+      "class": "quick_panel",
+      "row_padding": [6, 4, 6, 4],
+    },
+  ]
+}

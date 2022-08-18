@@ -1,5 +1,4 @@
 {
-	"Seti_bold_slctdfile_labels": true,
 	"auto_complete_cycle": true,
 	"auto_complete_selector": "source, plain.text, text.html.markdown.gfm",
 	"binary_file_patterns":
@@ -69,7 +68,7 @@
 		".sass-cache",
 		".mypy_cache"
 	],
-	"font_size": 13,
+	"font_size": 15,
 	"highlight_line": false,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
@@ -97,7 +96,7 @@
 		120
 	],
 	"tab_size": 2,
-	"theme": "Seti.sublime-theme",
+	"theme": "Default Dark.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": "all",
 	"use_tab_stops": true,

@@ -6,6 +6,7 @@
 	],
 	"installed_packages":
 	[
+		"A File Icon",
 		"Advanced CSV",
 		"ApplySyntax",
 		"AutomaticPackageReloader",
@@ -43,7 +44,6 @@
 		"ProjectManager",
 		"Sass",
 		"ScopeHunter",
-		"Seti_UI",
 		"SideBarTools",
 		"Sort Lines (Numerically)",
 		"sublack",

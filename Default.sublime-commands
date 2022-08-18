@@ -41,9 +41,9 @@
   },
 
   {
-    "caption": "Wrap Plus: Wrap At 80 Chars",
+    "caption": "Wrap Plus: Wrap At 120 Chars",
     "command": "wrap_lines_plus",
-    "args": { "width": 80 }
+    "args": { "width": 120 }
   },
 
   {

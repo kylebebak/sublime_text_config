@@ -5,10 +5,9 @@ import sublime_plugin
 Source:
 https://forum.sublimetext.com/t/run-multiple-commands-command/6848
 
-Takes an array of commands (same as those you'd provide to a key binding) with
-an optional context (defaults to view) and runs each command in order. Valid
-contexts are 'text', 'window', and 'app' for running a TextCommand,
-WindowCommand, or ApplicationCommand respectively.
+Takes an array of commands (same as those you'd provide to a key binding) with an optional context (defaults to view)
+and runs each command in order. Valid contexts are 'text', 'window', and 'app' for running a TextCommand, WindowCommand,
+or ApplicationCommand respectively.
 """
 
 

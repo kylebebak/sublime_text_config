@@ -9,7 +9,7 @@
 !*.sublime-build
 !*.sublime-keymap
 !*.sublime-commands
-!Seti_UI
+!*.sublime-theme
 
 # and these settings files
 !ApplySyntax.sublime-settings
