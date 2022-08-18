@@ -82,7 +82,7 @@
 		"draw_active"
 	],
 	"line_padding_bottom": 1,
-	"line_padding_top": 1,
+	"line_padding_top": 2,
 	"match_brackets": false,
 	"match_brackets_angle": false,
 	"match_brackets_braces": false,

@@ -1,6 +1,9 @@
+// Overrides settings in ~/Library/Application Support/Sublime Text/Packages/Theme - Default/Default.sublime-theme
+// Some inspiration from https://github.com/ctf0/Seti_ST3/blob/master/Seti.sublime-theme
 {
   "variables": {},
   "rules": [
+    // Sidebar
     {
       "class": "sidebar_label",
       "font.size": 13
@@ -8,11 +11,38 @@
     {
       "class": "sidebar_tree",
       // left, top, right, bottom
-      "row_padding": [16, 5, 4, 5],
+      "row_padding": [16, 6, 4, 6],
     },
     {
+      "class": "sidebar_label",
+      "parents": [{"class": "tree_row", "attributes": ["highlighted"]}],
+      "font.bold": true
+    },
+
+    // Quick panel (super+p and super+shift+p)
+    {
       "class": "quick_panel",
-      "row_padding": [6, 4, 6, 4],
+      "row_padding": [10, 9, 10, 9],
+    },
+
+    {
+        "class": "quick_panel_label",
+        "fg": [255, 255, 255],
+        "selected_fg": [255, 255, 255],
+        "match_fg": [0, 138, 255],
+        "selected_match_fg": [255, 223, 0]
+    },
+    {
+        "class": "quick_panel_path_label",
+        "fg": [255, 255, 255],
+        "selected_fg": [255, 255, 255],
+        "match_fg": [255, 255, 255],
+        "selected_match_fg": [255, 255, 255]
+    },
+    {
+        "class": "quick_panel_score_label",
+        "fg": [255, 255, 255],
+        "selected_fg": [255, 255, 255]
     },
   ]
 }
