@@ -11,7 +11,7 @@
   },
 
   {
-    "caption": "View: Copy Name",
+    "caption": "View: Name To Clipboard",
     "command": "copy_view_name"
   },
 
