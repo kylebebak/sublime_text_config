@@ -1,12 +1,11 @@
 from __future__ import annotations
 
-from typing import NamedTuple, cast
-
-import sublime  # type: ignore
-import sublime_plugin  # type: ignore
-
-from collections import namedtuple
 import os
+from typing import NamedTuple, cast
+from collections import namedtuple
+
+import sublime
+import sublime_plugin
 
 
 class DeleteOpenFileCommand(sublime_plugin.TextCommand):
@@ -24,7 +23,7 @@ class CopyViewNameCommand(sublime_plugin.TextCommand):
             return
 
         sublime.set_clipboard(name)
-        self.view.window().status_message(f"copied \"{name}\"")
+        self.view.window().status_message(f'copied "{name}"')
 
 
 BookmarkType = NamedTuple("Point", [("row", int), ("col", int), ("text", str)])
@@ -44,9 +43,7 @@ def format_bookmark(path: str, b: BookmarkType, include_text: bool) -> str:
 
 
 class CopyFilePathAndLineNumberCommand(sublime_plugin.TextCommand):
-    def run(
-        self, edit, strip: bool = True, max_len: int = 50, include_text: bool = False
-    ) -> None:
+    def run(self, edit, strip: bool = True, max_len: int = 50, include_text: bool = False) -> None:
         path: str | None = self.view.file_name()
         if not path:
             return
@@ -70,9 +67,7 @@ class CopyFilePathAndLineNumberCommand(sublime_plugin.TextCommand):
         except Exception:
             return None
 
-    def get_line_number_and_text(
-        self, point: int, strip: bool, max_len: int
-    ) -> BookmarkType:
+    def get_line_number_and_text(self, point: int, strip: bool, max_len: int) -> BookmarkType:
         row, col = self.view.rowcol(point)
         line: str = self.view.substr(self.view.line(point))
         if strip:

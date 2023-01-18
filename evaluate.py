@@ -1,3 +1,4 @@
+from __future__ import annotations
 from __future__ import division
 
 import sublime
@@ -9,10 +10,12 @@ import subprocess
 
 
 class EvaluateCommand(sublime_plugin.TextCommand):
+    view: sublime.View
+
     def run(self, edit):
         sels = self.view.sel()
 
-        threads = []
+        threads: list[EvaluateCall] = []
         for sel in sels:
             to_eval = self.view.substr(sel)
             thread = EvaluateCall(sel, to_eval, 5)
@@ -23,17 +26,15 @@ class EvaluateCommand(sublime_plugin.TextCommand):
 
         self.handle_threads(edit, threads)
 
-    def handle_threads(self, edit, threads, offset=0):
+    def handle_threads(self, edit: sublime.Edit, threads: list[EvaluateCall], offset: int = 0):
         for t in threads:
-            t.join(5)  # TODO: use bulk join maybe
+            t.join(5)
             offset = self.replace(edit, t, offset)
 
         selections = len(self.view.sel())
-        sublime.status_message(
-            "Evaluated %s selection%s!" % (selections, "" if selections == 1 else "s")
-        )
+        sublime.status_message(f"Evaluated {selections} selection(s)")
 
-    def replace(self, edit, thread, offset):
+    def replace(self, edit: sublime.Edit, thread: EvaluateCall, offset: int):
         sel = thread.sel
         original = thread.original
         result = thread.result
@@ -52,7 +53,7 @@ class EvaluateCommand(sublime_plugin.TextCommand):
 
 
 class EvaluateCall(threading.Thread):
-    def __init__(self, sel, to_eval, timeout):
+    def __init__(self, sel: sublime.Region, to_eval: str, timeout: float):
         self.sel = sel
         self.original = to_eval
         self.timeout = timeout
@@ -60,13 +61,14 @@ class EvaluateCall(threading.Thread):
         threading.Thread.__init__(self)
 
     def run(self):
-        """Evaluate `self.original`, save to `self.result`.
-        If `self.timeout` reached, the run fails and nothing change.
+        """
+        Evaluate `self.original`, save to `self.result`. If `self.timeout` reached, the run fails and nothing changes.
 
-        If `self.original` starts with '!', after trimming leading spaces,
-        it is evaluated as Shell code. (The same convention as ipython).
+        If `self.original` starts with '!', after trimming leading spaces, it is evaluated as Shell code. (The same
+        convention as ipython).
 
-        Otherwise, it is evaluated as Python code."""
+        Otherwise, it is evaluated as Python code.
+        """
 
         if self.original.lstrip().startswith("!"):
             # Remove the first bang
@@ -80,17 +82,14 @@ class EvaluateCall(threading.Thread):
                 )
                 # stderr goes to stdout
                 out, _ = p.communicate(timeout=self.timeout)
-                # ad-hoc Python 2/3 str/bytes handling
-                if type(out) is bytes:
-                    out = out.decode()
+                out = out.decode()
 
                 # Remove the last newline
                 if out.endswith("\n"):
                     out = out[:-1]
 
                 self.result = out
-            except (Exception):
-                # TODO: print error to console
+            except Exception:
                 pass
         else:
             try:

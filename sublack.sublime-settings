@@ -1,3 +1,4 @@
 {
-  "black_command": "~/.pyenv/shims/black"
+  "black_command": "~/.pyenv/shims/black",
+  "black_line_length": 120
 }

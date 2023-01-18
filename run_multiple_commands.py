@@ -1,14 +1,14 @@
-import sublime
-import sublime_plugin
-
 """
-Source:
-https://forum.sublimetext.com/t/run-multiple-commands-command/6848
+Adapted from: https://forum.sublimetext.com/t/run-multiple-commands-command/6848
 
 Takes an array of commands (same as those you'd provide to a key binding) with an optional context (defaults to view)
 and runs each command in order. Valid contexts are 'text', 'window', and 'app' for running a TextCommand, WindowCommand,
 or ApplicationCommand respectively.
 """
+from __future__ import annotations
+
+import sublime
+import sublime_plugin
 
 
 class RunMultipleCommandsCommand(sublime_plugin.TextCommand):
@@ -20,8 +20,7 @@ class RunMultipleCommandsCommand(sublime_plugin.TextCommand):
         if "args" in command:
             args = command["args"]
 
-        # Default context is the view since it's easiest to get the other
-        #   contexts from the view
+        # Default context is the view since it's easiest to get the other contexts from the view
         context = self.view
         if "context" in command:
             context_name = command["context"]

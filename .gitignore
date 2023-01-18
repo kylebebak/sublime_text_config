@@ -10,6 +10,8 @@
 !*.sublime-keymap
 !*.sublime-commands
 !*.sublime-theme
+!/pyrightconfig.json
+!/.flake8
 
 # and these settings files
 !ApplySyntax.sublime-settings
