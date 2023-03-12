@@ -1,8 +1,7 @@
 {
 	"auto_complete_cycle": true,
 	"auto_complete_selector": "source, plain.text, text.html.markdown.gfm",
-	"binary_file_patterns":
-	[
+	"binary_file_patterns": [
 		"*.dds",
 		"*.eot",
 		"*.gif",
@@ -26,8 +25,7 @@
 	"caret_style": "phase",
 	"close_windows_when_empty": false,
 	"ensure_newline_at_eof_on_save": true,
-	"file_exclude_patterns":
-	[
+	"file_exclude_patterns": [
 		"*.pyc",
 		"*.pyo",
 		"*.exe",
@@ -54,8 +52,7 @@
 		".tags_sorted_by_file",
 		".gemtags"
 	],
-	"folder_exclude_patterns":
-	[
+	"folder_exclude_patterns": [
 		".svn",
 		".git",
 		".hg",
@@ -71,16 +68,8 @@
 	"font_size": 15,
 	"highlight_line": false,
 	"highlight_modified_tabs": true,
-	"ignored_packages":
-	[
-		"Markdown",
-		"Vintage",
-	],
-	"indent_guide_options":
-	[
-		"draw_normal",
-		"draw_active"
-	],
+	"ignored_packages": ["Vintage"],
+	"indent_guide_options": ["draw_normal", "draw_active"],
 	"line_padding_bottom": 1,
 	"line_padding_top": 2,
 	"match_brackets": false,
@@ -91,10 +80,7 @@
 	"match_tags": false,
 	"mini_diff": false,
 	"open_files_in_new_window": "never",
-	"rulers":
-	[
-		120
-	],
+	"rulers": [120],
 	"tab_size": 2,
 	"theme": "Default Dark.sublime-theme",
 	"translate_tabs_to_spaces": true,
@@ -102,7 +88,9 @@
 	"use_tab_stops": true,
 	"wide_caret": false,
 	"word_wrap": true,
+	// https://github.com/sublimehq/sublime_text/issues/377
+	"wrap_width": 121,
 	"color_scheme": "Mariana.sublime-color-scheme",
 	"mde.list_indent_bullets": ["-"],
-	"scroll_past_end": 0.15,
+	"scroll_past_end": 0.15
 }

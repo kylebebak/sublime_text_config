@@ -1,12 +1,6 @@
 {
 	// Note that for Sublime to pick up changes to PATH they need to be made in ~/.zprofile
-	"clients": {
-		"gopls": {
-			"enabled": true,
-			"command": ["~/go/bin/gopls"],
-			"selector": "source.go"
-		}
-	},
+	"clients": {},
 	"show_diagnostics_panel_on_save": 0,
 	"show_code_actions": ""
 }
