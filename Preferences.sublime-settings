@@ -68,7 +68,9 @@
 	"font_size": 15,
 	"highlight_line": false,
 	"highlight_modified_tabs": true,
-	"ignored_packages": ["Vintage"],
+	"ignored_packages": [
+		"Vintage",
+	],
 	"indent_guide_options": ["draw_normal", "draw_active"],
 	"line_padding_bottom": 1,
 	"line_padding_top": 2,
@@ -92,5 +94,5 @@
 	"wrap_width": 121,
 	"color_scheme": "Mariana.sublime-color-scheme",
 	"mde.list_indent_bullets": ["-"],
-	"scroll_past_end": 0.15
+	"scroll_past_end": 0.15,
 }
