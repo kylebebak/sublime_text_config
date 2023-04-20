@@ -11,3 +11,20 @@ For chaining commands, I use [run_multiple_commands.py](run_multiple_commands.py
 ## `PATH`
 
 Modify paths in `~/.zprofile`, not in `~/.zshrc`, to make sure Sublime picks them up, e.g. for LSP.
+
+## `GitSavvy.sublime-settings`
+
+Reproduced here because they have an API token and can't go in version control.
+
+```json
+{
+    "api_tokens": {
+        "github.com": "..."
+    },
+    "global_flags": {
+        "commit": ["--cleanup=strip"]
+    },
+    "log_follow_rename": true,
+    "blame_follow_rename": true,
+}
+```
