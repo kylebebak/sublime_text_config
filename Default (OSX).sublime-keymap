@@ -191,6 +191,14 @@
     }
   },
 
+  // DISABLED BINDINGS
+
+  {
+    "keys": ["alt+super+o"],
+    // This disables the thoroughly useless insert/overwrite mode, by unbinding `toggle_overwrite` command
+    "command": "noop"
+  },
+
   // PACKAGES
 
   {

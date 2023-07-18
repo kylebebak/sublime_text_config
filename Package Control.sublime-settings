@@ -24,7 +24,7 @@
 		"INI",
 		"Jinja2",
 		"JsPrettier",
-		"LESS",
+		"Less",
 		"LSP",
 		"LSP-bash",
 		"LSP-gopls",
