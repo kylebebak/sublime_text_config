@@ -32,6 +32,7 @@
 		"LSP-json",
 		"LSP-lua",
 		"LSP-pyright",
+		"LSP-ruff",
 		"LSP-rust-analyzer",
 		"LSP-typescript",
 		"MarkdownEditing",
