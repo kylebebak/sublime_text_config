@@ -1,8 +1,8 @@
 from __future__ import annotations
 
 import os
-from typing import NamedTuple, cast
 from collections import namedtuple
+from typing import NamedTuple, cast
 
 import sublime
 import sublime_plugin

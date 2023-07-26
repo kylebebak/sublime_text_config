@@ -1,12 +1,12 @@
-from __future__ import annotations
-from __future__ import division
+from __future__ import annotations, division
+
+import datetime
+import math
+import subprocess
+import threading
 
 import sublime
 import sublime_plugin
-import threading
-import math
-import datetime
-import subprocess
 
 
 class EvaluateCommand(sublime_plugin.TextCommand):

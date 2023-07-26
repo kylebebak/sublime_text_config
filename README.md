@@ -1,4 +1,4 @@
-# Sublime Text 3 Configuration
+# Sublime Text 4 Configuration
 
 This repo contains the useful (mostly non-generated) files in the `~/Library/Application\ Support/Sublime\ Text/Packages/User/` directory. Check [.gitignore](.gitignore) to see which files belong in version control.
 

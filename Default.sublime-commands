@@ -50,4 +50,9 @@
     "caption": "LSP: Show Hover Popup",
     "command": "lsp_hover",
   },
+
+  {
+    "caption": "JSON Schema: Test Schema and Data",
+    "command": "json_schema_test",
+  },
 ]

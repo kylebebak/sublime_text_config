@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+{
+  "\$schema": "https://json-schema.org/draft-07/schema",
+  "type": "object",
+  "properties": {$1},
+  "required": []
+}
+]]></content>
+	<tabTrigger>json_schema</tabTrigger>
+</snippet>
