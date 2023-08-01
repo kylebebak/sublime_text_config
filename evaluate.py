@@ -1,6 +1,7 @@
 from __future__ import annotations, division
 
 import datetime
+import json
 import math
 import subprocess
 import threading
@@ -93,7 +94,7 @@ class EvaluateCall(threading.Thread):
                 pass
         else:
             try:
-                tmp_global = {"math": math, "datetime": datetime}
+                tmp_global = {"math": math, "datetime": datetime, "json": json}
                 code = compile(self.original, "<string>", "eval")
                 self.result = eval(code, tmp_global)
             except (ValueError, SyntaxError):
