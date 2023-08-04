@@ -19,13 +19,11 @@
 		"File History",
 		"FileDiffs",
 		"GitGutter",
-		"GitSavvy",
 		"Gofmt",
 		"INI",
 		"Jinja2",
 		"Jq",
 		"JsPrettier",
-		"Less",
 		"LSP",
 		"LSP-bash",
 		"LSP-gopls",
@@ -58,6 +56,7 @@
 	"repositories":
 	[
 		"https://github.com/kylebebak/Requester",
+		"https://github.com/kylebebak/GitSavvy",
 		"https://github.com/kylebebak/sublime_date_diff",
 		"https://github.com/noahcoad/open-url"
 	],
