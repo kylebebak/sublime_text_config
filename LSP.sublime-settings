@@ -3,8 +3,8 @@
 	"clients": {
 		"taplo-toml": {
 			"enabled": true,
-			// See https://taplo.tamasfe.dev
-			"command": ["/usr/local/bin/taplo", "lsp", "stdio"],
+			// See https://taplo.tamasfe.dev, installed with `brew install taplo`
+			"command": ["/opt/homebrew/bin/taplo", "lsp", "stdio"],
 			"selector": "source.toml"
 		}
 	},

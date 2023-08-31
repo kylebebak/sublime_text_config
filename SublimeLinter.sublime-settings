@@ -10,9 +10,5 @@
     "eslint": {
       "selector": "source.js, source.js.react, source.ts, source.tsx"
     },
-    "flake8": {
-      // exclude requester files
-      "excludes": ["*/*.pyr", "*/*.md", "<untitled>"]
-    },
   }
 }
