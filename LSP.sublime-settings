@@ -1,6 +1,13 @@
 {
 	// Note that for Sublime to pick up changes to PATH they need to be made in ~/.zprofile
-	"clients": {},
+	"clients": {
+		"taplo-toml": {
+			"enabled": true,
+			// See https://taplo.tamasfe.dev
+			"command": ["/usr/local/bin/taplo", "lsp", "stdio"],
+			"selector": "source.toml"
+		}
+	},
 	"show_diagnostics_panel_on_save": 0,
 	"show_code_actions": ""
 }
