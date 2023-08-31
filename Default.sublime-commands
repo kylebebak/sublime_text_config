@@ -55,4 +55,10 @@
     "caption": "JSON Schema: Test Schema and Data",
     "command": "json_schema_test",
   },
+
+  {
+    "caption": "Set Indent/Tab Size: 4",
+    "command": "set_setting",
+    "args": {"setting": "tab_size", "value": 4}
+  },
 ]
