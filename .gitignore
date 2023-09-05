@@ -11,6 +11,7 @@
 !*.sublime-commands
 !*.sublime-theme
 !/pyrightconfig.json
+!/ruff.toml
 
 # and these settings files
 !ApplySyntax.sublime-settings
