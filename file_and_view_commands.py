@@ -7,6 +7,8 @@ from typing import NamedTuple, cast
 import sublime
 import sublime_plugin
 
+from .utils import maybe_none, not_none
+
 
 class DeleteOpenFileCommand(sublime_plugin.TextCommand):
     def run(self, *args, **kwargs) -> None:
@@ -23,7 +25,7 @@ class CopyViewNameCommand(sublime_plugin.TextCommand):
             return
 
         sublime.set_clipboard(name)
-        self.view.window().status_message(f'copied "{name}"')
+        not_none(self.view.window()).status_message(f'copied "{name}"')
 
 
 BookmarkType = NamedTuple("Point", [("row", int), ("col", int), ("text", str)])
@@ -56,14 +58,14 @@ class CopyFilePathAndLineNumberCommand(sublime_plugin.TextCommand):
             bookmarks.append(self.get_line_number_and_text(r.begin(), strip, max_len))
         text = "\n".join(format_bookmark(path, b, include_text) for b in bookmarks)
         sublime.set_clipboard(text)
-        self.view.window().status_message("copied - {}".format(truncate(text, 80)))
+        not_none(self.view.window()).status_message("copied - {}".format(truncate(text, 80)))
 
     def project_path(self) -> str | None:
-        project = self.view.window().project_data()
-        if project is None:
+        project = not_none(self.view.window()).project_data()
+        if maybe_none(project) is None:
             return None
         try:
-            return os.path.expanduser(project["folders"][0]["path"])
+            return os.path.expanduser(cast(dict, project)["folders"][0]["path"])
         except Exception:
             return None
 

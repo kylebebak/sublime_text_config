@@ -10,6 +10,8 @@ from __future__ import annotations
 import sublime
 import sublime_plugin
 
+from .utils import not_none
+
 
 class RunMultipleCommandsCommand(sublime_plugin.TextCommand):
     def exec_command(self, command):
@@ -25,7 +27,7 @@ class RunMultipleCommandsCommand(sublime_plugin.TextCommand):
         if "context" in command:
             context_name = command["context"]
             if context_name == "window":
-                context = context.window()
+                context = not_none(context.window())
             elif context_name == "app":
                 context = sublime
             elif context_name == "text":
@@ -42,6 +44,6 @@ class RunMultipleCommandsCommand(sublime_plugin.TextCommand):
     def run(self, edit, commands=None, repetitions=1):
         if commands is None:
             return  # Not an error
-        for i in range(repetitions):
+        for _ in range(repetitions):
             for command in commands:
                 self.exec_command(command)

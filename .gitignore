@@ -12,6 +12,7 @@
 !*.sublime-theme
 !/pyrightconfig.json
 !/ruff.toml
+!/pre-push
 
 # and these settings files
 !ApplySyntax.sublime-settings

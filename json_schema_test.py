@@ -29,6 +29,7 @@ class JsonSchemaTestCommand(sublime_plugin.TextCommand):
     - So, [no bundling yet](https://json-schema.org/understanding-json-schema/structuring.html#bundling)
     - Remember to restart JSON-lsp so data file picks up schema file changes
     """
+
     view: sublime.View
 
     def run(self, edit):
