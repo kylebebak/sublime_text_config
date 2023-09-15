@@ -25,6 +25,10 @@
     {
       "syntax": "INI/INI",
       "rules": [{ "file_path": ".*/supervisord\\.conf$" }]
-    }
+    },
+    {
+      "syntax": "Dockerfile Syntax Highlighting/Syntaxes/Dockerfile",
+      "rules": [{ "file_path": ".*/Dockerfile*" }]
+    },
   ]
 }
