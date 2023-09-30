@@ -1,0 +1,10 @@
+{
+  "python_path": "/Users/kyle/.pyenv/versions/3.8.13/bin/python",
+  "installed_languages":
+  [
+		"python",
+		"json",
+		"toml",
+		"markdown"
+	],
+}
