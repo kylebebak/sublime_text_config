@@ -1,10 +1,16 @@
 {
   "python_path": "/Users/kyle/.pyenv/versions/3.8.13/bin/python",
-  "installed_languages":
-  [
-		"python",
-		"json",
-		"toml",
-		"markdown"
-	],
+  "installed_languages": [
+    "python",
+    "json",
+    "toml",
+    "html",
+    "typescript",
+    "go",
+    "yaml",
+    "tsx",
+    "javascript",
+    "lua",
+  ],
+  "debug": false,
 }
