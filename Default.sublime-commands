@@ -65,11 +65,21 @@
   {
     "caption": "Tree Sitter: Print Tree",
     "command": "tree_sitter_print_tree",
-    "args": {"out_path": "~/Desktop/out.txt"}
+    "args": {"out_path": "~/Desktop/tree.txt"}
   },
 
   {
     "caption": "Tree Sitter: Select Larger Node",
     "command": "tree_sitter_select_larger_node",
+  },
+
+  {
+    "caption": "Tree Sitter: Choose Siblings",
+    "command": "tree_sitter_choose_siblings",
+  },
+
+  {
+    "caption": "Tree Sitter: Choose Descendants",
+    "command": "tree_sitter_choose_descendants",
   },
 ]
