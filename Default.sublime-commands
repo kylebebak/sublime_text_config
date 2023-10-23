@@ -61,4 +61,15 @@
     "command": "set_setting",
     "args": {"setting": "tab_size", "value": 4}
   },
+
+  {
+    "caption": "Tree Sitter: Print Tree",
+    "command": "tree_sitter_print_tree",
+    "args": {"out_path": "~/Desktop/out.txt"}
+  },
+
+  {
+    "caption": "Tree Sitter: Select Larger Node",
+    "command": "tree_sitter_select_larger_node",
+  },
 ]
