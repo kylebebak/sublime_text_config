@@ -69,17 +69,7 @@
   },
 
   {
-    "caption": "Tree Sitter: Select Larger Node",
-    "command": "tree_sitter_select_larger_node",
-  },
-
-  {
-    "caption": "Tree Sitter: Choose Siblings",
-    "command": "tree_sitter_choose_siblings",
-  },
-
-  {
-    "caption": "Tree Sitter: Choose Descendants",
-    "command": "tree_sitter_choose_descendants",
+    "caption": "Tree Sitter: Expand Selection",
+    "command": "tree_sitter_expand_selection",
   },
 ]

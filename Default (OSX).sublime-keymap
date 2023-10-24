@@ -325,23 +325,24 @@
       "lines": true,
       "plugin": {
         "type": ["__all__"],
-        "command": "bh_modules.bracketselect",
-        "args": { "always_include_brackets": true }
-      }
-    }
-  },
-  // Select text between brackets
-  {
-    "keys": ["ctrl+alt+down"],
-    "command": "bh_async_key",
-    "args": {
-      "no_outside_adj": null,
-      "lines": true,
-      "plugin": {
-        "type": ["__all__"],
         "command": "bh_modules.bracketselect"
       }
     }
+  },
+  // TreeSitter
+  {
+    "keys": ["ctrl+alt+down"],
+    "command": "tree_sitter_expand_selection",
+  },
+  {
+    "keys": ["ctrl+alt+left"],
+    "command": "tree_sitter_select_sibling",
+    "args": { "to_next": false }
+  },
+  {
+    "keys": ["ctrl+alt+right"],
+    "command": "tree_sitter_select_sibling",
+    "args": { "to_next": true }
   },
 
   // Automatic Package Reloader
