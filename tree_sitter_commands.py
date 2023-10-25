@@ -1,5 +1,8 @@
+from __future__ import annotations
+
 import os
 
+import sublime
 import sublime_plugin
 from sublime_tree_sitter import (
     get_larger_region,
@@ -9,22 +12,39 @@ from sublime_tree_sitter import (
     query_tree,
     walk_tree,
 )
+from tree_sitter import Node
+
+
+def get_view_name(view: sublime.View):
+    if name := view.file_name():
+        return os.path.basename(name)
+
+    return view.name() or ""
 
 
 class TreeSitterPrintTreeCommand(sublime_plugin.TextCommand):
-    def run(self, edit, out_path: str = ""):
+    def format_node(self, node: Node):
+        return f"{node.type}  {node.start_point} → {node.end_point}"
+
+    def run(self, edit):
+        indent = " " * 2
         tree_dict = get_tree_dict(self.view.buffer_id())
         if not tree_dict:
             return
 
-        if not out_path:
-            for node in walk_tree(tree_dict["tree"].root_node):
-                print(f"{node.start_byte}, {node}")
+        window = self.view.window()
+        if not window:
+            return
 
-        else:
-            with open(os.path.expanduser(out_path), "w+") as f:
-                for node in walk_tree(tree_dict["tree"].root_node):
-                    f.write(f"{node.start_byte}, {node}\n")
+        nodes: list[str] = []
+        for node, depth in walk_tree(tree_dict["tree"].root_node):
+            nodes.append(f"{indent * depth}{self.format_node(node)}")
+
+        name = get_view_name(self.view)
+        view = window.new_file()
+        view.set_name(f"Syntax Tree - {name}" if name else "Syntax Tree")
+        view.set_scratch(True)
+        view.insert(edit, 0, "\n".join(nodes))
 
 
 class TreeSitterExpandSelectionCommand(sublime_plugin.TextCommand):
@@ -49,6 +69,7 @@ class TreeSitterSelectSiblingCommand(sublime_plugin.TextCommand):
         sel = self.view.sel()
         for region in sel:
             node = get_node_spanning_region(region, self.view.buffer_id())
+            print(node)
             if not node or not node.parent:
                 return
 
@@ -74,9 +95,14 @@ class TreeSitterSelectSiblingCommand(sublime_plugin.TextCommand):
                 self.view.show(new_begin)
 
 
+class TreeSitterSelectAdjacentCommand(sublime_plugin.TextCommand):
+    def run(self, edit, to_next: bool = True):
+        pass
+
+
 class TreeSitterSelectChooseDescendantsCommand(sublime_plugin.TextCommand):
     """
-    TODO:
+    TODO
 
     - Selecting all text should let us get root node, might require change to `get_node_spanning_region`
     - Specify query_name to look up query and use it

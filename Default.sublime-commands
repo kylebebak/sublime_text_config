@@ -65,7 +65,6 @@
   {
     "caption": "Tree Sitter: Print Tree",
     "command": "tree_sitter_print_tree",
-    "args": {"out_path": "~/Desktop/tree.txt"}
   },
 
   {

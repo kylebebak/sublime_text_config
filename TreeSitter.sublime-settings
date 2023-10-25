@@ -16,6 +16,6 @@
   "debug": false,
   // Markdown parser slow for some reason
   "language_name_to_debounce_ms": {
-    "markdown": 250
+    "markdown": 400
   }
 }
