@@ -1,6 +1,0 @@
-{
-  "cmds": [
-    ["/usr/local/go/bin/gofmt", "-e", "-s"]
-  ],
-  "format_on_save": true
-}

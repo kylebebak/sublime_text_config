@@ -19,7 +19,6 @@
 !bh_core.sublime-settings
 !Emmet.sublime-settings
 !GitGutter.sublime-settings
-!Gofmt.sublime-settings
 !golang.sublime-settings
 !JsPrettier.sublime-settings
 !LSP.sublime-settings
@@ -29,6 +28,4 @@
 !Package\ Control.sublime-settings
 !Preferences.sublime-settings
 !Requester.sublime-settings
-!SublimeLinter.sublime-settings
-!LSP-gopls.sublime-settings
 !TreeSitter.sublime-settings

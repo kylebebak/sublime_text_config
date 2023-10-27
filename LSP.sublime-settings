@@ -6,6 +6,9 @@
 			// See https://taplo.tamasfe.dev, installed with `brew install taplo`
 			"command": ["/opt/homebrew/bin/taplo", "lsp", "stdio"],
 			"selector": "source.toml"
+		},
+		"gopls": {
+			"command": ["~/go/bin/gopls"],
 		}
 	},
 	"show_diagnostics_panel_on_save": 0,
