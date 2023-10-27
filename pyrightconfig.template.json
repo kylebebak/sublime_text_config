@@ -16,6 +16,5 @@
   "reportUnusedVariable": "none",
   "reportUnnecessaryTypeIgnoreComment": "error",
   "reportIncompatibleVariableOverride": "none",
-  "reportIncompatibleMethodOverride": "none",
-  "extraPaths": ["/Applications/Sublime Text.app/Contents/MacOS/Lib/python38"]
+  "reportIncompatibleMethodOverride": "none"
 }

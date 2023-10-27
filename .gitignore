@@ -10,7 +10,7 @@
 !*.sublime-keymap
 !*.sublime-commands
 !*.sublime-theme
-!/pyrightconfig.json
+!/pyrightconfig.template.json
 !/ruff.toml
 !/pre-push
 
