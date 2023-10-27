@@ -9,6 +9,7 @@ from sublime_tree_sitter import (
     get_node_spanning_region,
     get_region_from_node,
     get_tree_dict,
+    has_tree,
     query_tree,
     walk_tree,
 )
@@ -45,6 +46,22 @@ class TreeSitterPrintTreeCommand(sublime_plugin.TextCommand):
         view.set_name(f"Syntax Tree - {name}" if name else "Syntax Tree")
         view.set_scratch(True)
         view.insert(edit, 0, "\n".join(nodes))
+
+
+class UserExpandSelectionCommand(sublime_plugin.TextCommand):
+    def run(self, edit):
+        if has_tree(self.view.buffer_id()):
+            self.view.run_command("tree_sitter_expand_selection")
+        else:
+            # Fall back to using BracketHighlighter
+            self.view.run_command(
+                "bh_async_key",
+                {
+                    "no_outside_adj": None,
+                    "lines": True,
+                    "plugin": {"type": ["__all__"], "command": "bh_modules.bracketselect"},
+                },  # type: ignore
+            )
 
 
 class TreeSitterExpandSelectionCommand(sublime_plugin.TextCommand):

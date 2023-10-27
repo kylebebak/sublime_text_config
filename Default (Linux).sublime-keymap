@@ -367,10 +367,4 @@
     "keys": ["ctrl+alt+h"],
     "command": "requester_history"
   },
-
-  // sublack
-  {
-    "keys": ["shift+alt+b"],
-    "command": "black_file"
-  }
 ]

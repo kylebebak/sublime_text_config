@@ -33,6 +33,11 @@
     "command": "lsp_symbol_type_definition"
   },
 
+  {
+    "keys": ["ctrl+alt+f"],
+    "command": "lsp_format_document"
+  },
+
   { "keys": ["super+alt+l", "super+alt+l"], "command": "lsp_restart_server" },
   { "keys": ["ctrl+l"], "command": "lsp_hover" },
 
@@ -286,37 +291,7 @@
 
   // BracketHighlighter
 
-  // Go to left bracket
-  {
-    "keys": ["ctrl+up"],
-    "command": "bh_async_key",
-    "args": {
-      "no_outside_adj": null,
-      "no_block_mode": null,
-      "lines": true,
-      "plugin": {
-        "type": ["__all__"],
-        "command": "bh_modules.bracketselect",
-        "args": { "select": "left" }
-      }
-    }
-  },
-  // Go to right bracket
-  {
-    "keys": ["ctrl+down"],
-    "command": "bh_async_key",
-    "args": {
-      "no_outside_adj": null,
-      "no_block_mode": null,
-      "lines": true,
-      "plugin": {
-        "type": ["__all__"],
-        "command": "bh_modules.bracketselect",
-        "args": { "select": "right" }
-      }
-    }
-  },
-  // Select text including brackets
+  // Select text
   {
     "keys": ["ctrl+alt+up"],
     "command": "bh_async_key",
@@ -332,7 +307,7 @@
   // TreeSitter
   {
     "keys": ["ctrl+alt+down"],
-    "command": "tree_sitter_expand_selection",
+    "command": "user_expand_selection",
   },
   {
     "keys": ["ctrl+alt+left"],
@@ -366,18 +341,6 @@
     "keys": ["super+shift+c"],
     "command": "color_helper",
     "args": { "mode": "info" }
-  },
-
-  // Sublime Linter
-  {
-    "keys": ["alt+l"],
-    "command": "sublime_linter_line_report"
-  },
-
-  // sublack
-  {
-    "keys": ["super+ctrl+b"],
-    "command": "black_file"
   },
 
   // MarkdownEditing
