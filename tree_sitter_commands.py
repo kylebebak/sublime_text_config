@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+from typing import TypeVar
 
 import sublime
 import sublime_plugin
@@ -15,12 +16,25 @@ from sublime_tree_sitter import (
 )
 from tree_sitter import Node
 
+T = TypeVar("T")
+
+
+def not_none(var: T | None) -> T:
+    assert var is not None
+    return var
+
 
 def get_view_name(view: sublime.View):
     if name := view.file_name():
         return os.path.basename(name)
 
     return view.name() or ""
+
+
+def scroll_to_point(point: int, view: sublime.View):
+    visible_region = view.visible_region()
+    if point not in visible_region:
+        view.show(point)
 
 
 class TreeSitterPrintTreeCommand(sublime_plugin.TextCommand):
@@ -37,8 +51,12 @@ class TreeSitterPrintTreeCommand(sublime_plugin.TextCommand):
         if not window:
             return
 
+        root_node = tree_dict["tree"].root_node
+        if len(sel := self.view.sel()) > 0 and len(region := sel[0]) > 0:
+            root_node = get_node_spanning_region(region, self.view.buffer_id()) or root_node
+
         nodes: list[str] = []
-        for node, depth in walk_tree(tree_dict["tree"].root_node):
+        for node, depth in walk_tree(root_node):
             nodes.append(f"{indent * depth}{self.format_node(node)}")
 
         name = get_view_name(self.view)
@@ -74,11 +92,7 @@ class TreeSitterExpandSelectionCommand(sublime_plugin.TextCommand):
             new_region = get_larger_region(region, self.view)
             if new_region:
                 self.view.sel().add(new_region)
-
-                new_begin = new_region.begin()
-                visible_region = self.view.visible_region()
-                if new_region.begin() not in visible_region:
-                    self.view.show(new_begin)
+                scroll_to_point(new_region.begin(), self.view)
 
 
 class TreeSitterSelectSiblingCommand(sublime_plugin.TextCommand):
@@ -86,18 +100,16 @@ class TreeSitterSelectSiblingCommand(sublime_plugin.TextCommand):
         sel = self.view.sel()
         for region in sel:
             node = get_node_spanning_region(region, self.view.buffer_id())
-            print(node)
             if not node or not node.parent:
                 return
 
-            siblings = node.parent.children
-            while node.parent:
-                siblings = node.parent.children
-                if len(siblings) == 1:
+            while node.parent and node.parent.parent:
+                if len(node.parent.children) == 1:
                     node = node.parent
                 else:
                     break
 
+            siblings = not_none(node.parent).children
             idx = siblings.index(node)
             idx = idx + 1 if to_next else idx - 1
             sibling = siblings[idx % len(siblings)]
@@ -106,10 +118,7 @@ class TreeSitterSelectSiblingCommand(sublime_plugin.TextCommand):
             self.view.sel().subtract(region)
             self.view.sel().add(new_region)
 
-            new_begin = new_region.begin()
-            visible_region = self.view.visible_region()
-            if new_region.begin() not in visible_region:
-                self.view.show(new_begin)
+            scroll_to_point(new_region.begin(), self.view)
 
 
 class TreeSitterSelectAdjacentCommand(sublime_plugin.TextCommand):
