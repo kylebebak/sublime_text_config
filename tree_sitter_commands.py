@@ -52,17 +52,26 @@ class TreeSitterPrintTreeCommand(sublime_plugin.TextCommand):
         if not window:
             return
 
-        root_node = tree_dict["tree"].root_node
-        if len(sel := self.view.sel()) > 0 and len(region := sel[0]) > 0:
-            root_node = get_node_spanning_region(region, self.view.buffer_id()) or root_node
+        root_nodes: list[Node] = []
+        for region in self.view.sel():
+            if len(region) > 0:
+                root_node = get_node_spanning_region(region, self.view.buffer_id())
+                if root_node:
+                    root_nodes.append(root_node)
 
-        nodes = [f"{indent * depth}{self.format_node(node)}" for node, depth in walk_tree(root_node)]
+        if not root_nodes:
+            root_nodes = [tree_dict["tree"].root_node]
+
+        parts: list[str] = []
+        for root_node in root_nodes:
+            parts.extend([f"{indent * depth}{self.format_node(node)}" for node, depth in walk_tree(root_node)])
+            parts.append("")
 
         name = get_view_name(self.view)
         view = window.new_file()
         view.set_name(f"Syntax Tree - {name}" if name else "Syntax Tree")
         view.set_scratch(True)
-        view.insert(edit, 0, "\n".join(nodes))
+        view.insert(edit, 0, "\n".join(parts))
 
 
 class TreeSitterSelectAncestorCommand(sublime_plugin.TextCommand):
@@ -79,7 +88,7 @@ class TreeSitterSelectAncestorCommand(sublime_plugin.TextCommand):
 
 
 class TreeSitterSelectSiblingCommand(sublime_plugin.TextCommand):
-    def run(self, edit, to_next: bool = True):
+    def run(self, edit, to_next: bool = True, extend: bool = False):
         sel = self.view.sel()
         for region in sel:
             node = get_node_spanning_region(region, self.view.buffer_id())
@@ -99,7 +108,8 @@ class TreeSitterSelectSiblingCommand(sublime_plugin.TextCommand):
             sibling = siblings[idx % len(siblings)]
 
             new_region = get_region_from_node(sibling, self.view)
-            sel.subtract(region)
+            if not extend:
+                sel.subtract(region)
             sel.add(new_region)
 
             scroll_to_point(new_region.begin(), self.view)
