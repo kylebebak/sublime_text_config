@@ -66,9 +66,4 @@
     "caption": "Tree Sitter: Print Tree",
     "command": "tree_sitter_print_tree",
   },
-
-  {
-    "caption": "Tree Sitter: Expand Selection",
-    "command": "tree_sitter_expand_selection",
-  },
 ]

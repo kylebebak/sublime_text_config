@@ -319,6 +319,10 @@
     "command": "tree_sitter_select_sibling",
     "args": { "to_next": true }
   },
+  {
+    "keys": ["ctrl+down"],
+    "command": "tree_sitter_select_descendant",
+  },
 
   // Automatic Package Reloader
   { "keys": ["super+ctrl+alt+r"], "command": "package_reloader_reload" },

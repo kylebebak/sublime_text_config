@@ -12,10 +12,14 @@
     "javascript",
     "lua",
     "markdown",
+    "rust",
+    "bash",
+    "scss",
+    "css",
   ],
   "debug": false,
   // Markdown parser slow for some reason
   "language_name_to_debounce_ms": {
-    "markdown": 400
-  }
+    "markdown": 400,
+  },
 }

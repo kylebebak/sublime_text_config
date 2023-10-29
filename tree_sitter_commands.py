@@ -66,25 +66,9 @@ class TreeSitterPrintTreeCommand(sublime_plugin.TextCommand):
         view.insert(edit, 0, "\n".join(nodes))
 
 
-class UserExpandSelectionCommand(sublime_plugin.TextCommand):
-    def run(self, edit):
-        if has_tree(self.view.buffer_id()):
-            self.view.run_command("tree_sitter_expand_selection")
-        else:
-            # Fall back to using BracketHighlighter
-            self.view.run_command(
-                "bh_async_key",
-                {
-                    "no_outside_adj": None,
-                    "lines": True,
-                    "plugin": {"type": ["__all__"], "command": "bh_modules.bracketselect"},
-                },  # type: ignore
-            )
-
-
-class TreeSitterExpandSelectionCommand(sublime_plugin.TextCommand):
+class TreeSitterSelectAncestorCommand(sublime_plugin.TextCommand):
     """
-    Note: we scroll to start of larger node if it's not visible.
+    Note: we scroll to start of ancestor if it's not visible.
     """
 
     def run(self, edit):
@@ -115,24 +99,41 @@ class TreeSitterSelectSiblingCommand(sublime_plugin.TextCommand):
             sibling = siblings[idx % len(siblings)]
 
             new_region = get_region_from_node(sibling, self.view)
-            self.view.sel().subtract(region)
-            self.view.sel().add(new_region)
+            sel.subtract(region)
+            sel.add(new_region)
 
             scroll_to_point(new_region.begin(), self.view)
 
 
-class TreeSitterSelectAdjacentCommand(sublime_plugin.TextCommand):
-    def run(self, edit, to_next: bool = True):
+class TreeSitterSelectDescendantCommand(sublime_plugin.TextCommand):
+    def run(self, edit):
         pass
 
 
-class TreeSitterSelectChooseDescendantsCommand(sublime_plugin.TextCommand):
+class UserExpandSelectionCommand(sublime_plugin.TextCommand):
+    def run(self, edit):
+        if has_tree(self.view.buffer_id()):
+            self.view.run_command("tree_sitter_select_ancestor")
+        else:
+            # Fall back to using BracketHighlighter
+            self.view.run_command(
+                "bh_async_key",
+                {
+                    "no_outside_adj": None,
+                    "lines": True,
+                    "plugin": {"type": ["__all__"], "command": "bh_modules.bracketselect"},
+                },  # type: ignore
+            )
+
+
+class TreeSitterChooseDescendantsCommand(sublime_plugin.TextCommand):
     """
     TODO
 
-    - Selecting all text should let us get root node, might require change to `get_node_spanning_region`
+    - Selecting all text should let us get root node
     - Specify query_name to look up query and use it
     - Create query for variable declarations, classes and functions
+    - Include variable declarations (when selecting root node, only those that are children of root node?)
     """
 
     def run(self, edit, query_name: str):
