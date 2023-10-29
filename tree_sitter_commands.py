@@ -9,6 +9,7 @@ from sublime_tree_sitter import (
     get_larger_region,
     get_node_spanning_region,
     get_region_from_node,
+    get_size,
     get_tree_dict,
     has_tree,
     query_tree,
@@ -55,9 +56,7 @@ class TreeSitterPrintTreeCommand(sublime_plugin.TextCommand):
         if len(sel := self.view.sel()) > 0 and len(region := sel[0]) > 0:
             root_node = get_node_spanning_region(region, self.view.buffer_id()) or root_node
 
-        nodes: list[str] = []
-        for node, depth in walk_tree(root_node):
-            nodes.append(f"{indent * depth}{self.format_node(node)}")
+        nodes = [f"{indent * depth}{self.format_node(node)}" for node, depth in walk_tree(root_node)]
 
         name = get_view_name(self.view)
         view = window.new_file()
@@ -85,6 +84,7 @@ class TreeSitterSelectSiblingCommand(sublime_plugin.TextCommand):
         for region in sel:
             node = get_node_spanning_region(region, self.view.buffer_id())
             if not node or not node.parent:
+                self.view.run_command("tree_sitter_select_descendant")
                 return
 
             while node.parent and node.parent.parent:
@@ -107,7 +107,22 @@ class TreeSitterSelectSiblingCommand(sublime_plugin.TextCommand):
 
 class TreeSitterSelectDescendantCommand(sublime_plugin.TextCommand):
     def run(self, edit):
-        pass
+        tree_dict = get_tree_dict(self.view.buffer_id())
+        if not tree_dict:
+            return
+
+        sel = self.view.sel()
+        for region in sel:
+            node = get_node_spanning_region(region, self.view.buffer_id()) or tree_dict["tree"].root_node
+
+            for desc, _ in walk_tree(node):
+                if get_size(desc) < get_size(node):
+                    new_region = get_region_from_node(desc, self.view)
+                    sel.subtract(region)
+                    sel.add(new_region)
+
+                    scroll_to_point(new_region.begin(), self.view)
+                    return
 
 
 class UserExpandSelectionCommand(sublime_plugin.TextCommand):
