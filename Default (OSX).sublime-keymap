@@ -413,6 +413,17 @@
     "keys": ["ctrl+alt+]"],
     "command": "unfold"
   },
+  {
+    "keys": ["ctrl+["],
+    "command": "fold_by_level",
+    "args": {
+      "level": 1
+    }
+  },
+  {
+    "keys": ["ctrl+]"],
+    "command": "unfold_all",
+  },
   // Automatic Package Reloader
   {
     "keys": ["super+ctrl+alt+r"],

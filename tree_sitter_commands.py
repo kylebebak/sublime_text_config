@@ -40,6 +40,9 @@ def scroll_to_point(point: int, view: sublime.View):
 
 
 class TreeSitterPrintTreeCommand(sublime_plugin.TextCommand):
+    """
+    For debugging. If nothing selected, print syntax tree for buffer. Else, print segment(s) of tree for selection(s).
+    """
     def format_node(self, node: Node):
         return f"{node.type}  {node.start_point} → {node.end_point}"
 
@@ -76,6 +79,10 @@ class TreeSitterPrintTreeCommand(sublime_plugin.TextCommand):
 
 
 def get_descendant(region: sublime.Region, view: sublime.View) -> Node | None:
+    """
+    Find node that spans region, then find first descendant that's smaller than this node. This descendant is basically
+    guaranteed to have at least one sibling.
+    """
     if not (tree_dict := get_tree_dict(view.buffer_id())):
         return
 
@@ -86,11 +93,18 @@ def get_descendant(region: sublime.Region, view: sublime.View) -> Node | None:
 
 
 def get_sibling(region: sublime.Region, view: sublime.View, forward: bool = True) -> Node | None:
+    """
+    - Find that node spans region
+    - Find "first" ancestor of this node, including node itself, that has siblings
+        - If node spanning region is root node, find "first" descendant that has siblings
+    - Return the next or previous sibling
+    """
     node = get_node_spanning_region(region, view.buffer_id())
     if not node:
         return
 
     if not node.parent:
+        # We're at root node, so we find the first descendant that has siblings, and return sibling adjacent to region
         tree_dict = get_tree_dict(view.buffer_id())
         first_sibling = get_descendant(region, view)
 
@@ -121,24 +135,31 @@ def get_sibling(region: sublime.Region, view: sublime.View, forward: bool = True
 
 class TreeSitterSelectAncestorCommand(sublime_plugin.TextCommand):
     """
-    Note: we scroll to start of ancestor if it's not visible.
+    Expand selection to smallest ancestor that's bigger than node spanning currently selected region.
+
+    Does not select region corresponding to root node, i.e. region that spans entire buffer, because there are easier
+    ways to do this…
     """
 
-    def run(self, edit, reverse: bool = False):
+    def run(self, edit, reverse_sel: bool = False):
         for region in self.view.sel():
             new_node = get_ancestor(region, self.view)
-            if new_node:
-                new_region = get_region_from_node(new_node, self.view, reverse=reverse)
+            if new_node and new_node.parent:
+                new_region = get_region_from_node(new_node, self.view, reverse=reverse_sel)
                 self.view.sel().add(new_region)
                 scroll_to_point(new_region.begin(), self.view)
 
 
 class TreeSitterSelectSiblingCommand(sublime_plugin.TextCommand):
-    def run(self, edit, forward: bool = True, extend: bool = False, reverse: bool = False):
+    """
+    Find node spanning selected region, then find its next or previous sibling (depending on value of `forward`), and
+    select this region or extend current selection (depending on value of `extend`).
+    """
+    def run(self, edit, forward: bool = True, extend: bool = False, reverse_sel: bool = False):
         sel = self.view.sel()
         for region in sel:
             if sibling := get_sibling(region, self.view, forward):
-                new_region = get_region_from_node(sibling, self.view, reverse=reverse)
+                new_region = get_region_from_node(sibling, self.view, reverse=reverse_sel)
                 if not extend:
                     sel.subtract(region)
                 sel.add(new_region)
@@ -147,11 +168,15 @@ class TreeSitterSelectSiblingCommand(sublime_plugin.TextCommand):
 
 
 class TreeSitterSelectDescendantCommand(sublime_plugin.TextCommand):
-    def run(self, edit, reverse: bool = False):
+    """
+    Find node that spans region, then find first descendant that's smaller than this node, and select region
+    corresponding to thsi node.
+    """
+    def run(self, edit, reverse_sel: bool = False):
         sel = self.view.sel()
         for region in sel:
             if desc := get_descendant(region, self.view):
-                new_region = get_region_from_node(desc, self.view, reverse=reverse)
+                new_region = get_region_from_node(desc, self.view, reverse=reverse_sel)
                 sel.subtract(region)
                 sel.add(new_region)
 
@@ -183,15 +208,6 @@ class UserReverseSelectionCommand(sublime_plugin.TextCommand):
 
 
 class TreeSitterChooseDescendantsCommand(sublime_plugin.TextCommand):
-    """
-    TODO
-
-    - Selecting all text should let us get root node
-    - Specify query_name to look up query and use it
-    - Create query for variable declarations, classes and functions
-    - Include variable declarations (when selecting root node, only those that are children of root node?)
-    """
-
     def run(self, edit, query_name: str):
         buffer_id = self.view.buffer_id()
         tree_dict = get_tree_dict(buffer_id)
