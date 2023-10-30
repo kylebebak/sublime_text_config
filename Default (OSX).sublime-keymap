@@ -1,10 +1,13 @@
 [
   // GENERAL
-
-  { "keys": ["super+k", "super+t"], "command": "title_case" },
-
-  { "keys": ["super+shift+d"], "command": "duplicate_line" },
-
+  {
+    "keys": ["super+k", "super+t"],
+    "command": "title_case"
+  },
+  {
+    "keys": ["super+shift+d"],
+    "command": "duplicate_line"
+  },
   // Symbols and navigation
   {
     "keys": ["super+e"],
@@ -17,72 +20,87 @@
       }
     ]
   },
-
-  { "keys": ["super+shift+r"], "command": "goto_symbol_in_project" },
-  { "keys": ["super+shift+minus"], "command": "jump_back" },
-  { "keys": ["super+shift+plus"], "command": "jump_forward" },
-
+  {
+    "keys": ["super+shift+r"],
+    "command": "goto_symbol_in_project"
+  },
+  {
+    "keys": ["super+shift+minus"],
+    "command": "jump_back"
+  },
+  {
+    "keys": ["super+shift+plus"],
+    "command": "jump_forward"
+  },
+  {
+    "keys": ["ctrl+alt+i"],
+    "command": "user_reverse_selection"
+  },
   // LSP
   {
     "keys": ["super+shift+e"],
     "command": "lsp_symbol_definition"
   },
-
   {
     "keys": ["ctrl+e"],
     "command": "lsp_symbol_type_definition"
   },
-
   {
     "keys": ["ctrl+alt+f"],
     "command": "lsp_format_document"
   },
-
-  { "keys": ["super+alt+l", "super+alt+l"], "command": "lsp_restart_server" },
-  { "keys": ["ctrl+l"], "command": "lsp_hover" },
-
+  {
+    "keys": ["super+alt+l", "super+alt+l"],
+    "command": "lsp_restart_server"
+  },
+  {
+    "keys": ["ctrl+l"],
+    "command": "lsp_hover"
+  },
   // Delete current line
   {
     "keys": ["super+shift+k"],
     "command": "run_macro_file",
-    "args": { "file": "Packages/Default/Delete Line.sublime-macro" }
+    "args": {
+      "file": "Packages/Default/Delete Line.sublime-macro"
+    }
   },
-
-  { "keys": ["super+0"], "command": "focus_side_bar" },
-
+  {
+    "keys": ["super+0"],
+    "command": "focus_side_bar"
+  },
   // Multiple cursors
   {
     "keys": ["super+alt+up"],
     "command": "select_lines",
-    "args": { "forward": false }
+    "args": {
+      "forward": false
+    }
   },
   {
     "keys": ["super+alt+down"],
     "command": "select_lines",
-    "args": { "forward": true }
+    "args": {
+      "forward": true
+    }
   },
-
-  // Selection
-  {
-    "keys": ["super+shift+a"],
-    "command": "expand_selection",
-    "args": { "to": "tag" }
-  },
-
-  // Aka select all, similar to `find_all {"close_panel": true}`, bound to `alt+enter`
+  // Aka select all that match this text
   {
     "keys": ["ctrl+alt+enter"],
     "command": "find_all_under"
   },
-
   // Files
-  { "keys": ["super+alt+r", "super+alt+r"], "command": "reveal_in_side_bar" },
-
+  {
+    "keys": ["super+alt+r", "super+alt+r"],
+    "command": "reveal_in_side_bar"
+  },
   // Auto-pair grave accents around selected text
   {
     "keys": ["`"],
     "command": "insert_snippet",
-    "args": { "contents": "`${0:$SELECTION}`" },
+    "args": {
+      "contents": "`${0:$SELECTION}`"
+    },
     "context": [
       {
         "key": "setting.auto_match_enabled",
@@ -97,26 +115,33 @@
       }
     ]
   },
-
   // MULTIPLE COMMANDS; these depend on run_multiple_commands.py
-
   // Search for text in files
   {
     "keys": ["shift+super+s"],
     "command": "run_multiple_commands",
     "args": {
       "commands": [
-        { "command": "expand_selection", "args": { "to": "word" } },
-        { "command": "slurp_find_string", "context": "window" },
+        {
+          "command": "expand_selection",
+          "args": {
+            "to": "word"
+          }
+        },
+        {
+          "command": "slurp_find_string",
+          "context": "window"
+        },
         {
           "command": "show_panel",
-          "args": { "panel": "find_in_files" },
+          "args": {
+            "panel": "find_in_files"
+          },
           "context": "window"
         }
       ]
     }
   },
-
   // Move up and down multiple lines at a time
   {
     "keys": ["alt+up"],
@@ -125,14 +150,16 @@
       "commands": [
         {
           "command": "move",
-          "args": { "by": "lines", "forward": false },
+          "args": {
+            "by": "lines",
+            "forward": false
+          },
           "context": "window"
         }
       ],
       "repetitions": 5
     }
   },
-
   {
     "keys": ["alt+down"],
     "command": "run_multiple_commands",
@@ -140,14 +167,16 @@
       "commands": [
         {
           "command": "move",
-          "args": { "by": "lines", "forward": true },
+          "args": {
+            "by": "lines",
+            "forward": true
+          },
           "context": "window"
         }
       ],
       "repetitions": 5
     }
   },
-
   {
     "keys": ["shift+alt+up"],
     "command": "run_multiple_commands",
@@ -155,14 +184,17 @@
       "commands": [
         {
           "command": "move",
-          "args": { "by": "lines", "forward": false, "extend": true },
+          "args": {
+            "by": "lines",
+            "forward": false,
+            "extend": true
+          },
           "context": "window"
         }
       ],
       "repetitions": 5
     }
   },
-
   {
     "keys": ["shift+alt+down"],
     "command": "run_multiple_commands",
@@ -170,47 +202,54 @@
       "commands": [
         {
           "command": "move",
-          "args": { "by": "lines", "forward": true, "extend": true },
+          "args": {
+            "by": "lines",
+            "forward": true,
+            "extend": true
+          },
           "context": "window"
         }
       ],
       "repetitions": 5
     }
   },
-
   {
     "keys": ["ctrl+alt+super+up"],
     "command": "run_multiple_commands",
     "args": {
-      "commands": [{ "command": "swap_line_up", "context": "window" }],
+      "commands": [
+        {
+          "command": "swap_line_up",
+          "context": "window"
+        }
+      ],
       "repetitions": 5
     }
   },
-
   {
     "keys": ["ctrl+alt+super+down"],
     "command": "run_multiple_commands",
     "args": {
-      "commands": [{ "command": "swap_line_down", "context": "window" }],
+      "commands": [
+        {
+          "command": "swap_line_down",
+          "context": "window"
+        }
+      ],
       "repetitions": 5
     }
   },
-
   // DISABLED BINDINGS
-
   {
     "keys": ["alt+super+o"],
     // This disables the thoroughly useless insert/overwrite mode, by unbinding `toggle_overwrite` command
     "command": "noop"
   },
-
   // PACKAGES
-
   {
     "keys": ["ctrl+super+v"],
     "command": "paste_from_history"
   },
-
   // Evaluate
   {
     "keys": ["super+alt+enter"],
@@ -223,7 +262,6 @@
       }
     ]
   },
-
   {
     "keys": ["super+alt+enter"],
     "command": "run_multiple_commands",
@@ -231,15 +269,24 @@
       "commands": [
         {
           "command": "move_to",
-          "args": { "extend": false, "to": "bol" },
+          "args": {
+            "extend": false,
+            "to": "bol"
+          },
           "context": "window"
         },
         {
           "command": "move_to",
-          "args": { "extend": true, "to": "eol" },
+          "args": {
+            "extend": true,
+            "to": "eol"
+          },
           "context": "window"
         },
-        { "command": "evaluate", "context": "window" }
+        {
+          "command": "evaluate",
+          "context": "window"
+        }
       ]
     },
     "context": [
@@ -250,50 +297,65 @@
       }
     ]
   },
-
   // MoveTab
   {
     "keys": ["super+ctrl+left"],
     "command": "move_tab",
-    "args": { "position": "-1" }
+    "args": {
+      "position": "-1"
+    }
   },
   {
     "keys": ["super+ctrl+right"],
     "command": "move_tab",
-    "args": { "position": "+1" }
+    "args": {
+      "position": "+1"
+    }
   },
-
   // Project Manager
   {
     "keys": ["super+ctrl+o"],
     "command": "project_manager",
-    "args": { "action": "new" }
+    "args": {
+      "action": "new"
+    }
   },
-
   // Wrap Plus
-  { "keys": ["alt+w"], "command": "wrap_lines", "args": { "width": 120 } },
-
+  {
+    "keys": ["alt+w"],
+    "command": "wrap_lines",
+    "args": {
+      "width": 120
+    }
+  },
   // GitSavvy
-  { "keys": ["super+alt+g", "super+alt+g"], "command": "gs_show_status" },
+  {
+    "keys": ["super+alt+g", "super+alt+g"],
+    "command": "gs_show_status"
+  },
   {
     "keys": ["super+alt+g", "super+alt+f"],
     "command": "gs_diff",
-    "args": { "current_file": true }
+    "args": {
+      "current_file": true
+    }
   },
-  { "keys": ["super+alt+g", "super+alt+i"], "command": "gs_inline_diff" },
-
+  {
+    "keys": ["super+alt+g", "super+alt+i"],
+    "command": "gs_inline_diff"
+  },
   // Copy file path and line number
   {
     "keys": ["super+alt+b", "super+alt+b"],
     "command": "copy_file_path_and_line_number",
-    "args": { "include_text": true }
+    "args": {
+      "include_text": true
+    }
   },
-
   // BracketHighlighter
-
   // Select text
   {
-    "keys": ["ctrl+alt+up"],
+    "keys": ["ctrl+down"],
     "command": "bh_async_key",
     "args": {
       "no_outside_adj": null,
@@ -307,49 +369,83 @@
   // TreeSitter
   {
     "keys": ["ctrl+alt+down"],
-    "command": "user_expand_selection",
+    "command": "user_expand_selection"
   },
   {
     "keys": ["ctrl+alt+left"],
     "command": "tree_sitter_select_sibling",
-    "args": { "to_next": false }
+    "args": {
+      "forward": false
+    }
+  },
+  {
+    "keys": ["ctrl+alt+shift+left"],
+    "command": "tree_sitter_select_sibling",
+    "args": {
+      "forward": false,
+      "extend": true
+    }
   },
   {
     "keys": ["ctrl+alt+right"],
     "command": "tree_sitter_select_sibling",
-    "args": { "to_next": true }
+    "args": {
+      "forward": true
+    }
   },
   {
-    "keys": ["ctrl+down"],
-    "command": "tree_sitter_select_descendant",
+    "keys": ["ctrl+alt+shift+right"],
+    "command": "tree_sitter_select_sibling",
+    "args": {
+      "forward": true,
+      "extend": true
+    }
   },
-
+  {
+    "keys": ["ctrl+alt+up"],
+    "command": "tree_sitter_select_descendant"
+  },
+  {
+    "keys": ["ctrl+alt+["],
+    "command": "fold"
+  },
+  {
+    "keys": ["ctrl+alt+]"],
+    "command": "unfold"
+  },
   // Automatic Package Reloader
-  { "keys": ["super+ctrl+alt+r"], "command": "package_reloader_reload" },
-
+  {
+    "keys": ["super+ctrl+alt+r"],
+    "command": "package_reloader_reload"
+  },
   // Requester
-  { "keys": ["ctrl+h"], "command": "requester_history" },
-
+  {
+    "keys": ["ctrl+h"],
+    "command": "requester_history"
+  },
   // Open URL
   {
     "keys": ["ctrl+alt+u"],
     "command": "open_url",
-    "args": { "show_menu": false }
+    "args": {
+      "show_menu": false
+    }
   },
-
   // Prettier
-  { "keys": ["super+ctrl+alt+f"], "command": "js_prettier" },
-
+  {
+    "keys": ["super+ctrl+alt+f"],
+    "command": "js_prettier"
+  },
   // Color Helper
   {
     "keys": ["super+shift+c"],
     "command": "color_helper",
-    "args": { "mode": "info" }
+    "args": {
+      "mode": "info"
+    }
   },
-
   // MarkdownEditing
   // For links no need to add anything, just look at "MarkdownEditing: New Inline Link" in command palette
-
   // Toggle GFM tasks
   {
     "keys": ["ctrl+x"],

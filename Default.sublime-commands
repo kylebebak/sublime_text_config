@@ -2,66 +2,70 @@
   {
     "caption": "File: Copy Path And Line Number",
     "command": "copy_file_path_and_line_number",
-    "args": { "include_text": true }
+    "args": {
+      "include_text": true
+    }
   },
-
   {
     "caption": "File: Delete",
     "command": "delete_open_file"
   },
-
   {
     "caption": "View: Copy viewname",
     "command": "copy_view_name"
   },
-
-  { "caption": "Show Scope Name", "command": "show_scope_name" },
-
+  {
+    "caption": "Show Scope Name",
+    "command": "show_scope_name"
+  },
   {
     "caption": "Paste From Clipboard History",
     "command": "paste_from_history"
   },
-
   {
     "caption": "Toggle Spell Check",
     "command": "toggle_setting",
-    "args": { "setting": "spell_check" }
+    "args": {
+      "setting": "spell_check"
+    }
   },
-
   {
     "caption": "Expand Selection: Matching Bracket",
     "command": "expand_selection",
-    "args": { "to": "brackets" }
+    "args": {
+      "to": "brackets"
+    }
   },
-
   {
     "caption": "Expand Selection: Matching Tag",
     "command": "expand_selection",
-    "args": { "to": "tag" }
+    "args": {
+      "to": "tag"
+    }
   },
-
   {
     "caption": "Wrap Plus: Wrap At 120 Chars",
     "command": "wrap_lines",
-    "args": { "width": 120 }
+    "args": {
+      "width": 120
+    }
   },
-
   {
     "caption": "LSP: Show Hover Popup",
     "command": "lsp_hover",
   },
-
   {
     "caption": "JSON Schema: Test Schema and Data",
     "command": "json_schema_test",
   },
-
   {
     "caption": "Set Indent/Tab Size: 4",
     "command": "set_setting",
-    "args": {"setting": "tab_size", "value": 4}
+    "args": {
+      "setting": "tab_size",
+      "value": 4
+    }
   },
-
   {
     "caption": "Tree Sitter: Print Tree",
     "command": "tree_sitter_print_tree",

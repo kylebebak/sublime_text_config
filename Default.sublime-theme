@@ -11,38 +11,38 @@
     {
       "class": "sidebar_tree",
       // left, top, right, bottom
-      "row_padding": [16, 6, 4, 6],
+      "row_padding": [16, 6, 4, 6]
     },
     {
       "class": "sidebar_label",
-      "parents": [{"class": "tree_row", "attributes": ["highlighted"]}],
+      "parents": [{ "class": "tree_row", "attributes": ["highlighted"] }],
       "font.bold": true
     },
 
     // Quick panel (super+p and super+shift+p)
     {
       "class": "quick_panel",
-      "row_padding": [10, 9, 10, 9],
+      "row_padding": [10, 9, 10, 9]
     },
 
     {
-        "class": "quick_panel_label",
-        "fg": [255, 255, 255],
-        "selected_fg": [255, 255, 255],
-        "match_fg": [0, 138, 255],
-        "selected_match_fg": [255, 223, 0]
+      "class": "quick_panel_label",
+      "fg": [255, 255, 255],
+      "selected_fg": [255, 255, 255],
+      "match_fg": [0, 138, 255],
+      "selected_match_fg": [255, 223, 0]
     },
     {
-        "class": "quick_panel_path_label",
-        "fg": [255, 255, 255],
-        "selected_fg": [255, 255, 255],
-        "match_fg": [255, 255, 255],
-        "selected_match_fg": [255, 255, 255]
+      "class": "quick_panel_path_label",
+      "fg": [255, 255, 255],
+      "selected_fg": [255, 255, 255],
+      "match_fg": [255, 255, 255],
+      "selected_match_fg": [255, 255, 255]
     },
     {
-        "class": "quick_panel_score_label",
-        "fg": [255, 255, 255],
-        "selected_fg": [255, 255, 255]
-    },
+      "class": "quick_panel_score_label",
+      "fg": [255, 255, 255],
+      "selected_fg": [255, 255, 255]
+    }
   ]
 }

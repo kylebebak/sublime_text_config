@@ -2,55 +2,75 @@
   //
   // Built-in
   //
-
-  { "keys": ["ctrl+k", "ctrl+t"], "command": "title_case" },
-
+  {
+    "keys": ["ctrl+k", "ctrl+t"],
+    "command": "title_case"
+  },
   // Navigation
-
   {
     "keys": ["pageup"],
     "command": "move_to",
-    "args": { "extend": false, "to": "bof" }
+    "args": {
+      "extend": false,
+      "to": "bof"
+    }
   },
   {
     "keys": ["pagedown"],
     "command": "move_to",
-    "args": { "extend": false, "to": "eof" }
+    "args": {
+      "extend": false,
+      "to": "eof"
+    }
   },
-
   {
     "keys": ["shift+pageup"],
     "command": "move_to",
-    "args": { "extend": true, "to": "bof" }
+    "args": {
+      "extend": true,
+      "to": "bof"
+    }
   },
   {
     "keys": ["shift+pagedown"],
     "command": "move_to",
-    "args": { "extend": true, "to": "eof" }
+    "args": {
+      "extend": true,
+      "to": "eof"
+    }
   },
-
   {
     "keys": ["ctrl+up"],
     "command": "move_to",
-    "args": { "extend": false, "to": "bof" }
+    "args": {
+      "extend": false,
+      "to": "bof"
+    }
   },
   {
     "keys": ["ctrl+down"],
     "command": "move_to",
-    "args": { "extend": false, "to": "eof" }
+    "args": {
+      "extend": false,
+      "to": "eof"
+    }
   },
-
   {
     "keys": ["ctrl+shift+up"],
     "command": "move_to",
-    "args": { "extend": true, "to": "bof" }
+    "args": {
+      "extend": true,
+      "to": "bof"
+    }
   },
   {
     "keys": ["ctrl+shift+down"],
     "command": "move_to",
-    "args": { "extend": true, "to": "eof" }
+    "args": {
+      "extend": true,
+      "to": "eof"
+    }
   },
-
   {
     "keys": ["ctrl+home"],
     "command": "prev_view"
@@ -59,10 +79,14 @@
     "keys": ["ctrl+end"],
     "command": "next_view"
   },
-
-  { "keys": ["ctrl+shift+minus"], "command": "jump_back" },
-  { "keys": ["ctrl+shift+equals"], "command": "jump_forward" },
-
+  {
+    "keys": ["ctrl+shift+minus"],
+    "command": "jump_back"
+  },
+  {
+    "keys": ["ctrl+shift+equals"],
+    "command": "jump_forward"
+  },
   {
     "keys": ["ctrl+alt+up"],
     "command": "swap_line_up"
@@ -71,46 +95,60 @@
     "keys": ["ctrl+alt+down"],
     "command": "swap_line_down"
   },
-
   // Search for text in files
   {
     "keys": ["ctrl+shift+s"],
     "command": "run_multiple_commands",
     "args": {
       "commands": [
-        { "command": "expand_selection", "args": { "to": "word" } },
-        { "command": "slurp_find_string", "context": "window" },
+        {
+          "command": "expand_selection",
+          "args": {
+            "to": "word"
+          }
+        },
+        {
+          "command": "slurp_find_string",
+          "context": "window"
+        },
         {
           "command": "show_panel",
-          "args": { "panel": "find_in_files" },
+          "args": {
+            "panel": "find_in_files"
+          },
           "context": "window"
         }
       ]
     }
   },
-
   // Multiple Cursors
   {
     "keys": ["alt+pageup"],
     "command": "select_lines",
-    "args": { "forward": false }
+    "args": {
+      "forward": false
+    }
   },
   {
     "keys": ["alt+pagedown"],
     "command": "select_lines",
-    "args": { "forward": true }
+    "args": {
+      "forward": true
+    }
   },
-
   // Selection
   {
     "keys": ["ctrl+shift+a"],
     "command": "expand_selection",
-    "args": { "to": "tag" }
+    "args": {
+      "to": "tag"
+    }
   },
-
   // Files
-  { "keys": ["alt+r", "alt+r"], "command": "reveal_in_side_bar" },
-
+  {
+    "keys": ["alt+r", "alt+r"],
+    "command": "reveal_in_side_bar"
+  },
   // Symbols And Navigation
   {
     "keys": ["ctrl+e"],
@@ -123,7 +161,6 @@
       }
     ]
   },
-
   {
     "keys": ["ctrl+g"],
     "command": "find_next"
@@ -135,25 +172,29 @@
   {
     "keys": ["alt+g"],
     "command": "show_overlay",
-    "args": { "overlay": "goto", "text": ":" }
+    "args": {
+      "overlay": "goto",
+      "text": ":"
+    }
   },
-
   //
   // Custom / Third-party
   //
-
   // MoveTab
   {
     "keys": ["ctrl+shift+home"],
     "command": "move_tab",
-    "args": { "position": "-1" }
+    "args": {
+      "position": "-1"
+    }
   },
   {
     "keys": ["ctrl+shift+end"],
     "command": "move_tab",
-    "args": { "position": "+1" }
+    "args": {
+      "position": "+1"
+    }
   },
-
   // Run multiple commands
   {
     "keys": ["alt+up"],
@@ -162,14 +203,16 @@
       "commands": [
         {
           "command": "move",
-          "args": { "by": "lines", "forward": false },
+          "args": {
+            "by": "lines",
+            "forward": false
+          },
           "context": "window"
         }
       ],
       "repetitions": 5
     }
   },
-
   {
     "keys": ["alt+down"],
     "command": "run_multiple_commands",
@@ -177,14 +220,16 @@
       "commands": [
         {
           "command": "move",
-          "args": { "by": "lines", "forward": true },
+          "args": {
+            "by": "lines",
+            "forward": true
+          },
           "context": "window"
         }
       ],
       "repetitions": 5
     }
   },
-
   {
     "keys": ["shift+alt+up"],
     "command": "run_multiple_commands",
@@ -192,14 +237,17 @@
       "commands": [
         {
           "command": "move",
-          "args": { "by": "lines", "forward": false, "extend": true },
+          "args": {
+            "by": "lines",
+            "forward": false,
+            "extend": true
+          },
           "context": "window"
         }
       ],
       "repetitions": 5
     }
   },
-
   {
     "keys": ["shift+alt+down"],
     "command": "run_multiple_commands",
@@ -207,26 +255,29 @@
       "commands": [
         {
           "command": "move",
-          "args": { "by": "lines", "forward": true, "extend": true },
+          "args": {
+            "by": "lines",
+            "forward": true,
+            "extend": true
+          },
           "context": "window"
         }
       ],
       "repetitions": 5
     }
   },
-
   // Open URL
   {
     "keys": ["ctrl+u"],
     "command": "open_url"
   },
-
   {
     "keys": ["ctrl+alt+u"],
     "command": "open_url",
-    "args": { "show_menu": false }
+    "args": {
+      "show_menu": false
+    }
   },
-
   // Git Gutter
   {
     "keys": ["ctrl+alt+j"],
@@ -236,35 +287,47 @@
     "keys": ["ctrl+alt+k"],
     "command": "git_gutter_prev_change"
   },
-
   // Project Manager
   {
     "keys": ["ctrl+alt+o"],
     "command": "project_manager",
-    "args": { "action": "new" }
+    "args": {
+      "action": "new"
+    }
   },
-
   // Wrap Plus
-  { "keys": ["alt+w"], "command": "wrap_lines", "args": { "width": 120 } },
-
+  {
+    "keys": ["alt+w"],
+    "command": "wrap_lines",
+    "args": {
+      "width": 120
+    }
+  },
   // Prettier
-  { "keys": ["ctrl+alt+f"], "command": "js_prettier" },
-
+  {
+    "keys": ["ctrl+alt+f"],
+    "command": "js_prettier"
+  },
   // GitSavvy
-  { "keys": ["ctrl+alt+g", "ctrl+alt+g"], "command": "gs_show_status" },
+  {
+    "keys": ["ctrl+alt+g", "ctrl+alt+g"],
+    "command": "gs_show_status"
+  },
   {
     "keys": ["ctrl+alt+g", "ctrl+alt+f"],
     "command": "gs_diff",
-    "args": { "current_file": true }
+    "args": {
+      "current_file": true
+    }
   },
-
   // Copy file path and line number
   {
     "keys": ["ctrl+alt+b", "ctrl+alt+b"],
     "command": "copy_file_path_and_line_number",
-    "args": { "include_text": true }
+    "args": {
+      "include_text": true
+    }
   },
-
   // BracketHighlighter
   {
     "keys": ["ctrl+alt+pageup"],
@@ -290,12 +353,13 @@
       }
     }
   },
-
   // Auto-pair grave accents around selected text
   {
     "keys": ["`"],
     "command": "insert_snippet",
-    "args": { "contents": "`${0:$SELECTION}`" },
+    "args": {
+      "contents": "`${0:$SELECTION}`"
+    },
     "context": [
       {
         "key": "setting.auto_match_enabled",
@@ -310,7 +374,6 @@
       }
     ]
   },
-
   // Evaluate
   {
     "keys": ["ctrl+alt+enter"],
@@ -323,7 +386,6 @@
       }
     ]
   },
-
   {
     "keys": ["ctrl+alt+enter"],
     "command": "run_multiple_commands",
@@ -331,15 +393,24 @@
       "commands": [
         {
           "command": "move_to",
-          "args": { "extend": false, "to": "bol" },
+          "args": {
+            "extend": false,
+            "to": "bol"
+          },
           "context": "window"
         },
         {
           "command": "move_to",
-          "args": { "extend": true, "to": "eol" },
+          "args": {
+            "extend": true,
+            "to": "eol"
+          },
           "context": "window"
         },
-        { "command": "evaluate", "context": "window" }
+        {
+          "command": "evaluate",
+          "context": "window"
+        }
       ]
     },
     "context": [
@@ -350,21 +421,18 @@
       }
     ]
   },
-
   // LSP
   {
     "keys": ["ctrl+shift+e"],
     "command": "lsp_symbol_definition"
   },
-
   {
     "keys": ["alt+e"],
     "command": "lsp_symbol_type_definition"
   },
-
   // Requester
   {
     "keys": ["ctrl+alt+h"],
     "command": "requester_history"
-  },
+  }
 ]

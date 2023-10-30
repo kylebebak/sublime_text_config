@@ -6,7 +6,8 @@ from typing import TypeVar
 import sublime
 import sublime_plugin
 from sublime_tree_sitter import (
-    get_larger_region,
+    byte_offset,
+    get_ancestor,
     get_node_spanning_region,
     get_region_from_node,
     get_size,
@@ -74,65 +75,87 @@ class TreeSitterPrintTreeCommand(sublime_plugin.TextCommand):
         view.insert(edit, 0, "\n".join(parts))
 
 
+def get_descendant(region: sublime.Region, view: sublime.View) -> Node | None:
+    if not (tree_dict := get_tree_dict(view.buffer_id())):
+        return
+
+    node = get_node_spanning_region(region, view.buffer_id()) or tree_dict["tree"].root_node
+    for desc, _ in walk_tree(node):
+        if get_size(desc) < get_size(node):
+            return desc
+
+
+def get_sibling(region: sublime.Region, view: sublime.View, forward: bool = True) -> Node | None:
+    node = get_node_spanning_region(region, view.buffer_id())
+    if not node:
+        return
+
+    if not node.parent:
+        tree_dict = get_tree_dict(view.buffer_id())
+        first_sibling = get_descendant(region, view)
+
+        if first_sibling and first_sibling.parent and tree_dict:
+            begin = byte_offset(region.begin(), tree_dict["s"])
+            if forward:
+                for sibling in first_sibling.parent.children:
+                    if begin <= sibling.start_byte:
+                        return sibling
+            else:
+                for sibling in reversed(first_sibling.parent.children):
+                    if begin >= sibling.start_byte:
+                        return sibling
+
+        return first_sibling
+
+    while node.parent and node.parent.parent:
+        if len(node.parent.children) == 1:
+            node = node.parent
+        else:
+            break
+
+    siblings = not_none(node.parent).children
+    idx = siblings.index(node)
+    idx = idx + 1 if forward else idx - 1
+    return siblings[idx % len(siblings)]
+
+
 class TreeSitterSelectAncestorCommand(sublime_plugin.TextCommand):
     """
     Note: we scroll to start of ancestor if it's not visible.
     """
 
-    def run(self, edit):
+    def run(self, edit, reverse: bool = False):
         for region in self.view.sel():
-            new_region = get_larger_region(region, self.view)
-            if new_region:
+            new_node = get_ancestor(region, self.view)
+            if new_node:
+                new_region = get_region_from_node(new_node, self.view, reverse=reverse)
                 self.view.sel().add(new_region)
                 scroll_to_point(new_region.begin(), self.view)
 
 
 class TreeSitterSelectSiblingCommand(sublime_plugin.TextCommand):
-    def run(self, edit, to_next: bool = True, extend: bool = False):
+    def run(self, edit, forward: bool = True, extend: bool = False, reverse: bool = False):
         sel = self.view.sel()
         for region in sel:
-            node = get_node_spanning_region(region, self.view.buffer_id())
-            if not node or not node.parent:
-                self.view.run_command("tree_sitter_select_descendant")
-                return
+            if sibling := get_sibling(region, self.view, forward):
+                new_region = get_region_from_node(sibling, self.view, reverse=reverse)
+                if not extend:
+                    sel.subtract(region)
+                sel.add(new_region)
 
-            while node.parent and node.parent.parent:
-                if len(node.parent.children) == 1:
-                    node = node.parent
-                else:
-                    break
-
-            siblings = not_none(node.parent).children
-            idx = siblings.index(node)
-            idx = idx + 1 if to_next else idx - 1
-            sibling = siblings[idx % len(siblings)]
-
-            new_region = get_region_from_node(sibling, self.view)
-            if not extend:
-                sel.subtract(region)
-            sel.add(new_region)
-
-            scroll_to_point(new_region.begin(), self.view)
+                scroll_to_point(new_region.begin(), self.view)
 
 
 class TreeSitterSelectDescendantCommand(sublime_plugin.TextCommand):
-    def run(self, edit):
-        tree_dict = get_tree_dict(self.view.buffer_id())
-        if not tree_dict:
-            return
-
+    def run(self, edit, reverse: bool = False):
         sel = self.view.sel()
         for region in sel:
-            node = get_node_spanning_region(region, self.view.buffer_id()) or tree_dict["tree"].root_node
+            if desc := get_descendant(region, self.view):
+                new_region = get_region_from_node(desc, self.view, reverse=reverse)
+                sel.subtract(region)
+                sel.add(new_region)
 
-            for desc, _ in walk_tree(node):
-                if get_size(desc) < get_size(node):
-                    new_region = get_region_from_node(desc, self.view)
-                    sel.subtract(region)
-                    sel.add(new_region)
-
-                    scroll_to_point(new_region.begin(), self.view)
-                    return
+                scroll_to_point(new_region.begin(), self.view)
 
 
 class UserExpandSelectionCommand(sublime_plugin.TextCommand):
@@ -149,6 +172,14 @@ class UserExpandSelectionCommand(sublime_plugin.TextCommand):
                     "plugin": {"type": ["__all__"], "command": "bh_modules.bracketselect"},
                 },  # type: ignore
             )
+
+
+class UserReverseSelectionCommand(sublime_plugin.TextCommand):
+    def run(self, edit):
+        sel = self.view.sel()
+        for region in sel:
+            sel.subtract(region)
+            sel.add(sublime.Region(a=region.b, b=region.a))
 
 
 class TreeSitterChooseDescendantsCommand(sublime_plugin.TextCommand):
