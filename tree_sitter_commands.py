@@ -2,11 +2,7 @@ from __future__ import annotations
 
 import sublime
 import sublime_plugin
-from sublime_tree_sitter import (
-    get_node_spanning_region,
-    get_tree_dict,
-    query_tree,
-)
+from sublime_tree_sitter import get_tree_dict
 
 
 class UserExpandSelectionCommand(sublime_plugin.TextCommand):
@@ -31,18 +27,3 @@ class UserReverseSelectionCommand(sublime_plugin.TextCommand):
         for region in sel:
             sel.subtract(region)
             sel.add(sublime.Region(a=region.b, b=region.a))
-
-
-class TreeSitterChooseDescendantsCommand(sublime_plugin.TextCommand):
-    def run(self, edit, query_name: str):
-        buffer_id = self.view.buffer_id()
-        tree_dict = get_tree_dict(buffer_id)
-        if not tree_dict:
-            return
-
-        node = get_node_spanning_region(self.view.sel()[0], buffer_id)
-        if not node:
-            return
-        nodes = query_tree(tree_dict["scope"], "", node) or []
-        for node in nodes:
-            print(node[0])

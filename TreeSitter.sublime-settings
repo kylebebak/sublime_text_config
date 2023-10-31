@@ -29,10 +29,6 @@
     ],
     "json": [
       "source.json",
-      "source.json.sublime",
-      "source.json.sublime.keymap",
-      "source.json.sublime.commands",
-      "source.json.sublime.theme",
       "source.requester-response"
     ],
   }

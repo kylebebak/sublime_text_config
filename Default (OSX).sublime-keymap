@@ -21,6 +21,34 @@
     ]
   },
   {
+    "keys": ["ctrl+left"],
+    "command": "requester_page_request_history",
+    "args": {
+      "pages": -1
+    },
+    "context": [
+      {
+        "key": "setting.requester.response_view",
+        "operator": "equal",
+        "operand": true
+      }
+    ]
+  },
+  {
+    "keys": ["ctrl+right"],
+    "command": "requester_page_request_history",
+    "args": {
+      "pages": 1
+    },
+    "context": [
+      {
+        "key": "setting.requester.response_view",
+        "operator": "equal",
+        "operand": true
+      }
+    ]
+  },
+  {
     "keys": ["super+shift+r"],
     "command": "goto_symbol_in_project"
   },
