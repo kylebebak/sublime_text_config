@@ -12,7 +12,6 @@ from sublime_tree_sitter import (
     get_region_from_node,
     get_size,
     get_tree_dict,
-    has_tree,
     query_tree,
     walk_tree,
 )
@@ -33,10 +32,9 @@ def get_view_name(view: sublime.View):
     return view.name() or ""
 
 
-def scroll_to_point(point: int, view: sublime.View):
-    visible_region = view.visible_region()
-    if point not in visible_region:
-        view.show(point)
+def scroll_to_region(region: sublime.Region, view: sublime.View):
+    if region.b not in view.visible_region():
+        view.show(region.b)
 
 
 class TreeSitterPrintTreeCommand(sublime_plugin.TextCommand):
@@ -141,13 +139,18 @@ class TreeSitterSelectAncestorCommand(sublime_plugin.TextCommand):
     ways to do this…
     """
 
-    def run(self, edit, reverse_sel: bool = False):
-        for region in self.view.sel():
+    def run(self, edit, reverse_sel: bool = True):
+        sel = self.view.sel()
+        new_region: sublime.Region | None = None
+
+        for region in sel:
             new_node = get_ancestor(region, self.view)
             if new_node and new_node.parent:
                 new_region = get_region_from_node(new_node, self.view, reverse=reverse_sel)
                 self.view.sel().add(new_region)
-                scroll_to_point(new_region.begin(), self.view)
+
+        if new_region and len(sel) == 1:
+            scroll_to_region(new_region, self.view)
 
 
 class TreeSitterSelectSiblingCommand(sublime_plugin.TextCommand):
@@ -155,16 +158,20 @@ class TreeSitterSelectSiblingCommand(sublime_plugin.TextCommand):
     Find node spanning selected region, then find its next or previous sibling (depending on value of `forward`), and
     select this region or extend current selection (depending on value of `extend`).
     """
-    def run(self, edit, forward: bool = True, extend: bool = False, reverse_sel: bool = False):
+    def run(self, edit, forward: bool = True, extend: bool = False, reverse_sel: bool = True):
         sel = self.view.sel()
+        new_regions: list[sublime.Region] = []
+
         for region in sel:
             if sibling := get_sibling(region, self.view, forward):
                 new_region = get_region_from_node(sibling, self.view, reverse=reverse_sel)
+                new_regions.append(new_region)
                 if not extend:
                     sel.subtract(region)
                 sel.add(new_region)
 
-                scroll_to_point(new_region.begin(), self.view)
+        if new_regions:
+            scroll_to_region(new_regions[-1] if forward else new_regions[0], self.view)
 
 
 class TreeSitterSelectDescendantCommand(sublime_plugin.TextCommand):
@@ -172,20 +179,23 @@ class TreeSitterSelectDescendantCommand(sublime_plugin.TextCommand):
     Find node that spans region, then find first descendant that's smaller than this node, and select region
     corresponding to thsi node.
     """
-    def run(self, edit, reverse_sel: bool = False):
+    def run(self, edit, reverse_sel: bool = True):
         sel = self.view.sel()
+        new_region: sublime.Region | None = None
+
         for region in sel:
             if desc := get_descendant(region, self.view):
                 new_region = get_region_from_node(desc, self.view, reverse=reverse_sel)
                 sel.subtract(region)
                 sel.add(new_region)
 
-                scroll_to_point(new_region.begin(), self.view)
+        if new_region and len(sel) == 1:
+            scroll_to_region(new_region, self.view)
 
 
 class UserExpandSelectionCommand(sublime_plugin.TextCommand):
     def run(self, edit):
-        if has_tree(self.view.buffer_id()):
+        if get_tree_dict(self.view.buffer_id()):
             self.view.run_command("tree_sitter_select_ancestor")
         else:
             # Fall back to using BracketHighlighter

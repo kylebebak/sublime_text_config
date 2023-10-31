@@ -352,10 +352,9 @@
       "include_text": true
     }
   },
-  // BracketHighlighter
-  // Select text
+  // BracketHighlighter, select text
   {
-    "keys": ["ctrl+down"],
+    "keys": ["ctrl+up"],
     "command": "bh_async_key",
     "args": {
       "no_outside_adj": null,
@@ -369,7 +368,7 @@
   // TreeSitter
   {
     "keys": ["ctrl+alt+down"],
-    "command": "user_expand_selection"
+    "command": "tree_sitter_select_descendant"
   },
   {
     "keys": ["ctrl+alt+left"],
@@ -403,7 +402,7 @@
   },
   {
     "keys": ["ctrl+alt+up"],
-    "command": "tree_sitter_select_descendant"
+    "command": "user_expand_selection"
   },
   {
     "keys": ["ctrl+alt+["],
