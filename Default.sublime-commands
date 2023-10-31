@@ -66,8 +66,4 @@
       "value": 4
     }
   },
-  {
-    "caption": "Tree Sitter: Print Tree",
-    "command": "tree_sitter_print_tree",
-  },
 ]

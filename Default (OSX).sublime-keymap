@@ -367,6 +367,10 @@
   },
   // TreeSitter
   {
+    "keys": ["ctrl+alt+up"],
+    "command": "user_expand_selection"
+  },
+  {
     "keys": ["ctrl+alt+down"],
     "command": "tree_sitter_select_descendant"
   },
@@ -401,10 +405,6 @@
     }
   },
   {
-    "keys": ["ctrl+alt+up"],
-    "command": "user_expand_selection"
-  },
-  {
     "keys": ["ctrl+alt+["],
     "command": "fold"
   },
@@ -421,7 +421,7 @@
   },
   {
     "keys": ["ctrl+]"],
-    "command": "unfold_all",
+    "command": "unfold_all"
   },
   // Automatic Package Reloader
   {
