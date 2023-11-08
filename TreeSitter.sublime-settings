@@ -12,10 +12,12 @@
     "javascript",
     "lua",
     "markdown",
-    "rust",
     "bash",
     "scss",
     "css",
+    "java",
+    "rust",
+    "sql",
   ],
   "debug": false,
   // Markdown parser slow for some reason
