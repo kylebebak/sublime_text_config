@@ -5,6 +5,7 @@
 !.gitignore
 !README.md
 !/snippets
+!/queries
 !*.py
 !*.sublime-build
 !*.sublime-keymap

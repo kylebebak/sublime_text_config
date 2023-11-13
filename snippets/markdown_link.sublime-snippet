@@ -1,7 +1,0 @@
-<snippet>
-	<content><![CDATA[
-[$1]($2)
-]]></content>
-	<tabTrigger>link</tabTrigger>
-	<scope>text.html.markdown,text.html.markdown.gfm</scope>
-</snippet>
