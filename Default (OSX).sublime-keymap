@@ -433,6 +433,85 @@
     }
   },
   {
+    "keys": ["ctrl+alt+,"],
+    "command": "tree_sitter_select_cousins",
+    "args": {
+      "which": "previous"
+    }
+  },
+  {
+    "keys": ["ctrl+alt+."],
+    "command": "tree_sitter_select_cousins",
+    "args": {
+      "which": "next"
+    }
+  },
+  {
+    "keys": ["ctrl+alt+shift+,"],
+    "command": "tree_sitter_select_cousins",
+    "args": {
+      "which": "previous",
+      "extend": true
+    }
+  },
+  {
+    "keys": ["ctrl+alt+shift+."],
+    "command": "tree_sitter_select_cousins",
+    "args": {
+      "which": "next",
+      "extend": true
+    }
+  },
+  {
+    "keys": ["ctrl+alt+;"],
+    "command": "tree_sitter_select_cousins",
+    "args": {
+      "which": "previous",
+      "same_types": false
+    }
+  },
+  {
+    "keys": ["ctrl+alt+'"],
+    "command": "tree_sitter_select_cousins",
+    "args": {
+      "which": "next",
+      "same_types": false
+    }
+  },
+  {
+    "keys": ["ctrl+alt+shift+;"],
+    "command": "tree_sitter_select_cousins",
+    "args": {
+      "which": "previous",
+      "same_types": false,
+      "extend": true
+    }
+  },
+  {
+    "keys": ["ctrl+alt+shift+'"],
+    "command": "tree_sitter_select_cousins",
+    "args": {
+      "which": "next",
+      "same_types": false,
+      "extend": true
+    }
+  },
+  {
+    "keys": ["ctrl+alt+x"],
+    "command": "tree_sitter_select_cousins",
+    "args": {
+      "which": "all"
+    }
+  },
+  {
+    "keys": ["ctrl+alt+c"],
+    "command": "tree_sitter_select_cousins",
+    "args": {
+      "which": "all",
+      "same_text": true
+    }
+  },
+  {
     "keys": ["ctrl+alt+["],
     "command": "fold"
   },
