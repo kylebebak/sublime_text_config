@@ -497,6 +497,40 @@
     }
   },
   {
+    "keys": ["ctrl+alt+["],
+    "command": "tree_sitter_select_cousins",
+    "args": {
+      "which": "previous",
+      "same_text": true
+    }
+  },
+  {
+    "keys": ["ctrl+alt+]"],
+    "command": "tree_sitter_select_cousins",
+    "args": {
+      "which": "next",
+      "same_text": true
+    }
+  },
+  {
+    "keys": ["ctrl+alt+shift+["],
+    "command": "tree_sitter_select_cousins",
+    "args": {
+      "which": "previous",
+      "same_text": true,
+      "extend": true
+    }
+  },
+  {
+    "keys": ["ctrl+alt+shift+]"],
+    "command": "tree_sitter_select_cousins",
+    "args": {
+      "which": "next",
+      "same_text": true,
+      "extend": true
+    }
+  },
+  {
     "keys": ["ctrl+alt+x"],
     "command": "tree_sitter_select_cousins",
     "args": {
@@ -512,22 +546,27 @@
     }
   },
   {
-    "keys": ["ctrl+alt+["],
+    "keys": ["ctrl+alt+n"],
+    "command": "tree_sitter_show_node_under_selection"
+  },
+  // Folding
+  {
+    "keys": ["ctrl+["],
     "command": "fold"
   },
   {
-    "keys": ["ctrl+alt+]"],
+    "keys": ["ctrl+]"],
     "command": "unfold"
   },
   {
-    "keys": ["ctrl+["],
+    "keys": ["alt+["],
     "command": "fold_by_level",
     "args": {
       "level": 1
     }
   },
   {
-    "keys": ["ctrl+]"],
+    "keys": ["alt+]"],
     "command": "unfold_all"
   },
   // Automatic Package Reloader
