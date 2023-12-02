@@ -1,3 +1,4 @@
+; Variables
 (class_definition (block (expression_statement (assignment left: (identifier) @definition.var))))
 (function_definition (block (expression_statement (assignment left: (identifier) @definition.var))))
 ; Walrus operator

@@ -467,7 +467,7 @@
     "command": "tree_sitter_select_cousins",
     "args": {
       "which": "previous",
-      "same_types": false
+      "same_text": true
     }
   },
   {
@@ -475,7 +475,7 @@
     "command": "tree_sitter_select_cousins",
     "args": {
       "which": "next",
-      "same_types": false
+      "same_text": true
     }
   },
   {
@@ -483,7 +483,7 @@
     "command": "tree_sitter_select_cousins",
     "args": {
       "which": "previous",
-      "same_types": false,
+      "same_text": true,
       "extend": true
     }
   },
@@ -492,7 +492,7 @@
     "command": "tree_sitter_select_cousins",
     "args": {
       "which": "next",
-      "same_types": false,
+      "same_text": true,
       "extend": true
     }
   },
@@ -501,7 +501,7 @@
     "command": "tree_sitter_select_cousins",
     "args": {
       "which": "previous",
-      "same_text": true
+      "same_types": false
     }
   },
   {
@@ -509,7 +509,7 @@
     "command": "tree_sitter_select_cousins",
     "args": {
       "which": "next",
-      "same_text": true
+      "same_types": false
     }
   },
   {
@@ -517,7 +517,7 @@
     "command": "tree_sitter_select_cousins",
     "args": {
       "which": "previous",
-      "same_text": true,
+      "same_types": false,
       "extend": true
     }
   },
@@ -526,7 +526,7 @@
     "command": "tree_sitter_select_cousins",
     "args": {
       "which": "next",
-      "same_text": true,
+      "same_types": false,
       "extend": true
     }
   },
