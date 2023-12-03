@@ -70,7 +70,6 @@ class EvaluateCall(threading.Thread):
 
         Otherwise, it is evaluated as Python code.
         """
-
         if self.original.lstrip().startswith("!"):
             # Remove the first bang
             shell_code = self.original.lstrip()[1:]
