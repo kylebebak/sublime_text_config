@@ -549,6 +549,10 @@
     "keys": ["ctrl+alt+n"],
     "command": "tree_sitter_show_node_under_selection"
   },
+  {
+    "keys": ["super+r"],
+    "command": "user_tree_sitter_goto_query"
+  },
   // Folding
   {
     "keys": ["ctrl+["],

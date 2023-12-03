@@ -1,7 +1,8 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Literal
+from typing import List, Literal, Set, Tuple
+from TreeSitter.src.api import get_ancestors
 
 import sublime
 import sublime_plugin
@@ -61,6 +62,8 @@ CAPTURE_NAME_TO_KIND: dict[CaptureNameType, sublime.Kind] = {
     "definition.function": (sublime.KindId.FUNCTION, "f", "f"),
 }
 
+CaptureType = Tuple[Node, str, List[Node]]
+
 
 def get_capture_kind(capture_name: str) -> sublime.Kind:
     if capture_name not in CAPTURE_NAME_TO_KIND:
@@ -78,22 +81,26 @@ def get_captures_from_nodes(
     if not (tree_dict := get_tree_dict(view.buffer_id())):
         return []
 
-    captures: list[tuple[Node, str]] = []
-    for node in nodes:
-        for n, c in query_node(tree_dict["scope"], node, query_file, queries_path) or []:
-            captures.append((n, c))
+    captured_nodes: Set[Node] = set()
+    captures: list[CaptureType] = []
+
+    for search_node in nodes:
+        for captured_node, capture_name in query_node(tree_dict["scope"], search_node, query_file, queries_path) or []:
+            captured_nodes.add(captured_node)
+            captured_ancestors = [a for a in get_ancestors(captured_node)[1:] if a in captured_nodes]
+            captures.append((captured_node, capture_name, captured_ancestors))
 
     return captures
 
 
-def goto_goto_captures(captures: list[tuple[Node, str]], view: sublime.View):
+def goto_captures(captures: list[CaptureType], view: sublime.View):
     options: list[sublime.QuickPanelItem] = []
-    for node, capture_name in captures:
+    for node, capture_name, ancestors in captures:
         options.append(
             sublime.QuickPanelItem(
                 trigger=node.text.decode(),
                 kind=get_capture_kind(capture_name),
-                annotation="text",
+                annotation=ancestors[0].text.decode() if ancestors else "",
             )
         )
 
@@ -101,7 +108,7 @@ def goto_goto_captures(captures: list[tuple[Node, str]], view: sublime.View):
         """
         Scroll to symbol and select it.
         """
-        node, _ = captures[idx]
+        node, _, _ = captures[idx]
         a = view.text_point_utf8(*node.start_point)
         b = view.text_point_utf8(*node.end_point)
         region = sublime.Region(a, b)
@@ -129,7 +136,7 @@ def goto_goto_captures(captures: list[tuple[Node, str]], view: sublime.View):
     window.show_quick_panel(options, on_select=on_select, on_highlight=on_highlight)
 
 
-class CustomTreeSitterGotoQueryCommand(sublime_plugin.TextCommand):
+class UserTreeSitterGotoQueryCommand(sublime_plugin.TextCommand):
     """
     Render goto options in current buffer from tree sitter query.
     """
@@ -141,5 +148,22 @@ class CustomTreeSitterGotoQueryCommand(sublime_plugin.TextCommand):
         nodes = get_selected_nodes(self.view) or [tree_dict["tree"].root_node]
         queries_path = "" if len(nodes) == 1 and nodes[0].parent is None else QUERIES_PATH
 
-        captures = get_captures_from_nodes(nodes, self.view, queries_path=queries_path)
-        goto_goto_captures(captures, self.view)
+        def get_captures(nodes: list[Node]) -> list[CaptureType]:
+            try:
+                return get_captures_from_nodes(nodes, self.view, queries_path=queries_path)
+            except FileNotFoundError:
+                return []
+
+        # If query returns no captures:
+        #   - Against non-root node, move to root
+        #   - Against root node, move to built-in goto text command
+
+        if captures := get_captures(nodes):
+            return goto_captures(captures, self.view)
+
+        if len(nodes) > 1 or nodes[0].parent is not None:
+            nodes = [tree_dict["tree"].root_node]
+            if captures := get_captures(nodes):
+                return goto_captures(captures, self.view)
+
+        not_none(self.view.window()).run_command("show_overlay", {"overlay": "goto", "text": "@"})
