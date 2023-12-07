@@ -21,34 +21,6 @@
     ]
   },
   {
-    "keys": ["ctrl+left"],
-    "command": "requester_page_request_history",
-    "args": {
-      "pages": -1
-    },
-    "context": [
-      {
-        "key": "setting.requester.response_view",
-        "operator": "equal",
-        "operand": true
-      }
-    ]
-  },
-  {
-    "keys": ["ctrl+right"],
-    "command": "requester_page_request_history",
-    "args": {
-      "pages": 1
-    },
-    "context": [
-      {
-        "key": "setting.requester.response_view",
-        "operator": "equal",
-        "operand": true
-      }
-    ]
-  },
-  {
     "keys": ["super+shift+r"],
     "command": "goto_symbol_in_project"
   },
@@ -407,7 +379,14 @@
     "command": "tree_sitter_select_sibling",
     "args": {
       "forward": false
-    }
+    },
+    "context": [
+      {
+        "key": "setting.requester.response_view",
+        "operator": "equal",
+        "operand": false
+      }
+    ]
   },
   {
     "keys": ["ctrl+alt+shift+left"],
@@ -422,7 +401,14 @@
     "command": "tree_sitter_select_sibling",
     "args": {
       "forward": true
-    }
+    },
+    "context": [
+      {
+        "key": "setting.requester.response_view",
+        "operator": "equal",
+        "operand": false
+      }
+    ]
   },
   {
     "keys": ["ctrl+alt+shift+right"],
@@ -551,7 +537,19 @@
   },
   {
     "keys": ["super+r"],
-    "command": "user_tree_sitter_goto_query"
+    "command": "user_tree_sitter_goto_query",
+    "context": [
+      {
+        "key": "setting.requester.response_view",
+        "operator": "equal",
+        "operand": false
+      },
+      {
+        "key": "selector",
+        "operator": "not_equal",
+        "operand": "source.requester"
+      },
+    ]
   },
   // Folding
   {

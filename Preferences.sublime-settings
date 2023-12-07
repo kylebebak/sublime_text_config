@@ -95,4 +95,5 @@
 	"color_scheme": "Mariana.sublime-color-scheme",
 	"mde.list_indent_bullets": ["-"],
 	"scroll_past_end": 0.15,
+	"index_files": true,
 }

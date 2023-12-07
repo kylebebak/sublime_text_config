@@ -44,9 +44,12 @@ class UserTreeSitterGotoQueryCommand(sublime_plugin.TextCommand):
     - Against root node, move to built-in goto text command
     """
 
+    def fallback(self):
+        not_none(self.view.window()).run_command("show_overlay", {"overlay": "goto", "text": "@"})
+
     def run(self, edit):
         if not (tree_dict := get_tree_dict(self.view.buffer_id())):
-            return
+            return self.fallback()
 
         nodes = get_selected_nodes(self.view) or [tree_dict["tree"].root_node]
         is_root_node = len(nodes) == 1 and nodes[0].parent is None
@@ -65,4 +68,4 @@ class UserTreeSitterGotoQueryCommand(sublime_plugin.TextCommand):
             if captures := get_captures(nodes, ""):
                 return goto_captures(captures, self.view)
 
-        not_none(self.view.window()).run_command("show_overlay", {"overlay": "goto", "text": "@"})
+        self.fallback()
