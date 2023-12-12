@@ -7,10 +7,6 @@
     }
   },
   {
-    "caption": "File: Delete",
-    "command": "delete_open_file"
-  },
-  {
     "caption": "View: Copy viewname",
     "command": "copy_view_name"
   },
@@ -27,20 +23,6 @@
     "command": "toggle_setting",
     "args": {
       "setting": "spell_check"
-    }
-  },
-  {
-    "caption": "Expand Selection: Matching Bracket",
-    "command": "expand_selection",
-    "args": {
-      "to": "brackets"
-    }
-  },
-  {
-    "caption": "Expand Selection: Matching Tag",
-    "command": "expand_selection",
-    "args": {
-      "to": "tag"
     }
   },
   {

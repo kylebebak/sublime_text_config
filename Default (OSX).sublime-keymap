@@ -367,6 +367,10 @@
   },
   // TreeSitter
   {
+    "keys": ["ctrl+alt+/"],
+    "command": "user_tree_sitter_select_ancestor"
+  },
+  {
     "keys": ["ctrl+alt+up"],
     "command": "user_expand_selection"
   },

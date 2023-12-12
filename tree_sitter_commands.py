@@ -2,7 +2,15 @@ from __future__ import annotations
 
 import sublime
 import sublime_plugin
-from sublime_tree_sitter import get_captures_from_nodes, get_selected_nodes, get_tree_dict, goto_captures
+from sublime_tree_sitter import (
+    get_ancestors,
+    get_captures_from_nodes,
+    get_region_from_node,
+    get_scope_to_language_name,
+    get_selected_nodes,
+    get_tree_dict,
+    goto_captures,
+)
 from tree_sitter import Node
 
 from .utils import not_none
@@ -69,3 +77,40 @@ class UserTreeSitterGotoQueryCommand(sublime_plugin.TextCommand):
                 return goto_captures(captures, self.view)
 
         self.fallback()
+
+
+class UserTreeSitterSelectAncestorCommand(sublime_plugin.TextCommand):
+    """
+    Expand selection to nearest ancestor of a given type. If no types configured for this language, fall back to
+    `UserExpandSelectionCommand`.
+    """
+
+    ECMA_TYPES = ["function_declaration", "arrow_function", "method_definition", "class_declaration"]
+    LANGUAGE_TO_ANCESTOR_TYPES: dict[str, list[str]] = {
+        "python": ["class_definition", "function_definition"],
+        "javascript": ECMA_TYPES,
+        "typescript": ECMA_TYPES,
+        "tsx": ECMA_TYPES,
+    }
+
+    def fallback(self):
+        not_none(self.view.window()).run_command("show_overlay", {"overlay": "goto", "text": "@"})
+
+    def run(self, edit):
+        if not (tree_dict := get_tree_dict(self.view.buffer_id())):
+            return self.fallback()
+
+        language = get_scope_to_language_name()[tree_dict["scope"]]
+        if not (ancestor_types := self.LANGUAGE_TO_ANCESTOR_TYPES.get(language)):
+            return self.view.run_command("user_expand_selection_command")
+
+        nodes = get_selected_nodes(self.view, include_emtpy_regions=True) or [tree_dict["tree"].root_node]
+
+        sel = self.view.sel()
+        for node in nodes:
+            for ancestor in get_ancestors(node)[1:]:
+                if ancestor.type in ancestor_types:
+                    new_region = get_region_from_node(ancestor, self.view, reverse=True)
+                    sel.add(new_region)
+                    self.view.show(new_region)
+                    break
