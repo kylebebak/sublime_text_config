@@ -19,6 +19,8 @@
     "rust",
     "sql",
     "query",
+    "c",
+    "cpp",
   ],
   "debug": false,
   // Markdown parser slow for some reason

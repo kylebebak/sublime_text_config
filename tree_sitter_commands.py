@@ -3,11 +3,16 @@ from __future__ import annotations
 import sublime
 import sublime_plugin
 from sublime_tree_sitter import (
+    CaptureDict,
+    contains,
+    format_breadcrumbs,
     get_ancestors,
     get_captures_from_nodes,
+    get_node_spanning_region,
     get_region_from_node,
     get_scope_to_language_name,
     get_selected_nodes,
+    get_size,
     get_tree_dict,
     goto_captures,
 )
@@ -62,7 +67,7 @@ class UserTreeSitterGotoQueryCommand(sublime_plugin.TextCommand):
         nodes = get_selected_nodes(self.view) or [tree_dict["tree"].root_node]
         is_root_node = len(nodes) == 1 and nodes[0].parent is None
 
-        def get_captures(nodes: list[Node], queries_path: str):
+        def get_captures(nodes: list[Node], queries_path: str) -> list[CaptureDict]:
             try:
                 return get_captures_from_nodes(nodes, self.view, queries_path=queries_path)
             except FileNotFoundError:
@@ -81,8 +86,9 @@ class UserTreeSitterGotoQueryCommand(sublime_plugin.TextCommand):
 
 class UserTreeSitterSelectAncestorCommand(sublime_plugin.TextCommand):
     """
-    Expand selection to nearest ancestor of a given type. If no types configured for this language, fall back to
-    `UserExpandSelectionCommand`.
+    Expand selection to nearest ancestor of a given type.
+
+    TODO: this can be part of `TreeSitterShowBreadcrumbsCommand`.
     """
 
     ECMA_TYPES = ["function_declaration", "arrow_function", "method_definition", "class_declaration"]
@@ -93,16 +99,13 @@ class UserTreeSitterSelectAncestorCommand(sublime_plugin.TextCommand):
         "tsx": ECMA_TYPES,
     }
 
-    def fallback(self):
-        not_none(self.view.window()).run_command("show_overlay", {"overlay": "goto", "text": "@"})
-
     def run(self, edit):
         if not (tree_dict := get_tree_dict(self.view.buffer_id())):
-            return self.fallback()
+            return
 
         language = get_scope_to_language_name()[tree_dict["scope"]]
         if not (ancestor_types := self.LANGUAGE_TO_ANCESTOR_TYPES.get(language)):
-            return self.view.run_command("user_expand_selection_command")
+            return
 
         nodes = get_selected_nodes(self.view, include_emtpy_regions=True) or [tree_dict["tree"].root_node]
 
@@ -114,3 +117,43 @@ class UserTreeSitterSelectAncestorCommand(sublime_plugin.TextCommand):
                     sel.add(new_region)
                     self.view.show(new_region)
                     break
+
+
+class TreeSitterShowBreadcrumbsCommand(sublime_plugin.TextCommand):
+    """
+    Render popup with ancestor breadcrumbs "above" selection in parse tree.
+    """
+
+    def run(self, edit):
+        if not (sel := self.view.sel()):
+            return
+
+        if not (node := get_node_spanning_region(sel[0], self.view.buffer_id())) or not node.parent:
+            return
+
+        ancestors = get_ancestors(node)
+        if len(ancestors) < 2:
+            return
+        search_node = get_ancestors(node)[-2]
+
+        try:
+            captures = get_captures_from_nodes([search_node], self.view)
+        except FileNotFoundError:
+            return
+
+        bc_capture = None
+        for capture in captures:
+            if (bc := capture["breadcrumb"]) and contains(bc["container"], node):
+                if bc_capture is None:
+                    bc_capture = capture
+                    continue
+                if bc_capture["breadcrumb"] is None:
+                    continue
+                if get_size(bc["container"]) <= get_size(bc_capture["breadcrumb"]["container"]):
+                    bc_capture = capture
+
+        if bc_capture is None or bc_capture["breadcrumb"] is None:
+            return
+
+        bc_nodes: list[Node] = [bc_capture["breadcrumb"]["node"], *(c["node"] for c in bc_capture["breadcrumbs"])]
+        self.view.show_popup(format_breadcrumbs(bc_nodes), max_width=1024)

@@ -540,6 +540,10 @@
     "command": "tree_sitter_show_node_under_selection"
   },
   {
+    "keys": ["ctrl+alt+b"],
+    "command": "tree_sitter_show_breadcrumbs"
+  },
+  {
     "keys": ["super+r"],
     "command": "user_tree_sitter_goto_query",
     "context": [
