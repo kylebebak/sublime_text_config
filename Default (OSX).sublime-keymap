@@ -29,7 +29,7 @@
     "command": "jump_back"
   },
   {
-    "keys": ["super+shift+plus"],
+    "keys": ["super+shift+equals"],
     "command": "jump_forward"
   },
   {
@@ -37,6 +37,10 @@
     "command": "user_reverse_selection"
   },
   // LSP
+  {
+    "keys": ["ctrl+l"],
+    "command": "lsp_hover"
+  },
   {
     "keys": ["super+shift+e"],
     "command": "lsp_symbol_definition"
@@ -46,16 +50,24 @@
     "command": "lsp_symbol_type_definition"
   },
   {
-    "keys": ["ctrl+alt+f"],
-    "command": "lsp_format_document"
-  },
-  {
-    "keys": ["super+alt+l", "super+alt+l"],
+    "keys": ["super+l", "super+l"],
     "command": "lsp_restart_server"
   },
   {
-    "keys": ["ctrl+l"],
-    "command": "lsp_hover"
+    "keys": ["super+l", "super+f"],
+    "command": "lsp_format_document"
+  },
+  {
+    "keys": ["super+l", "super+r"],
+    "command": "lsp_document_symbols"
+  },
+  {
+    "keys": ["super+l", "super+c"],
+    "command": "lsp_call_hierarchy"
+  },
+  {
+    "keys": ["super+l", "super+s"],
+    "command": "lsp_symbol_references"
   },
   // Delete current line
   {
