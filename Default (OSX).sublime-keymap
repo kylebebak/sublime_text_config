@@ -54,6 +54,10 @@
     "command": "lsp_restart_server"
   },
   {
+    "keys": ["ctrl+alt+f"],
+    "command": "lsp_format_document"
+  },
+  {
     "keys": ["super+l", "super+f"],
     "command": "lsp_format_document"
   },
@@ -377,7 +381,7 @@
       }
     }
   },
-  // TreeSitter
+  // Tree-sitter
   {
     "keys": ["ctrl+alt+/"],
     "command": "user_tree_sitter_select_ancestor"

@@ -3,7 +3,6 @@ from __future__ import annotations
 import sublime
 import sublime_plugin
 from sublime_tree_sitter import (
-    CaptureDict,
     contains,
     format_breadcrumbs,
     get_ancestors,
@@ -17,8 +16,6 @@ from sublime_tree_sitter import (
     goto_captures,
 )
 from tree_sitter import Node
-
-from .utils import not_none
 
 QUERIES_PATH = "~/Repos/sublime_text_config/queries"
 
@@ -57,31 +54,17 @@ class UserTreeSitterGotoQueryCommand(sublime_plugin.TextCommand):
     - Against root node, move to built-in goto text command
     """
 
-    def fallback(self):
-        not_none(self.view.window()).run_command("show_overlay", {"overlay": "goto", "text": "@"})
-
     def run(self, edit):
-        if not (tree_dict := get_tree_dict(self.view.buffer_id())):
-            return self.fallback()
+        nodes = get_selected_nodes(self.view)
+        if not nodes or (len(nodes) == 1 and nodes[0].parent is None):
+            return self.view.run_command("tree_sitter_goto_query")
 
-        nodes = get_selected_nodes(self.view) or [tree_dict["tree"].root_node]
-        is_root_node = len(nodes) == 1 and nodes[0].parent is None
-
-        def get_captures(nodes: list[Node], queries_path: str) -> list[CaptureDict]:
-            try:
-                return get_captures_from_nodes(nodes, self.view, queries_path=queries_path)
-            except FileNotFoundError:
-                return []
-
-        if captures := get_captures(nodes, "" if is_root_node else QUERIES_PATH):
+        if captures := get_captures_from_nodes(
+            nodes, self.view, queries_path=QUERIES_PATH, handle_queries_file_not_found=True
+        ):
             return goto_captures(captures, self.view)
 
-        if not is_root_node:
-            nodes = [tree_dict["tree"].root_node]
-            if captures := get_captures(nodes, ""):
-                return goto_captures(captures, self.view)
-
-        self.fallback()
+        return self.view.run_command("tree_sitter_goto_query")
 
 
 class UserTreeSitterSelectAncestorCommand(sublime_plugin.TextCommand):

@@ -18,5 +18,5 @@
 
 (function_definition name: (identifier) @definition.function.bc.1)
 
-((if_statement) @anonymous.bc)
-((with_statement) @anonymous.bc)
+(("if") @definition.block.bc.1)
+(("with") @definition.block.bc.1)
