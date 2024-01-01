@@ -33,8 +33,7 @@
       "source.requester"
     ],
     "json": [
-      "source.json",
-      "source.requester-response"
+      "source.json"
     ],
   },
 }
