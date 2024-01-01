@@ -44,9 +44,9 @@ class UserReverseSelectionCommand(sublime_plugin.TextCommand):
             sel.add(sublime.Region(a=region.b, b=region.a))
 
 
-class UserTreeSitterGotoQueryCommand(sublime_plugin.TextCommand):
+class UserTreeSitterGotoSymbolCommand(sublime_plugin.TextCommand):
     """
-    Render goto options in current buffer from tree sitter query.
+    Render goto options for symbols in current buffer captured by tree sitter query.
 
     If query returns no captures:
 
@@ -57,14 +57,14 @@ class UserTreeSitterGotoQueryCommand(sublime_plugin.TextCommand):
     def run(self, edit):
         nodes = get_selected_nodes(self.view)
         if not nodes or (len(nodes) == 1 and nodes[0].parent is None):
-            return self.view.run_command("tree_sitter_goto_query")
+            return self.view.run_command("tree_sitter_goto_symbol")
 
         if captures := get_captures_from_nodes(
-            nodes, self.view, queries_path=QUERIES_PATH, handle_queries_file_not_found=True
+            nodes, self.view, queries_path=QUERIES_PATH, handle_query_file_not_found=True
         ):
             return goto_captures(captures, self.view)
 
-        return self.view.run_command("tree_sitter_goto_query")
+        return self.view.run_command("tree_sitter_goto_symbol")
 
 
 class UserTreeSitterSelectAncestorCommand(sublime_plugin.TextCommand):

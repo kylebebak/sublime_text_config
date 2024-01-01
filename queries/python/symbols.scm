@@ -6,17 +6,17 @@
 
 (call (identifier) @definition.call)
 
-(for_statement left: (identifier) @definition.var.bc.1)
-(for_statement left: (pattern_list) @definition.var.bc.1)
-(for_statement left: (tuple_pattern) @definition.var.bc.1)
+(for_statement left: (identifier) @definition.loop.breadcrumb.1)
+(for_statement left: (pattern_list) @definition.loop.breadcrumb.1)
+(for_statement left: (tuple_pattern) @definition.loop.breadcrumb.1)
 
 ; Walrus operator
 (named_expression (identifier) @definition.var)
 
 ; Classes and functions
-(class_definition name: (identifier) @definition.class.bc.1)
+(class_definition name: (identifier) @definition.class.breadcrumb.1)
 
-(function_definition name: (identifier) @definition.function.bc.1)
+(function_definition name: (identifier) @definition.function.breadcrumb.1)
 
-(("if") @definition.block.bc.1)
-(("with") @definition.block.bc.1)
+(("if") @definition.if.breadcrumb.1)
+(("with") @definition.block.breadcrumb.1)
