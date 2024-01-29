@@ -32,8 +32,5 @@
       "source.python",
       "source.requester"
     ],
-    "json": [
-      "source.json"
-    ],
   },
 }
