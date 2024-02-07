@@ -26,6 +26,7 @@
 		"LSP-bash",
 		"LSP-eslint",
 		"LSP-gopls",
+		"LSP-jdtls",
 		"LSP-json",
 		"LSP-lua",
 		"LSP-pyright",

@@ -28,3 +28,13 @@ Reproduced here because they have an API token and can't go in version control.
     "blame_follow_rename": true,
 }
 ```
+
+## LSP
+
+### Java
+
+To install the [eclipse-jdtls](https://github.com/sublimelsp/LSP-jdtls), first install `java` with `brew install java`, then do this:
+
+```sh
+sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+```
