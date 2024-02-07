@@ -21,6 +21,10 @@
     "query",
     "c",
     "cpp",
+    "dockerfile",
+    "make",
+    "hcl",
+    "terraform",
   ],
   "debug": false,
   // Markdown parser slow for some reason
