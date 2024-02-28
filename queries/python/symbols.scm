@@ -5,6 +5,7 @@
 ((as_pattern_target) @definition.var)
 
 (call (identifier) @definition.call)
+(call function: (attribute attribute: (identifier) @definition.call))
 
 (for_statement left: (identifier) @definition.loop @breadcrumb.1)
 (for_statement left: (pattern_list) @definition.loop @breadcrumb.1)

@@ -5,6 +5,9 @@
 (type_alias_declaration (type_identifier) @definition.type)
 (interface_declaration (type_identifier) @definition.interface)
 
+(call_expression function: (identifier) @definition.call)
+(call_expression function: (member_expression property: (property_identifier) @definition.call))
+
 (variable_declarator
   [
     ((identifier) @definition.object @breadcrumb.1 (as_expression (object)))
