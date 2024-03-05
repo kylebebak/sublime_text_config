@@ -8,6 +8,17 @@
     "keys": ["super+shift+d"],
     "command": "duplicate_line"
   },
+  {
+    "keys": ["ctrl+alt+f"],
+    "command": "toggle_in_selection",
+    "context": [
+      {
+        "key": "setting.is_widget",
+        "operator": "equal",
+        "operand": true
+      }
+    ]
+  },
   // Symbols and navigation
   {
     "keys": ["super+e"],
@@ -52,10 +63,6 @@
   {
     "keys": ["super+l", "super+l"],
     "command": "lsp_restart_server"
-  },
-  {
-    "keys": ["ctrl+alt+f"],
-    "command": "lsp_format_document"
   },
   {
     "keys": ["super+l", "super+f"],
