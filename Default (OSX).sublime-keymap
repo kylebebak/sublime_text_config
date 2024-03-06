@@ -582,6 +582,23 @@
       },
     ]
   },
+  {
+    "keys": ["ctrl+alt+r"],
+    "command": "user_tree_sitter_goto_symbol",
+    "args": {"force_user_queries": true},
+    "context": [
+      {
+        "key": "setting.requester.response_view",
+        "operator": "equal",
+        "operand": false
+      },
+      {
+        "key": "selector",
+        "operator": "not_equal",
+        "operand": "source.requester"
+      },
+    ]
+  },
   // Folding
   {
     "keys": ["ctrl+["],

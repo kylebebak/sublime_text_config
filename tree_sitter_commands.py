@@ -52,16 +52,22 @@ class UserTreeSitterGotoSymbolCommand(sublime_plugin.TextCommand):
 
     - Against non-root node, move to root
     - Against root node, move to built-in goto text command
+
+    If `force_user_queries=True` passed, use queries from `QUERIES_PATH`, on root node, regardless of current selection.
     """
 
-    def run(self, edit):
+    def run(self, edit, force_user_queries: bool = False):
+        if force_user_queries:
+            if not (tree_dict := get_tree_dict(self.view.buffer_id())):
+                return
+            if captures := get_captures_from_nodes([tree_dict["tree"].root_node], self.view, queries_path=QUERIES_PATH):
+                return goto_captures(captures, self.view)
+
         nodes = get_selected_nodes(self.view)
         if not nodes or (len(nodes) == 1 and nodes[0].parent is None):
             return self.view.run_command("tree_sitter_goto_symbol")
 
-        if captures := get_captures_from_nodes(
-            nodes, self.view, queries_path=QUERIES_PATH, handle_query_file_not_found=True
-        ):
+        if captures := get_captures_from_nodes(nodes, self.view, queries_path=QUERIES_PATH):
             return goto_captures(captures, self.view)
 
         return self.view.run_command("tree_sitter_goto_symbol")
