@@ -7,6 +7,20 @@
     }
   },
   {
+    "caption": "File: Copy Relative Path",
+    "command": "copy_file_path",
+    "args": {
+      "relative": true
+    }
+  },
+  {
+    "caption": "File: Copy Absolute Path",
+    "command": "copy_file_path",
+    "args": {
+      "relative": false
+    }
+  },
+  {
     "caption": "View: Copy viewname",
     "command": "copy_view_name"
   },
