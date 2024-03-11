@@ -1,5 +1,9 @@
 [
   {
+    "caption": "File: Copy Name",
+    "command": "copy_file_name",
+  },
+  {
     "caption": "File: Copy Path And Line Number",
     "command": "copy_file_path_and_line_number",
     "args": {
@@ -21,7 +25,7 @@
     }
   },
   {
-    "caption": "View: Copy viewname",
+    "caption": "View: Copy Name",
     "command": "copy_view_name"
   },
   {

@@ -26,6 +26,15 @@ class CopyViewNameCommand(sublime_plugin.TextCommand):
         not_none(self.view.window()).status_message(f'copied "{name}"')
 
 
+class CopyFileNameCommand(sublime_plugin.TextCommand):
+    def run(self, edit) -> None:
+        if not (path := self.view.file_name()):
+            return
+        filename = os.path.basename(path)
+        sublime.set_clipboard(filename)
+        not_none(self.view.window()).status_message("copied - {}".format(truncate(filename, 80)))
+
+
 class CopyFilePathCommand(sublime_plugin.TextCommand):
     def run(self, edit, relative: bool = True) -> None:
         if not (path := self.view.file_name()):
