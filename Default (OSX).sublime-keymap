@@ -47,6 +47,10 @@
     "keys": ["ctrl+alt+i"],
     "command": "user_reverse_selection"
   },
+  {
+    "keys": ["ctrl+alt+m"],
+    "command": "user_merge_selections"
+  },
   // LSP
   {
     "keys": ["ctrl+l"],

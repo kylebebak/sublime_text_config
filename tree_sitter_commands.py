@@ -36,6 +36,15 @@ class UserExpandSelectionCommand(sublime_plugin.TextCommand):
             )
 
 
+class UserMergeSelectionsCommand(sublime_plugin.TextCommand):
+    def run(self, edit):
+        if len(sel := self.view.sel()) == 0:
+            return
+        region = sublime.Region(a=sel[0].begin(), b=sel[-1].end())
+        sel.clear()
+        sel.add(region)
+
+
 class UserReverseSelectionCommand(sublime_plugin.TextCommand):
     def run(self, edit):
         sel = self.view.sel()
