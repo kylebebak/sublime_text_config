@@ -1,11 +1,9 @@
 {
 	"bootstrapped": true,
 	"ignore_vcs_packages": true,
-	"in_process_packages":
-	[
+	"in_process_packages": [
 	],
-	"installed_packages":
-	[
+	"installed_packages": [
 		"A File Icon",
 		"Advanced CSV",
 		"ApplySyntax",
@@ -50,8 +48,8 @@
 		"TOML",
 		"UnitTesting",
 	],
-	"repositories":
-	[
+	"repositories": [
+		"https://github.com/sublime-treesitter/TreeSitter",
 		"https://github.com/kylebebak/Requester",
 		"https://github.com/kylebebak/GitSavvy",
 		"https://github.com/kylebebak/sublime_date_diff",
