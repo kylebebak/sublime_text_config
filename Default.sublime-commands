@@ -55,6 +55,10 @@
     "command": "lsp_hover",
   },
   {
+    "caption": "LSP: Symbol References",
+    "command": "lsp_symbol_references",
+  },
+  {
     "caption": "JSON Schema: Test Schema and Data",
     "command": "json_schema_test",
   },

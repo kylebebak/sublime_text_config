@@ -81,7 +81,7 @@
     "command": "lsp_call_hierarchy"
   },
   {
-    "keys": ["super+l", "super+s"],
+    "keys": ["super+l", "super+e"],
     "command": "lsp_symbol_references"
   },
   // Delete current line
