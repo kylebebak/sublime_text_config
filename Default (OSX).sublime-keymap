@@ -559,6 +559,27 @@
       "same_text": true
     }
   },
+  // Like find_next and find_prev, but case-sensitive, and for node of same type
+  {
+    "keys": ["ctrl+alt+f"],
+    "command": "tree_sitter_select_cousins",
+    "args": {
+      "which": "previous",
+      "same_types_depth": 2,
+      "same_text": true,
+      "same_depth": false
+    }
+  },
+  {
+    "keys": ["ctrl+alt+g"],
+    "command": "tree_sitter_select_cousins",
+    "args": {
+      "which": "next",
+      "same_types_depth": 2,
+      "same_text": true,
+      "same_depth": false
+    }
+  },
   {
     "keys": ["ctrl+alt+n"],
     "command": "tree_sitter_show_node_under_selection"
