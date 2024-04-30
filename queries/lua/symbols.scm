@@ -2,3 +2,5 @@
 (function_declaration name: (method_index_expression) @definition.function @breadcrumb.1)
 
 (assignment_statement (variable_list name: (identifier) @definition.var))
+
+(function_call (identifier) @definition.call)

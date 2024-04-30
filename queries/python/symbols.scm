@@ -21,3 +21,9 @@
 
 (("if") @definition.if @breadcrumb.1)
 (("with") @definition.block @breadcrumb.1)
+
+; Imports
+(import_from_statement ("import" (dotted_name) @definition.import))
+(import_from_statement (aliased_import (identifier) @definition.import))
+(import_statement (dotted_name) @definition.import)
+(import_statement (aliased_import (identifier) @definition.import))

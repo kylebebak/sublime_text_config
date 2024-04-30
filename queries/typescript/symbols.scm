@@ -16,3 +16,8 @@
     ]))
   ]
 )
+
+; Imports
+(import_clause (identifier) @definition.import)
+(import_clause (namespace_import (identifier) @definition.import))
+(import_clause (named_imports (import_specifier (identifier) @definition.import .)))
