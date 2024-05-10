@@ -3,11 +3,13 @@ from __future__ import annotations
 import sublime
 import sublime_plugin
 from sublime_tree_sitter import (
+    TreeDict,
     contains,
     format_breadcrumbs,
     get_ancestors,
     get_captures_from_nodes,
     get_node_spanning_region,
+    get_query_s_from_file,
     get_region_from_node,
     get_scope_to_language_name,
     get_selected_nodes,
@@ -65,19 +67,26 @@ class UserTreeSitterGotoSymbolCommand(sublime_plugin.TextCommand):
     If `force_user_queries=True` passed, use queries from `QUERIES_PATH`, on root node, regardless of current selection.
     """
 
+    def get_query_s(self, tree_dict: TreeDict):
+        language = get_scope_to_language_name()[tree_dict["scope"]]
+        return get_query_s_from_file(language, QUERIES_PATH)
+
     def run(self, edit, force_user_queries: bool = False):
+        tree_dict = get_tree_dict(self.view.buffer_id())
         if force_user_queries:
-            if not (tree_dict := get_tree_dict(self.view.buffer_id())):
+            if not tree_dict:
                 return
-            if captures := get_captures_from_nodes([tree_dict["tree"].root_node], self.view, queries_path=QUERIES_PATH):
+            nodes = [tree_dict["tree"].root_node]
+            if captures := get_captures_from_nodes(nodes, self.view, self.get_query_s(tree_dict)):
                 return goto_captures(captures, self.view)
 
         nodes = get_selected_nodes(self.view)
         if not nodes or (len(nodes) == 1 and nodes[0].parent is None):
             return self.view.run_command("tree_sitter_goto_symbol")
 
-        if captures := get_captures_from_nodes(nodes, self.view, queries_path=QUERIES_PATH):
-            return goto_captures(captures, self.view)
+        if tree_dict:
+            if captures := get_captures_from_nodes(nodes, self.view, self.get_query_s(tree_dict)):
+                return goto_captures(captures, self.view)
 
         return self.view.run_command("tree_sitter_goto_symbol")
 
@@ -125,7 +134,8 @@ class TreeSitterShowBreadcrumbsCommand(sublime_plugin.TextCommand):
     def run(self, edit):
         if not (sel := self.view.sel()):
             return
-
+        if not (tree_dict := get_tree_dict(self.view.buffer_id())):
+            return
         if not (node := get_node_spanning_region(sel[0], self.view.buffer_id())) or not node.parent:
             return
 
@@ -135,9 +145,10 @@ class TreeSitterShowBreadcrumbsCommand(sublime_plugin.TextCommand):
         search_node = get_ancestors(node)[-2]
 
         try:
-            captures = get_captures_from_nodes([search_node], self.view)
+            query_s = get_query_s_from_file(get_scope_to_language_name()[tree_dict["scope"]])
         except FileNotFoundError:
             return
+        captures = get_captures_from_nodes([search_node], self.view, query_s)
 
         bc_capture = None
         for capture in captures:
