@@ -1,0 +1,9 @@
+{
+  "settings": {
+    // Catalog of JSON Schema files that define schemas for a bunch of JSON, YAML, and TOML config files: https://www.schemastore.org/api/json/catalog.json
+    "yaml.schemas": {
+      // Schema for CloudFormation templates; the more correct solve is saving these files with `.cf.yml.` extension
+      "https://raw.githubusercontent.com/awslabs/goformation/master/schema/cloudformation.schema.json": "*/templates/*.yml"
+    }
+  }
+}

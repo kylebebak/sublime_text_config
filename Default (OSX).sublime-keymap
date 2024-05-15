@@ -9,7 +9,7 @@
     "command": "duplicate_line"
   },
   {
-    "keys": ["alt+f"],
+    "keys": ["ctrl+f"],
     "command": "toggle_in_selection",
     "context": [
       {

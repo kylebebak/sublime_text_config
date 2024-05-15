@@ -23,6 +23,8 @@
 !golang.sublime-settings
 !JsPrettier.sublime-settings
 !LSP.sublime-settings
+!LSP-gopls.sublime-settings
+!LSP-yaml.sublime-settings
 !Markdown.sublime-settings
 !nginx.sublime-settings
 !open_url.sublime-settings
