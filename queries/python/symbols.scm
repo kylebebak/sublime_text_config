@@ -1,6 +1,6 @@
 ; Variables
 (expression_statement (assignment left: (identifier) @definition.var))
-(expression_statement (assignment left: (pattern_list) @definition.var))
+(expression_statement (assignment left: (pattern_list (identifier) @definition.var)))
 (expression_statement (assignment left: (tuple_pattern) @definition.var))
 ((as_pattern_target) @definition.var)
 
