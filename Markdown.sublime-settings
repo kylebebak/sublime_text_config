@@ -6,8 +6,7 @@
 	],
 	"line_numbers": true,
 	"tab_size": 4,
-	// https://github.com/sublimehq/sublime_text/issues/377
-	"wrap_width": 101,
+	"wrap_width": 100,
 	"color_scheme": "MarkdownEditor.sublime-color-scheme",
 	"rulers":
 	[
