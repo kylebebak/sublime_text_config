@@ -18,7 +18,6 @@
 # and these settings files
 !ApplySyntax.sublime-settings
 !bh_core.sublime-settings
-!Emmet.sublime-settings
 !GitGutter.sublime-settings
 !golang.sublime-settings
 !JsPrettier.sublime-settings

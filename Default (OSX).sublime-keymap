@@ -77,6 +77,10 @@
     "command": "lsp_document_symbols"
   },
   {
+    "keys": ["super+l", "super+t"],
+    "command": "lsp_workspace_symbols"
+  },
+  {
     "keys": ["super+l", "super+c"],
     "command": "lsp_call_hierarchy"
   },
