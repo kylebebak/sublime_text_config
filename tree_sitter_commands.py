@@ -72,7 +72,10 @@ class UserTreeSitterGotoSymbolCommand(sublime_plugin.TextCommand):
         return get_query_s_from_file(language, QUERIES_PATH)
 
     def run(self, edit, force_user_queries: bool = False):
-        tree_dict = get_tree_dict(self.view.buffer_id())
+        if tree_dict := get_tree_dict(self.view.buffer_id()):
+            if tree_dict["scope"] == "text.html.markdown" and (window := self.view.window()):
+                return window.run_command("show_overlay", {"overlay": "goto", "text": "@"})
+
         if force_user_queries:
             if not tree_dict:
                 return
