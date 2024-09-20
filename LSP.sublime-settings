@@ -4,10 +4,17 @@
 		"taplo-toml": {
 			"enabled": true,
 			// See https://taplo.tamasfe.dev, installed with `brew install taplo`
-			"command": ["/opt/homebrew/bin/taplo", "lsp", "stdio"],
+			"command": [
+				"/opt/homebrew/bin/taplo",
+				"lsp",
+				"stdio"
+			],
 			"selector": "source.toml"
 		},
 	},
 	"show_diagnostics_panel_on_save": 0,
-	"show_code_actions": ""
+	"show_code_actions": "",
+	"lsp_code_actions_on_save": {
+		"source.fixAll.ruff": true
+	}
 }

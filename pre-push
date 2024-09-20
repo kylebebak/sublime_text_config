@@ -2,6 +2,6 @@
 
 # Run from root of repo: `cd .git/hooks && ln -s -f ../../pre-push`
 
-ruff .
+ruff check .
 ruff format --check .
 pyright

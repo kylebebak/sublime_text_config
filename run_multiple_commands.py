@@ -5,6 +5,7 @@ Takes an array of commands (same as those you'd provide to a key binding) with a
 and runs each command in order. Valid contexts are 'text', 'window', and 'app' for running a TextCommand, WindowCommand,
 or ApplicationCommand respectively.
 """
+
 from __future__ import annotations
 
 import sublime
