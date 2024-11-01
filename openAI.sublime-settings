@@ -1,0 +1,18 @@
+{
+	// https://github.com/yaroslavyaroslav/OpenAI-sublime-text/blob/develop/openAI.sublime-settings
+	"url": "http://localhost:11434",
+	"token": "xxxxxxxxxx", // For local models anything with at least 10 chars works
+	"markdown": true,
+	"status_hint": [
+		"name",
+		"prompt_mode",
+		"chat_model"
+	],
+	"assistants": [
+		{
+			"name": "llama3.1:8b",
+			"chat_model": "llama3.1:8b",
+			"prompt_mode": "panel"
+		}
+	]
+}
