@@ -37,4 +37,5 @@
       "source.requester"
     ],
   },
+  "file_ignore_patterns": [".*\\.aider.chat.history.md$"],
 }
