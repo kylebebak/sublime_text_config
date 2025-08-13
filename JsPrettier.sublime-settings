@@ -1,4 +1,5 @@
 {
   "node_path": "~/.nvm/current/bin/node",
-  "auto_format_on_save": false
+  "auto_format_on_save": false,
+  "disable_prettier_cursor_offset": true
 }
