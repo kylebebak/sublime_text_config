@@ -50,6 +50,7 @@
 	],
 	"folder_exclude_patterns": [
 		".git",
+		".worktrees",
 		".bundle",
 		"node_modules",
 		"go/pkg",
