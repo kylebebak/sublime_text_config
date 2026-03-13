@@ -351,13 +351,10 @@
       "action": "new"
     }
   },
-  // Wrap Plus
+  // Wrap Lines
   {
     "keys": ["alt+w"],
-    "command": "wrap_lines",
-    "args": {
-      "width": 120
-    }
+    "command": "wrap_lines_from_settings",
   },
   // GitSavvy
   {

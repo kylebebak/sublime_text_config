@@ -1,5 +1,5 @@
 // settings in here override those in "Requester/Requester.sublime-settings",
 
 {
-  "max_content_length_kb": 10000
+  "max_content_length_kb": 40000
 }

@@ -44,11 +44,8 @@
     }
   },
   {
-    "caption": "Wrap Plus: Wrap At 120 Chars",
-    "command": "wrap_lines",
-    "args": {
-      "width": 120
-    }
+    "caption": "Wrap Lines",
+    "command": "wrap_lines_from_settings",
   },
   {
     "caption": "LSP: Show Hover Popup",

@@ -83,6 +83,7 @@
 	"wide_caret": false,
 	"word_wrap": true,
 	"wrap_width": 120,
+	"wrap_lines_width": 120,
 	"color_scheme": "Mariana.sublime-color-scheme",
 	"mde.list_indent_bullets": ["-"],
 	"scroll_past_end": 0.15,
