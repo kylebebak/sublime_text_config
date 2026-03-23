@@ -19,6 +19,10 @@
       }
     ]
   },
+  {
+    "keys": ["ctrl+option+p"],
+    "command": "show_scope_name"
+  },
   // Symbols and navigation
   {
     "keys": ["super+e"],
