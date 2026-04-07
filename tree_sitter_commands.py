@@ -12,6 +12,7 @@ from sublime_tree_sitter import (
     get_query_s_from_file,
     get_region_from_node,
     get_scope_to_language_name,
+    get_scope_to_queries_name,
     get_selected_nodes,
     get_size,
     get_tree_dict,
@@ -68,8 +69,8 @@ class UserTreeSitterGotoSymbolCommand(sublime_plugin.TextCommand):
     """
 
     def get_query_s(self, tree_dict: TreeDict):
-        language = get_scope_to_language_name()[tree_dict["scope"]]
-        return get_query_s_from_file(language, QUERIES_PATH)
+        queries_name = get_scope_to_queries_name()[tree_dict["scope"]]
+        return get_query_s_from_file(queries_name, QUERIES_PATH)
 
     def run(self, edit, force_user_queries: bool = False):
         if tree_dict := get_tree_dict(self.view.buffer_id()):
@@ -148,7 +149,7 @@ class TreeSitterShowBreadcrumbsCommand(sublime_plugin.TextCommand):
         search_node = get_ancestors(node)[-2]
 
         try:
-            query_s = get_query_s_from_file(get_scope_to_language_name()[tree_dict["scope"]])
+            query_s = get_query_s_from_file(get_scope_to_queries_name()[tree_dict["scope"]])
         except FileNotFoundError:
             return
         captures = get_captures_from_nodes([search_node], self.view, query_s)

@@ -30,14 +30,11 @@
   ],
   "debug": false,
   // Markdown parser slow for some reason
+  "scope_to_language_name": {
+    "source.requester": "python",
+  },
   "language_name_to_debounce_ms": {
     "markdown": 400,
-  },
-  "language_name_to_scopes": {
-    "python": [
-      "source.python",
-      "source.requester"
-    ],
   },
   "file_ignore_patterns": [],
 }
