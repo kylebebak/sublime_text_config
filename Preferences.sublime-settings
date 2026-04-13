@@ -53,6 +53,7 @@
 		".worktrees",
 		".bundle",
 		"node_modules",
+		".ruff_cache",
 		"go/pkg",
 		"__pycache__",
 		".sass-cache",
