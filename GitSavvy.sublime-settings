@@ -1,0 +1,7 @@
+{
+	"global_flags": {
+		"commit": ["--cleanup=strip"]
+	},
+	"log_follow_rename": true,
+	"blame_follow_rename": true,
+}
