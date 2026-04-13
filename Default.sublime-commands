@@ -67,4 +67,12 @@
       "value": 4
     }
   },
+  {
+    "caption": "Set Indent/Tab Size: 2",
+    "command": "set_setting",
+    "args": {
+      "setting": "tab_size",
+      "value": 2
+    }
+  },
 ]

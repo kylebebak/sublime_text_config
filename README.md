@@ -11,30 +11,3 @@ For chaining commands, I use [run_multiple_commands.py](run_multiple_commands.py
 ## `PATH`
 
 Modify paths in `~/.zprofile`, not in `~/.zshrc`, to make sure Sublime picks them up, e.g. for LSP.
-
-## `GitSavvy.sublime-settings`
-
-Reproduced here because they have an API token and can't go in version control.
-
-```json
-{
-    "api_tokens": {
-        "github.com": "..."
-    },
-    "global_flags": {
-        "commit": ["--cleanup=strip"]
-    },
-    "log_follow_rename": true,
-    "blame_follow_rename": true,
-}
-```
-
-## LSP
-
-### Java
-
-To install the [eclipse-jdtls](https://github.com/sublimelsp/LSP-jdtls), first install `java` with `brew install java`, then do this:
-
-```sh
-sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
-```
