@@ -33,3 +33,6 @@
 !Preferences.sublime-settings
 !Requester.sublime-settings
 !TreeSitter.sublime-settings
+
+# and others
+!JSONL.sublime-syntax

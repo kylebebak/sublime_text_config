@@ -1,0 +1,8 @@
+%YAML 1.2
+---
+name: JSON Lines
+file_extensions: [jsonl, ndjson]
+scope: source.jsonl
+contexts:
+  main:
+    - include: scope:source.json
