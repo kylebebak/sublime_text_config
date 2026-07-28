@@ -1,0 +1,13 @@
+// Note that for Sublime to pick up changes to PATH they need to be made in ~/.zprofile
+{
+  "taplo-toml": {
+    "enabled": true,
+    // See https://taplo.tamasfe.dev, installed with `brew install taplo`
+    "command": [
+      "/opt/homebrew/bin/taplo",
+      "lsp",
+      "stdio"
+    ],
+    "selector": "source.toml"
+  },
+}

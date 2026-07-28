@@ -1,17 +1,5 @@
+// Individual language server config in `LanguageServers.sublime-settings`
 {
-	// Note that for Sublime to pick up changes to PATH they need to be made in ~/.zprofile
-	"clients": {
-		"taplo-toml": {
-			"enabled": true,
-			// See https://taplo.tamasfe.dev, installed with `brew install taplo`
-			"command": [
-				"/opt/homebrew/bin/taplo",
-				"lsp",
-				"stdio"
-			],
-			"selector": "source.toml"
-		},
-	},
 	"show_diagnostics_panel_on_save": 0,
 	"show_code_actions": "",
 	"lsp_code_actions_on_save": {
