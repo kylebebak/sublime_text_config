@@ -3,7 +3,7 @@
     { "label": "reveal", "commands": ["open"] },
     {
       "label": "terminal",
-      "commands": ["open", "-a", "/Applications/iTerm.app"]
+      "commands": ["open", "-a", "/Applications/Ghostty.app"]
     },
   ],
   "file_custom_commands": [
@@ -15,7 +15,7 @@
     },
     {
       "label": "terminal",
-      "commands": "open -a /Applications/iTerm.app \"`dirname '$url'`\""
+      "commands": "open -a /Applications/Ghostty.app \"`dirname '$url'`\""
     },
     { "label": "copy path", "commands": "printf '$url' | pbcopy" },
   ],

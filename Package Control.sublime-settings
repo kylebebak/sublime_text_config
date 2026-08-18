@@ -16,7 +16,6 @@
 		"FileDiffs",
 		"GitGutter",
 		"INI",
-		"Jinja2",
 		"Jq",
 		"JsPrettier",
 		"LSP",
@@ -49,6 +48,7 @@
 		"https://github.com/kylebebak/Requester",
 		"https://github.com/kylebebak/GitSavvy",
 		"https://github.com/kylebebak/sublime_date_diff",
-		"https://github.com/noahcoad/open-url"
+		// `noahcoad/open-url` has stuff that doesn't interest me
+		"https://github.com/kylebebak/open-url"
 	],
 }
