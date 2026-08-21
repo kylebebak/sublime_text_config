@@ -664,13 +664,9 @@
       "show_menu": false
     }
   },
-  // Color Helper
   {
-    "keys": ["super+shift+c"],
-    "command": "color_helper",
-    "args": {
-      "mode": "info"
-    }
+    "keys": ["super+ctrl+alt+f"],
+    "command": "oxfmt_buffer"
   },
   // MarkdownEditing
   // For links no need to add anything, just look at "MarkdownEditing: New Inline Link" in command palette
