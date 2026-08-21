@@ -664,11 +664,6 @@
       "show_menu": false
     }
   },
-  // Prettier
-  {
-    "keys": ["super+ctrl+alt+f"],
-    "command": "js_prettier"
-  },
   // Color Helper
   {
     "keys": ["super+shift+c"],

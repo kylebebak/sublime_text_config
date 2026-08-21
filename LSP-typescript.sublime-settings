@@ -1,0 +1,7 @@
+{
+  "disabled_capabilities": {
+    // Formatting is handled by oxfmt, not by the limited formatting capabilities shipped as part of `tsc --lsp`
+    "documentFormattingProvider": true,
+    "documentRangeFormattingProvider": true
+  }
+}

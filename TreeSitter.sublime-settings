@@ -11,7 +11,6 @@
     "tsx",
     "javascript",
     "lua",
-    "bash",
     "scss",
     "css",
     "java",
@@ -27,6 +26,7 @@
     "php",
     "markdown",
     "python",
+    "bash",
   ],
   "debug": false,
   // Markdown parser slow for some reason

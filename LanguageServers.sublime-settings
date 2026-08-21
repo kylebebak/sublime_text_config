@@ -10,4 +10,23 @@
     ],
     "selector": "source.toml"
   },
+  "oxfmt": {
+    "enabled": true,
+    // Will execute the local node_modules/.bin/oxfmt version automatically if present
+    "command": [
+      "npx",
+      "oxfmt",
+      "--lsp"
+    ],
+    "selector": "source.js | source.jsx | source.ts | source.tsx | source.json | source.yaml | source.toml | source.css | source.scss | source.less | text.html"
+  },
+  "oxlint": {
+    "enabled": true,
+    "command": [
+      "npx",
+      "oxlint",
+      "--lsp"
+    ],
+    "selector": "source.js | source.jsx | source.ts | source.tsx"
+  }
 }
