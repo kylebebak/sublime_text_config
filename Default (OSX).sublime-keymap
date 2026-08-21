@@ -646,11 +646,6 @@
     "keys": ["alt+]"],
     "command": "unfold_all"
   },
-  // Automatic Package Reloader
-  {
-    "keys": ["super+ctrl+alt+r"],
-    "command": "package_reloader_reload"
-  },
   // Requester
   {
     "keys": ["ctrl+h"],

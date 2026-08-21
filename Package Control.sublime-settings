@@ -1,13 +1,10 @@
 {
-	"bootstrapped": true,
-	"ignore_vcs_packages": true,
 	"in_process_packages": [
 	],
 	"installed_packages": [
 		"A File Icon",
 		"Advanced CSV",
 		"ApplySyntax",
-		"AutomaticPackageReloader",
 		"BracketHighlighter",
 		"ChannelRepositoryTools",
 		"Dockerfile Syntax Highlighting",
@@ -18,7 +15,6 @@
 		"Jq",
 		"LSP",
 		"LSP-bash",
-		"LSP-gopls",
 		"LSP-json",
 		"LSP-lua",
 		"LSP-pyright",
@@ -32,7 +28,6 @@
 		"nginx",
 		"Package Control",
 		"PackageDev",
-		"PackageResourceViewer",
 		"ProjectManager",
 		"Sass",
 		"Scheme",

@@ -20,10 +20,8 @@
 !bh_core.sublime-settings
 !GitGutter.sublime-settings
 !GitSavvy.sublime-settings
-!golang.sublime-settings
-!LSP.sublime-settings
 !LanguageServers.sublime-settings
-!LSP-gopls.sublime-settings
+!LSP.sublime-settings
 !LSP-typescript.sublime-settings
 !LSP-yaml.sublime-settings
 !Markdown.sublime-settings
