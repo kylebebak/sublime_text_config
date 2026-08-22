@@ -4,6 +4,7 @@
 # except...
 !.gitignore
 !README.md
+!plugin_hosts.md
 !/snippets
 !/queries
 !*.py

@@ -12,7 +12,6 @@
 		"FileDiffs",
 		"GitGutter",
 		"INI",
-		"Jq",
 		"LSP",
 		"LSP-bash",
 		"LSP-json",
@@ -37,8 +36,8 @@
 	],
 	"repositories": [
 		"https://github.com/sublime-treesitter/TreeSitter",
-		"https://github.com/kylebebak/Requester",
 		"https://github.com/kylebebak/GitSavvy",
+		"https://github.com/kylebebak/Requester",
 		"https://github.com/kylebebak/sublime_date_diff",
 		// `noahcoad/open-url` has stuff that doesn't interest me
 		"https://github.com/kylebebak/open-url"

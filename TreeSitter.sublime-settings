@@ -1,6 +1,4 @@
 {
-  // To create python executable, `cd ~/.virtualenvs`, `uv venv 3.8 --python 3.8`, `source 3.8/bin/activate`, `uv pip install tree_sitter==0.21.3`
-  "python_path": "~/.virtualenvs/3.8/bin/python",
   "installed_languages": [
     "json",
     "toml",
@@ -29,10 +27,10 @@
     "bash",
   ],
   "debug": false,
-  // Markdown parser slow for some reason
   "scope_to_language_name": {
     "source.requester": "python",
   },
+  // Markdown parser slow for some reason
   "language_name_to_debounce_ms": {
     "markdown": 400,
   },
