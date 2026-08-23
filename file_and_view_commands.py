@@ -12,7 +12,7 @@ from .utils import maybe_none, not_none
 
 def truncate(s: str, n: int) -> str:
     if len(s) > n:
-        return "{}…".format(s[:n])
+        return f"{s[:n]}…"
     return s
 
 
@@ -32,7 +32,7 @@ class CopyFileNameCommand(sublime_plugin.TextCommand):
             return
         filename = os.path.basename(path)
         sublime.set_clipboard(filename)
-        not_none(self.view.window()).status_message("copied - {}".format(truncate(filename, 80)))
+        not_none(self.view.window()).status_message(f"copied - {truncate(filename, 80)}")
 
 
 class CopyFilePathCommand(sublime_plugin.TextCommand):
@@ -42,17 +42,22 @@ class CopyFilePathCommand(sublime_plugin.TextCommand):
         if (project_path := get_project_path(self.view)) and relative:
             path = os.path.relpath(path, project_path)
         sublime.set_clipboard(path)
-        not_none(self.view.window()).status_message("copied - {}".format(truncate(path, 80)))
+        not_none(self.view.window()).status_message(f"copied - {truncate(path, 80)}")
 
 
-BookmarkType = NamedTuple("Point", [("row", int), ("col", int), ("text", str)])
+class BookmarkType(NamedTuple):
+    row: int
+    col: int
+    text: str
+
+
 Bookmark = namedtuple("Bookmark", ["row", "col", "text"])
 
 
 def format_bookmark(path: str, b: BookmarkType, include_text: bool) -> str:
     if include_text:
-        return "{}:{}:{}    {}".format(path, str(b.row + 1), str(b.col + 1), b.text)
-    return "{}:{}:{}".format(path, str(b.row + 1), str(b.col + 1))
+        return f"{path}:{b.row + 1!s}:{b.col + 1!s}    {b.text}"
+    return f"{path}:{b.row + 1!s}:{b.col + 1!s}"
 
 
 def get_project_path(view: sublime.View) -> str | None:
@@ -77,7 +82,7 @@ class CopyFilePathAndLineNumberCommand(sublime_plugin.TextCommand):
             bookmarks.append(self.get_line_number_and_text(r.begin(), strip, max_len))
         text = "\n".join(format_bookmark(path, b, include_text) for b in bookmarks)
         sublime.set_clipboard(text)
-        not_none(self.view.window()).status_message("copied - {}".format(truncate(text, 80)))
+        not_none(self.view.window()).status_message(f"copied - {truncate(text, 80)}")
 
     def get_line_number_and_text(self, point: int, strip: bool, max_len: int) -> BookmarkType:
         row, col = self.view.rowcol(point)

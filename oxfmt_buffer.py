@@ -84,7 +84,7 @@ class OxfmtBufferCommand(sublime_plugin.TextCommand):
         argv = oxfmt_executable(cwd) + [f"--stdin-filepath={stdin_filepath}"]
 
         try:
-            result = subprocess.run(
+            result = subprocess.run(  # noqa: PLW1510, UP022
                 argv,
                 input=content.encode("utf-8"),
                 stdout=subprocess.PIPE,

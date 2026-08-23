@@ -1,5 +1,3 @@
-from __future__ import annotations, division
-
 import datetime
 import json
 import math
@@ -8,6 +6,52 @@ import threading
 
 import sublime
 import sublime_plugin
+
+
+class EvaluateCall(threading.Thread):
+    def __init__(self, sel: sublime.Region, to_eval: str, timeout: float):
+        self.sel = sel
+        self.original = to_eval
+        self.timeout = timeout
+        self.result = self.original  # Default result
+        threading.Thread.__init__(self)
+
+    def run(self):
+        """
+        Evaluate `self.original`, save to `self.result`. If `self.timeout` reached, the run fails and nothing changes.
+
+        If `self.original` starts with '!', after trimming leading spaces, it is evaluated as Shell code. (The same
+        convention as ipython).
+
+        Otherwise, it is evaluated as Python code.
+        """
+        if self.original.lstrip().startswith("!"):
+            # Remove the first bang
+            shell_code = self.original.lstrip()[1:]
+            try:
+                p = subprocess.Popen(
+                    shell_code,
+                    shell=True,
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.STDOUT,
+                )
+                # stderr goes to stdout
+                out, _ = p.communicate(timeout=self.timeout)
+                out = out.decode()
+
+                # Remove the last newline
+                out = out.removesuffix("\n")
+
+                self.result = out
+            except Exception:  # noqa: S110
+                pass
+        else:
+            try:
+                tmp_global = {"math": math, "datetime": datetime, "json": json}
+                code = compile(self.original, "<string>", "eval")
+                self.result = eval(code, tmp_global)
+            except ValueError, SyntaxError:
+                pass
 
 
 class EvaluateCommand(sublime_plugin.TextCommand):
@@ -51,50 +95,3 @@ class EvaluateCommand(sublime_plugin.TextCommand):
         self.view.sel().add(sublime.Region(end_point, end_point))
 
         return offset + len(main) - len(original)
-
-
-class EvaluateCall(threading.Thread):
-    def __init__(self, sel: sublime.Region, to_eval: str, timeout: float):
-        self.sel = sel
-        self.original = to_eval
-        self.timeout = timeout
-        self.result = self.original  # Default result
-        threading.Thread.__init__(self)
-
-    def run(self):
-        """
-        Evaluate `self.original`, save to `self.result`. If `self.timeout` reached, the run fails and nothing changes.
-
-        If `self.original` starts with '!', after trimming leading spaces, it is evaluated as Shell code. (The same
-        convention as ipython).
-
-        Otherwise, it is evaluated as Python code.
-        """
-        if self.original.lstrip().startswith("!"):
-            # Remove the first bang
-            shell_code = self.original.lstrip()[1:]
-            try:
-                p = subprocess.Popen(
-                    shell_code,
-                    shell=True,
-                    stdout=subprocess.PIPE,
-                    stderr=subprocess.STDOUT,
-                )
-                # stderr goes to stdout
-                out, _ = p.communicate(timeout=self.timeout)
-                out = out.decode()
-
-                # Remove the last newline
-                if out.endswith("\n"):
-                    out = out[:-1]
-
-                self.result = out
-            except Exception:
-                pass
-        else:
-            try:
-                tmp_global = {"math": math, "datetime": datetime, "json": json}
-                code = compile(self.original, "<string>", "eval")
-                self.result = eval(code, tmp_global)
-            except (ValueError, SyntaxError):
-                pass

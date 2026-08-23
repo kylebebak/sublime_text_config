@@ -17,7 +17,7 @@ from .utils import not_none
 class RunMultipleCommandsCommand(sublime_plugin.TextCommand):
     def exec_command(self, command):
         if "command" not in command:
-            raise Exception("No command name provided.")
+            raise Exception("No command name provided.")  # noqa: TRY002
 
         args = None
         if "args" in command:
@@ -34,7 +34,7 @@ class RunMultipleCommandsCommand(sublime_plugin.TextCommand):
             elif context_name == "text":
                 pass
             else:
-                raise Exception('Invalid command context "' + context_name + '".')
+                raise Exception('Invalid command context "' + context_name + '".')  # noqa: TRY002
 
         # Skip args if not needed
         if args is None:

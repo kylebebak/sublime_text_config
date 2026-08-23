@@ -1,6 +1,4 @@
-# https://beta.ruff.rs/docs/configuration/
-lint.select = ["F", "E", "I001", "ERA001"]
-
-lint.ignore = ["E501"]
-
 line-length = 120
+
+[lint]
+ignore = ["BLE001"]

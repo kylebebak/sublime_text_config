@@ -25,6 +25,7 @@
     "markdown",
     "python",
     "bash",
+    "ruby",
   ],
   "debug": false,
   "scope_to_language_name": {

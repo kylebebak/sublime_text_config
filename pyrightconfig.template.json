@@ -1,4 +1,5 @@
 {
+  "pythonVersion": "3.14",
   "typeCheckingMode": "strict",
   "reportMissingParameterType": "none",
   "reportMissingTypeArgument": "none",
@@ -16,5 +17,10 @@
   "reportUnusedVariable": "none",
   "reportUnnecessaryTypeIgnoreComment": "error",
   "reportIncompatibleVariableOverride": "none",
-  "reportIncompatibleMethodOverride": "none"
+  "reportIncompatibleMethodOverride": "none",
+  "extraPaths": [
+    "/Applications/Sublime Text.app/Contents/MacOS/Lib/python314",
+    ".../Library/Application Support/Sublime Text/Packages",
+    ".../Library/Application Support/Sublime Text/Packages/TreeSitter/src/lib"
+  ]
 }

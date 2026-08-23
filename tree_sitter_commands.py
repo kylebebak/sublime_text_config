@@ -1,5 +1,8 @@
 from __future__ import annotations
 
+from collections.abc import Mapping
+from typing import Any
+
 import sublime
 import sublime_plugin
 from sublime_tree_sitter import (
@@ -18,7 +21,6 @@ from sublime_tree_sitter import (
     get_tree_dict,
     goto_captures,
 )
-from tree_sitter import Node
 
 QUERIES_PATH = "~/Repos/sublime_text_config/queries"
 
@@ -70,12 +72,13 @@ class UserTreeSitterGotoSymbolCommand(sublime_plugin.TextCommand):
 
     def get_query_s(self, tree_dict: TreeDict):
         queries_name = get_scope_to_queries_name()[tree_dict["scope"]]
-        return get_query_s_from_file(queries_name, QUERIES_PATH)
+        try:
+            return get_query_s_from_file(queries_name, QUERIES_PATH)
+        except Exception:  # Fall back to queries bundled with STS
+            return get_query_s_from_file(queries_name)
 
     def run(self, edit, force_user_queries: bool = False):
-        if tree_dict := get_tree_dict(self.view.buffer_id()):
-            if tree_dict["scope"] == "text.html.markdown" and (window := self.view.window()):
-                return window.run_command("show_overlay", {"overlay": "goto", "text": "@"})
+        tree_dict = get_tree_dict(self.view.buffer_id())
 
         if force_user_queries:
             if not tree_dict:
@@ -88,9 +91,8 @@ class UserTreeSitterGotoSymbolCommand(sublime_plugin.TextCommand):
         if not nodes or (len(nodes) == 1 and nodes[0].parent is None):
             return self.view.run_command("tree_sitter_goto_symbol")
 
-        if tree_dict:
-            if captures := get_captures_from_nodes(nodes, self.view, self.get_query_s(tree_dict)):
-                return goto_captures(captures, self.view)
+        if tree_dict and (captures := get_captures_from_nodes(nodes, self.view, self.get_query_s(tree_dict))):
+            return goto_captures(captures, self.view)
 
         return self.view.run_command("tree_sitter_goto_symbol")
 
@@ -102,9 +104,9 @@ class UserTreeSitterSelectAncestorCommand(sublime_plugin.TextCommand):
     TODO: this can be part of `TreeSitterShowBreadcrumbsCommand`.
     """
 
-    ECMA_TYPES = ["function_declaration", "arrow_function", "method_definition", "class_declaration"]
-    LANGUAGE_TO_ANCESTOR_TYPES: dict[str, list[str]] = {
-        "python": ["class_definition", "function_definition"],
+    ECMA_TYPES = ("function_declaration", "arrow_function", "method_definition", "class_declaration")
+    LANGUAGE_TO_ANCESTOR_TYPES: Mapping[str, tuple[str, ...]] = {
+        "python": ("class_definition", "function_definition"),
         "javascript": ECMA_TYPES,
         "typescript": ECMA_TYPES,
         "tsx": ECMA_TYPES,
@@ -168,5 +170,5 @@ class TreeSitterShowBreadcrumbsCommand(sublime_plugin.TextCommand):
         if bc_capture is None or bc_capture["breadcrumb"] is None:
             return
 
-        bc_nodes: list[Node] = [bc_capture["breadcrumb"]["node"], *(c["node"] for c in bc_capture["breadcrumbs"])]
+        bc_nodes: list[Any] = [bc_capture["breadcrumb"]["node"], *(c["node"] for c in bc_capture["breadcrumbs"])]
         self.view.show_popup(format_breadcrumbs(bc_nodes), max_width=1024)
