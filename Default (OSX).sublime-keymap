@@ -591,7 +591,7 @@
   },
   {
     "keys": ["ctrl+alt+b"],
-    "command": "tree_sitter_show_breadcrumbs"
+    "command": "user_tree_sitter_show_breadcrumbs"
   },
   {
     "keys": ["super+r"],

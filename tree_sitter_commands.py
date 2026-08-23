@@ -74,8 +74,13 @@ class UserTreeSitterGotoSymbolCommand(sublime_plugin.TextCommand):
         queries_name = get_scope_to_queries_name()[tree_dict["scope"]]
         try:
             return get_query_s_from_file(queries_name, QUERIES_PATH)
-        except Exception:  # Fall back to queries bundled with STS
+        except Exception:  # Fall back to queries bundled with STS  # noqa: S110
+            pass
+
+        try:
             return get_query_s_from_file(queries_name)
+        except Exception:  # Fall back to Sublime's goto
+            return ""
 
     def run(self, edit, force_user_queries: bool = False):
         tree_dict = get_tree_dict(self.view.buffer_id())
@@ -101,7 +106,8 @@ class UserTreeSitterSelectAncestorCommand(sublime_plugin.TextCommand):
     """
     Expand selection to nearest ancestor of a given type.
 
-    TODO: this can be part of `TreeSitterShowBreadcrumbsCommand`.
+    TODO: this can be part of `UserTreeSitterShowBreadcrumbsCommand`. Also (and this is not important), this doesn't
+    work in injected trees.
     """
 
     ECMA_TYPES = ("function_declaration", "arrow_function", "method_definition", "class_declaration")
@@ -132,9 +138,11 @@ class UserTreeSitterSelectAncestorCommand(sublime_plugin.TextCommand):
                     break
 
 
-class TreeSitterShowBreadcrumbsCommand(sublime_plugin.TextCommand):
+class UserTreeSitterShowBreadcrumbsCommand(sublime_plugin.TextCommand):
     """
     Render popup with ancestor breadcrumbs "above" selection in parse tree.
+
+    TODO: not important, but this doesn't work in injected trees.
     """
 
     def run(self, edit):
