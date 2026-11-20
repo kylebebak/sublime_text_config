@@ -79,4 +79,16 @@
     "caption": "Oxfmt Buffer",
     "command": "oxfmt_buffer",
   },
+  {
+    "caption": "Mermaid: Render",
+    "command": "mermaid_render",
+  },
+  {
+    "caption": "Mermaid: Auto Render",
+    "command": "mermaid_auto_render",
+  },
+  {
+    "caption": "Mermaid: Remove",
+    "command": "mermaid_remove",
+  },
 ]
