@@ -6,6 +6,7 @@
 !README.md
 !plugin_hosts.md
 !/snippets
+!/bin
 !/queries
 !*.py
 !*.sublime-build
