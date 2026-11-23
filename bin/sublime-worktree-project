@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
-"""Create a Sublime Text project for a git worktree, cloned from the main repo's project.
+
+"""
+Create a Sublime Text project for a git worktree, cloned from the main repo's project.
+
+Assumes we're using https://github.com/randy3k/ProjectManager (which we always are).
 
 Finds the .sublime-project in the Projects dir whose folder points at the worktree's
 main checkout, copies it (comments and all), and rewrites every path string under the
 main checkout to the same path under the worktree. Output goes to Projects/worktrees/.
 
-ln -sf ~/repos/sublime_text_config/bin/sublime-worktree-project ~/.local/bin/sublime-worktree-project
+ln -s ~/repos/sublime_text_config/bin/sublime-worktree-project ~/.local/bin/sublime-worktree-project
 
 Usage:
   sublime-worktree-project [WORKTREE] [--no-open] [--force] [--dry-run]
@@ -13,6 +17,8 @@ Usage:
 
 WORKTREE defaults to the current directory. Override the Projects dir with SUBLIME_PROJECTS_DIR.
 """
+
+from __future__ import annotations
 
 import argparse
 import json
@@ -115,6 +121,13 @@ def rewrite(text: str, template: Path, main_repo: Path, worktree: Path) -> str:
     return STRING_RE.sub(sub, text)
 
 
+def refresh_project_manager() -> None:
+    """Project Manager caches its project list; ask it to rescan if Sublime is running."""
+    if subprocess.run(["pgrep", "-x", "sublime_text"], check=False, capture_output=True).returncode == 0:
+        cmd = 'project_manager {"action": "refresh_projects"}'
+        subprocess.run(["subl", "--background", "--command", cmd], check=False)
+
+
 def create(args: argparse.Namespace) -> int:
     start = Path(args.worktree).expanduser().resolve()
     try:
@@ -149,6 +162,7 @@ def create(args: argparse.Namespace) -> int:
         OUT_DIR.mkdir(parents=True, exist_ok=True)
         out.write_text(content)
         print(f"wrote {out}" + (f" (from {template.name})" if template else ""))
+        refresh_project_manager()
     if not args.no_open:
         subprocess.run(["subl", "--project", str(out)], check=False)
     return 0
@@ -174,6 +188,8 @@ def prune(args: argparse.Namespace) -> int:
             removed += 1
     if not removed:
         print("nothing to prune")
+    elif not args.dry_run:
+        refresh_project_manager()
     return 0
 
 

@@ -13,11 +13,14 @@ For chaining commands, I use [run_multiple_commands.py](run_multiple_commands.py
 ```sh
 # Symlink this repo into .../Packages/User
 rm -dr ~/Library/Application\ Support/Sublime\ Text/Packages/User
-ln -s ~/Repos/sublime_text_config ~/Library/Application\ Support/Sublime\ Text/Packages/User
+ln -s ~/repos/sublime_text_config ~/Library/Application\ Support/Sublime\ Text/Packages/User
 
 # Get a `subl` executable
 sudo mkdir /usr/local/bin
-sudo ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
+sudo ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/.local/bin/subl
+
+# Get `sublime-worktree-project` executable
+ln -s ~/repos/sublime_text_config/bin/sublime-worktree-project ~/.local/bin/sublime-worktree-project
 ```
 
 To install custom packages from git repos, do `cd ~/Library/Application\ Support/Sublime\ Text/Packages`, and `git clone ...` these packages.
