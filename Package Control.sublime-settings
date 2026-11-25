@@ -14,6 +14,7 @@
 		"INI",
 		"LSP",
 		"LSP-bash",
+		"LSP-gopls",
 		"LSP-json",
 		"LSP-lua",
 		"LSP-pyright",

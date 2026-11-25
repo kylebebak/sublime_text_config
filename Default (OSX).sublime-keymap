@@ -607,6 +607,17 @@
         "operator": "not_equal",
         "operand": "source.requester"
       },
+      // TODO: refine default symbol indexing queries for Rust and Go
+      {
+        "key": "selector",
+        "operator": "not_equal",
+        "operand": "source.rust"
+      },
+      {
+        "key": "selector",
+        "operator": "not_equal",
+        "operand": "source.go"
+      },
     ]
   },
   {
